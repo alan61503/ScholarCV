@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeCustomizer from "../components/ui/ThemeCustomizer";
+import { profile } from "../data/profile";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Faculty Profiles Portfolio System",
-  description: "Dynamic academic portfolios for university faculty members.",
+  title: `${profile.personalInfo.name} — ${profile.personalInfo.title}`,
+  description: profile.personalInfo.biography,
 };
 
 export default function RootLayout({

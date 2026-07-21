@@ -14,15 +14,15 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
       {/* Funded Projects */}
       <Card>
         <CardContent className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-border-subtle">
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-accent-50 dark:bg-accent-950/40 text-accent-600 dark:text-accent-400">
+              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
                 <Briefcase className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground">Funded Projects</h2>
+              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Funded Projects</h2>
             </div>
-            <span className="text-xs font-semibold px-2.5 py-1 bg-accent-55/10 text-accent-600 dark:text-accent-400 rounded-full">
-              {fundedProjects.length} Projects
+            <span className="text-xs font-semibold px-3 py-1 bg-accent-500/10 text-accent-700 dark:text-accent-400 rounded-full">
+              {fundedProjects.length} {fundedProjects.length === 1 ? 'Project' : 'Projects'}
             </span>
           </div>
 
@@ -35,18 +35,16 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
               {fundedProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="flex flex-col justify-between p-5 border border-border-subtle rounded-lg hover:border-accent-200 dark:hover:border-accent-800 transition-all hover:shadow-sm"
+                  className="flex flex-col justify-between p-5 border border-border-subtle/80 rounded-xl hover:border-accent-500/30 transition-all hover:shadow-sm bg-surface-muted/30"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between gap-2">
                       <span
-                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold
-                          ${
-                            project.status === 'Ongoing'
-                              ? 'bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400'
-                              : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400'
-                          }
-                        `}
+                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                          project.status === 'Ongoing'
+                            ? 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
+                            : 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
+                        }`}
                       >
                         {project.status === 'Ongoing' ? (
                           <Clock className="h-3 w-3" />
@@ -55,8 +53,8 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
                         )}
                         <span>{project.status}</span>
                       </span>
-                      
-                      <span className="text-xs font-mono font-bold text-foreground">
+
+                      <span className="text-xs font-mono font-bold text-foreground bg-surface px-2.5 py-1 rounded-md border border-border-subtle">
                         {project.amount}
                       </span>
                     </div>
@@ -65,7 +63,7 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
                       {project.title}
                     </h3>
 
-                    <p className="text-xs text-accent-650 dark:text-accent-400 font-bold">
+                    <p className="text-xs text-accent-700 dark:text-accent-400 font-bold">
                       {project.role}
                     </p>
 
@@ -76,14 +74,14 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between text-xs text-foreground-muted mt-4 pt-3 border-t border-border-subtle">
+                  <div className="flex items-center justify-between text-xs text-foreground-muted mt-4 pt-3 border-t border-border-subtle/70">
                     <span className="flex items-center gap-1.5 font-medium">
-                      <Landmark className="h-3.5 w-3.5" />
+                      <Landmark className="h-3.5 w-3.5 text-accent-500" />
                       {project.fundingAgency}
                     </span>
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="h-3.5 w-3.5" />
-                      {project.startDate} to {project.endDate}
+                    <span className="flex items-center gap-1.5 font-mono">
+                      <Calendar className="h-3.5 w-3.5 text-accent-500" />
+                      {project.startDate} – {project.endDate}
                     </span>
                   </div>
                 </div>
@@ -96,13 +94,16 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
       {/* Grants Received */}
       <Card>
         <CardContent className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-border-subtle">
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400">
+              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
                 <CreditCard className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground">Grants Received</h2>
+              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Grants Received</h2>
             </div>
+            <span className="text-xs font-semibold px-3 py-1 bg-accent-500/10 text-accent-700 dark:text-accent-400 rounded-full">
+              {grantsReceived.length} {grantsReceived.length === 1 ? 'Grant' : 'Grants'}
+            </span>
           </div>
 
           {grantsReceived.length === 0 ? (
@@ -114,25 +115,29 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
               {grantsReceived.map((grant) => (
                 <div
                   key={grant.id}
-                  className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 border border-border-subtle rounded-md hover:bg-surface-muted/60 transition-colors"
+                  className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 border border-border-subtle/80 rounded-xl hover:bg-surface-muted/40 transition-colors"
                 >
                   <div className="space-y-1.5 flex-1">
                     <div className="flex items-center gap-2">
                       <h3 className="text-base font-bold text-foreground font-serif">{grant.title}</h3>
-                      <span className="text-[11px] font-semibold bg-surface-muted px-2 py-0.5 rounded text-foreground-muted">
+                      <span className="text-[11px] font-semibold bg-accent-500/10 text-accent-700 dark:text-accent-400 px-2 py-0.5 rounded-full font-mono">
                         {grant.year}
                       </span>
                     </div>
-                    <p className="text-xs text-foreground-muted">
-                      Purpose: {grant.purpose}
-                    </p>
-                    <p className="text-xs font-semibold text-foreground-muted">
-                      Agency: {grant.agency}
-                    </p>
+                    {grant.purpose && (
+                      <p className="text-xs text-foreground-muted">
+                        <strong className="text-foreground">Purpose:</strong> {grant.purpose}
+                      </p>
+                    )}
+                    {grant.agency && (
+                      <p className="text-xs text-foreground-muted">
+                        <strong className="text-foreground">Agency:</strong> {grant.agency}
+                      </p>
+                    )}
                   </div>
-                  
+
                   <div className="text-right shrink-0">
-                    <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 rounded-lg text-sm font-bold font-mono">
+                    <span className="inline-block px-3 py-1.5 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 rounded-lg text-sm font-bold font-mono border border-emerald-500/20">
                       {grant.amount}
                     </span>
                   </div>

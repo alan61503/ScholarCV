@@ -12,21 +12,21 @@ export default function ScholarsScholarly({ phdScholars }: ScholarsScholarlyProp
     <section id="scholars" className="scroll-mt-24 space-y-6">
       <Card>
         <CardContent className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-border-subtle">
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-accent-50 dark:bg-accent-950/40 text-accent-600 dark:text-accent-400">
+              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
                 <Users className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground">Research Scholars</h2>
+              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Research Scholars</h2>
             </div>
-            
+
             {/* Quick summary badges */}
             <div className="flex gap-2">
-              <span className="text-[10px] md:text-xs font-semibold px-2 py-0.5 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 rounded-full">
-                {phdScholars.filter(s => s.status === 'Completed').length} Completed
+              <span className="text-xs font-semibold px-3 py-1 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 rounded-full border border-emerald-500/20">
+                {phdScholars.filter((s) => s.status === 'Completed').length} Completed
               </span>
-              <span className="text-[10px] md:text-xs font-semibold px-2 py-0.5 bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 rounded-full">
-                {phdScholars.filter(s => s.status === 'Ongoing').length} Ongoing
+              <span className="text-xs font-semibold px-3 py-1 bg-amber-500/10 text-amber-700 dark:text-amber-400 rounded-full border border-amber-500/20">
+                {phdScholars.filter((s) => s.status === 'Ongoing').length} Ongoing
               </span>
             </div>
           </div>
@@ -40,24 +40,22 @@ export default function ScholarsScholarly({ phdScholars }: ScholarsScholarlyProp
               {phdScholars.map((scholar) => (
                 <div
                   key={scholar.id}
-                  className="flex flex-col justify-between p-5 border border-border-subtle rounded-lg hover:border-accent-200 dark:hover:border-accent-800 transition-all bg-surface-muted/40"
+                  className="flex flex-col justify-between p-5 border border-border-subtle/80 rounded-xl hover:border-accent-500/30 transition-all bg-surface-muted/30"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-semibold text-foreground-muted">
+                      <span className="text-xs font-semibold font-mono text-foreground-muted">
                         Joined: {scholar.joiningYear}
                       </span>
-                      
+
                       <span
-                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider
-                          ${
-                            scholar.status === 'Completed'
-                              ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400'
-                              : scholar.status === 'Submitted'
-                              ? 'bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400'
-                              : 'bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400'
-                          }
-                        `}
+                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                          scholar.status === 'Completed'
+                            ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
+                            : scholar.status === 'Submitted'
+                            ? 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20'
+                            : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
+                        }`}
                       >
                         {scholar.status === 'Completed' ? (
                           <CheckCircle className="h-3 w-3" />
@@ -71,23 +69,23 @@ export default function ScholarsScholarly({ phdScholars }: ScholarsScholarlyProp
                     </div>
 
                     <div>
-                      <h3 className="text-base font-bold text-foreground flex items-center gap-2">
-                        <GraduationCap className="h-4.5 w-4.5 text-foreground-muted shrink-0" />
+                      <h3 className="text-base font-serif font-bold text-foreground flex items-center gap-2">
+                        <GraduationCap className="h-4.5 w-4.5 text-accent-500 shrink-0" />
                         {scholar.scholarName}
                       </h3>
-                      <p className="text-xs font-semibold text-accent-650 dark:text-accent-400 mt-1">
+                      <p className="text-xs font-semibold text-accent-700 dark:text-accent-400 mt-1">
                         Role: {scholar.role}
                       </p>
                     </div>
 
-                    <p className="text-xs md:text-sm text-foreground-muted leading-relaxed border-t border-border-subtle pt-2 italic">
+                    <p className="text-xs md:text-sm text-foreground-muted leading-relaxed border-t border-border-subtle/70 pt-2 italic">
                       "{scholar.thesisTitle}"
                     </p>
                   </div>
 
                   {scholar.completionYear && (
-                    <div className="text-xs text-foreground-muted mt-4 pt-2 border-t border-border-subtle">
-                      Completed in: <span className="font-bold">{scholar.completionYear}</span>
+                    <div className="text-xs text-foreground-muted mt-4 pt-2 border-t border-border-subtle/70 font-mono">
+                      Completed in: <span className="font-bold text-foreground">{scholar.completionYear}</span>
                     </div>
                   )}
                 </div>

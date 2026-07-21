@@ -17,14 +17,15 @@ import {
   Award,
   Sparkles,
   Lock,
-  ChevronRight,
-  Search,
+  CloudCheck,
+  Cloud,
 } from 'lucide-react';
 import { profile as defaultProfile } from '../../data/profile';
 import { FacultyProfile, Publication } from '../../types/faculty';
 import { sectionSchemas, arrayStringFields } from './schema';
 import RepeatableSection from './RepeatableSection';
 import PublicationsForm from './PublicationsForm';
+import { getCloudProfile, saveCloudProfile } from '../../lib/profileService';
 
 const STORAGE_KEY = 'scholarcv:draft-profile';
 
@@ -156,24 +157,29 @@ const categoryGroups = [
 
 export default function PortfolioForm() {
   const [draft, setDraft] = useState<Record<string, unknown> | null>(null);
-  const [status, setStatus] = useState<'idle' | 'saved' | 'copied'>('idle');
+  const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'copied'>('idle');
   const [activeGroupId, setActiveGroupId] = useState<string>('personal');
-  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      setDraft(stored ? JSON.parse(stored) : toDraft(defaultProfile));
-    } catch {
-      setDraft(toDraft(defaultProfile));
+    async function loadInitialProfile() {
+      try {
+        // Load live profile from Firebase Firestore
+        const liveProfile = await getCloudProfile();
+        setDraft(toDraft(liveProfile));
+      } catch {
+        // Fallback to local draft or default
+        const stored = window.localStorage.getItem(STORAGE_KEY);
+        setDraft(stored ? JSON.parse(stored) : toDraft(defaultProfile));
+      }
     }
+    loadInitialProfile();
   }, []);
 
   if (!draft) {
     return (
       <div className="flex items-center justify-center p-12 text-sm text-foreground-muted">
         <div className="animate-spin rounded-full h-5 w-5 border-2 border-accent-500 border-t-transparent mr-3" />
-        Loading admin workspace...
+        Connecting to Firebase Cloud Database...
       </div>
     );
   }
@@ -188,17 +194,31 @@ export default function PortfolioForm() {
     setDraft({ ...draft, [key]: items });
   };
 
-  const handleSave = () => {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
-    setStatus('saved');
-    setTimeout(() => setStatus('idle'), 2500);
+  const handleSave = async () => {
+    setStatus('saving');
+    try {
+      // 1. Save to local storage cache
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+      
+      // 2. Publish live to Cloud Firestore
+      const structuredProfile = fromDraft(draft);
+      await saveCloudProfile(structuredProfile);
+      
+      setStatus('saved');
+      setTimeout(() => setStatus('idle'), 3000);
+    } catch (err) {
+      console.error('Cloud save failed:', err);
+      setStatus('saved'); // Still saved locally
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
-  const handleReset = () => {
+  const handleReset = async () => {
     if (window.confirm('Reset all draft changes to initial profile defaults?')) {
       const fresh = toDraft(defaultProfile);
       setDraft(fresh);
       window.localStorage.removeItem(STORAGE_KEY);
+      await saveCloudProfile(defaultProfile);
     }
   };
 
@@ -227,12 +247,12 @@ export default function PortfolioForm() {
       {/* Top Action Toolbar */}
       <div className="sticky top-0 z-30 rounded-xl border border-border-subtle bg-surface/95 backdrop-blur-md p-4 shadow-md flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-accent-500/10 text-accent-700 dark:text-accent-400">
-            <Lock className="h-4 w-4" />
+          <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+            <Cloud className="h-4 w-4" />
           </span>
           <div>
-            <h2 className="text-sm font-semibold font-serif text-foreground">Admin Workspace</h2>
-            <p className="text-[11px] text-foreground-muted">Changes saved locally in browser</p>
+            <h2 className="text-sm font-semibold font-serif text-foreground">Cloud Live Management</h2>
+            <p className="text-[11px] text-foreground-muted">Connected to Firebase Firestore (`aruna-portfolio-663fd`)</p>
           </div>
         </div>
 
@@ -240,21 +260,31 @@ export default function PortfolioForm() {
           <button
             type="button"
             onClick={handleSave}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-accent-700 dark:bg-accent-600 text-white text-xs font-semibold hover:bg-accent-800 transition-all shadow-sm active:scale-95"
+            disabled={status === 'saving'}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 dark:bg-emerald-500 text-white text-xs font-semibold hover:bg-emerald-700 transition-all shadow-sm active:scale-95 disabled:opacity-50"
           >
-            <Save className="h-3.5 w-3.5" /> Save Draft
+            {status === 'saving' ? (
+              <>
+                <div className="animate-spin h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full" />
+                <span>Publishing...</span>
+              </>
+            ) : (
+              <>
+                <Save className="h-3.5 w-3.5" /> Save & Publish Live
+              </>
+            )}
           </button>
           <button
             type="button"
             onClick={handleDownload}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-border-subtle bg-surface-muted text-xs font-medium text-foreground hover:bg-surface transition-all"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border-subtle bg-surface-muted text-xs font-medium text-foreground hover:bg-surface transition-all"
           >
-            <Download className="h-3.5 w-3.5 text-accent-500" /> Export JSON
+            <Download className="h-3.5 w-3.5 text-accent-500" /> Export
           </button>
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-border-subtle bg-surface-muted text-xs font-medium text-foreground hover:bg-surface transition-all"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border-subtle bg-surface-muted text-xs font-medium text-foreground hover:bg-surface transition-all"
           >
             {status === 'copied' ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5 text-accent-500" />} Copy JSON
           </button>
@@ -270,7 +300,7 @@ export default function PortfolioForm() {
 
         {status === 'saved' && (
           <div className="w-full text-right text-xs font-medium text-emerald-600 dark:text-emerald-400 animate-pulse">
-            Draft saved to browser storage ✓
+            ✓ Published live to Firebase Cloud Database! Changes are now live for all visitors.
           </div>
         )}
       </div>

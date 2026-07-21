@@ -1,59 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  /* Core surfaces */
-  --background: #f7f6f2; /* warm paper white */
-  --surface: #ffffff;
-  --surface-muted: #f1efe9;
-  --foreground: #1c1a17; /* near-black ink */
-  --foreground-muted: #5c5850;
-  --border-color: #e4e0d6;
+  /* Core surfaces - Crisp, ultra-readable light mode */
+  --background: #f8fafc; /* crisp slate light background */
+  --surface: #ffffff;    /* pure white card surface */
+  --surface-muted: #f1f5f9;
+  --foreground: #0f172a; /* deep slate ink for high contrast */
+  --foreground-muted: #475569;
+  --border-color: #e2e8f0;
 
-  /* Academic navy accent scale */
-  --accent-50: #eef2f8;
-  --accent-100: #dbe3f0;
-  --accent-200: #b3c4e0;
-  --accent-300: #85a1cd;
-  --accent-400: #5a7fb8;
-  --accent-500: #3c62a0;
-  --accent-600: #2c4c82;
-  --accent-700: #243d68;
-  --accent-800: #1d3255;
-  --accent-900: #172845;
-  --accent-950: #0d182b;
+  /* Academic royal navy accent scale */
+  --accent-50: #eff6ff;
+  --accent-100: #dbeafe;
+  --accent-200: #bfdbfe;
+  --accent-300: #93c5fd;
+  --accent-400: #60a5fa;
+  --accent-500: #3b82f6;
+  --accent-600: #2563eb;
+  --accent-700: #1d4ed8;
+  --accent-800: #1e40af;
+  --accent-900: #1e3a8a;
+  --accent-950: #0f172a;
 
-  /* Secondary warm accent (brass / gold) for highlights */
-  --brass-500: #a9782f;
-  --brass-600: #8f6224;
+  /* Warm gold accent */
+  --brass-500: #d97706;
+  --brass-600: #b45309;
 
   --accent: var(--accent-700);
   --accent-light: var(--accent-50);
 }
 
 .dark {
-  --background: #0d1016;
-  --surface: #151920;
-  --surface-muted: #1b202a;
-  --foreground: #eeeef0;
-  --foreground-muted: #9a9ea8;
-  --border-color: #262c37;
+  /* Core surfaces - High elegance midnight dark mode */
+  --background: #0b0f19; /* deep obsidian slate background */
+  --surface: #111827;    /* rich dark card surface */
+  --surface-muted: #1f2937;
+  --foreground: #f8fafc; /* high contrast bright white text */
+  --foreground-muted: #94a3b8;
+  --border-color: #1f2937;
 
-  --accent-50: #131d2d;
-  --accent-100: #182541;
-  --accent-200: #22355c;
-  --accent-300: #2e4977;
-  --accent-400: #4a6ba0;
-  --accent-500: #6f8fc0;
-  --accent-600: #93aed6;
-  --accent-700: #b1c5e2;
-  --accent-800: #cfdcee;
-  --accent-900: #e4ebf6;
-  --accent-950: #f4f7fb;
+  /* Glowing electric blue accent scale */
+  --accent-50: #0f172a;
+  --accent-100: #1e293b;
+  --accent-200: #334155;
+  --accent-300: #475569;
+  --accent-400: #38bdf8;
+  --accent-500: #60a5fa;
+  --accent-600: #818cf8;
+  --accent-700: #a5b4fc;
+  --accent-800: #c7d2fe;
+  --accent-900: #e0e7ff;
+  --accent-950: #f8fafc;
 
-  --brass-500: #c99a4c;
-  --brass-600: #d8ac63;
+  --brass-500: #f59e0b;
+  --brass-600: #fbbf24;
 
-  --accent: var(--accent-600);
+  --accent: var(--accent-400);
   --accent-light: var(--accent-100);
 }
 
@@ -99,44 +101,70 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-/* Understated hairline texture on the page background for a print-like feel */
-.paper-texture {
-  background-image: radial-gradient(var(--border-color) 0.5px, transparent 0.5px);
-  background-size: 22px 22px;
-  opacity: 0.35;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent-500) 25%, transparent);
+  background: color-mix(in srgb, var(--accent-500) 30%, transparent);
 }
 
-/* Scrollbar - understated */
+/* Custom understated scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--border-color);
-  border-radius: 8px;
-  border: 2px solid var(--background);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
 }
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
+/* Print Styles for Academic CV Export */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    line-height: 1.4;
   }
-}
-.animate-fade-up {
-  animation: fade-up 0.5s ease both;
+
+  /* Hide interactive web components when printing */
+  header,
+  footer,
+  nav,
+  button,
+  input,
+  select,
+  .no-print,
+  main {
+    display: none !important;
+  }
+
+  /* Display printable CV section */
+  .print-cv-root {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+
+  .print-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
 }

@@ -8,7 +8,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Card({ children, className = '', ...props }: CardProps) {
   return (
     <div
-      className={`bg-surface border border-border-subtle rounded-lg shadow-sm overflow-hidden ${className}`}
+      className={`bg-surface border border-border-subtle/80 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden ${className}`}
       {...props}
     >
       {children}
@@ -18,7 +18,7 @@ export function Card({ children, className = '', ...props }: CardProps) {
 
 export function CardHeader({ children, className = '', ...props }: CardProps) {
   return (
-    <div className={`p-6 pb-4 border-b border-border-subtle ${className}`} {...props}>
+    <div className={`p-6 md:p-8 pb-4 border-b border-border-subtle/70 ${className}`} {...props}>
       {children}
     </div>
   );
@@ -26,7 +26,7 @@ export function CardHeader({ children, className = '', ...props }: CardProps) {
 
 export function CardContent({ children, className = '', ...props }: CardProps) {
   return (
-    <div className={`p-6 ${className}`} {...props}>
+    <div className={`p-6 md:p-8 ${className}`} {...props}>
       {children}
     </div>
   );
@@ -35,7 +35,7 @@ export function CardContent({ children, className = '', ...props }: CardProps) {
 export function CardTitle({ children, className = '', ...props }: CardProps) {
   return (
     <h3
-      className={`text-lg font-semibold text-foreground font-serif tracking-tight ${className}`}
+      className={`text-xl font-bold text-foreground font-serif tracking-tight ${className}`}
       {...props}
     >
       {children}
@@ -45,7 +45,7 @@ export function CardTitle({ children, className = '', ...props }: CardProps) {
 
 export function SectionEyebrow({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
-    <p className={`text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-600 dark:text-accent-500 ${className}`}>
+    <p className={`text-[11px] font-bold uppercase tracking-[0.15em] text-accent-700 dark:text-accent-400 ${className}`}>
       {children}
     </p>
   );

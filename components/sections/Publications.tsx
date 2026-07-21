@@ -23,13 +23,13 @@ interface PublicationsProps {
 
 function TypeBadge({ type }: { type: Publication['type'] }) {
   const styles: Record<string, string> = {
-    Journal: 'bg-accent-50 dark:bg-accent-950/50 text-accent-700 dark:text-accent-400',
-    Conference: 'bg-brass-500/10 text-brass-600 dark:text-brass-500',
-    Book: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400',
-    'Book Chapter': 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400',
+    Journal: 'bg-accent-500/10 text-accent-700 dark:text-accent-400 border border-accent-500/20',
+    Conference: 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20',
+    Book: 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20',
+    'Book Chapter': 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20',
   };
   return (
-    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${styles[type]}`}>
+    <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${styles[type]}`}>
       {type}
     </span>
   );
@@ -88,19 +88,17 @@ export default function Publications({ publications }: PublicationsProps) {
     <section id="publications" className="scroll-mt-24 space-y-6">
       <Card>
         <CardContent className="p-6 md:p-8 space-y-6">
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-border-subtle">
-            <div>
-              <SectionEyebrow>Research Output</SectionEyebrow>
-              <div className="flex items-center gap-3 mt-1">
-                <BookOpen className="h-5 w-5 text-accent-600 dark:text-accent-400" />
-                <h2 className="text-xl font-bold font-serif text-foreground">Publications</h2>
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
+                <BookOpen className="h-5 w-5" />
               </div>
+              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Publications</h2>
             </div>
 
-            <div className="self-start md:self-auto px-3 py-1 rounded-full bg-surface-muted text-foreground-muted text-xs font-semibold">
-              Total Publications: {publications.length}
-            </div>
+            <span className="text-xs font-semibold px-3 py-1 bg-accent-500/10 text-accent-700 dark:text-accent-400 rounded-full">
+              {publications.length} {publications.length === 1 ? 'Publication' : 'Publications'}
+            </span>
           </div>
 
           {/* Controls Bar */}

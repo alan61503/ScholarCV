@@ -58,26 +58,6 @@ export const sectionSchemas: SectionConfig[] = [
     emptyItem: { category: '', skills: '' },
   },
   {
-    key: 'publications',
-    title: 'Publications',
-    fields: [
-      { key: 'title', label: 'Title', type: 'text' },
-      { key: 'authors', label: 'Authors (comma-separated)', type: 'text' },
-      { key: 'journalName', label: 'Journal / Venue', type: 'text' },
-      { key: 'volume', label: 'Volume', type: 'text' },
-      { key: 'issue', label: 'Issue', type: 'text' },
-      { key: 'pages', label: 'Pages', type: 'text' },
-      { key: 'year', label: 'Year', type: 'text' },
-      { key: 'doi', label: 'DOI', type: 'text' },
-      { key: 'citationCount', label: 'Citation Count', type: 'number' },
-      { key: 'type', label: 'Type', type: 'select', options: ['Journal', 'Conference', 'Book', 'Book Chapter'] },
-    ],
-    emptyItem: {
-      title: '', authors: '', journalName: '', volume: '', issue: '', pages: '',
-      year: '', doi: '', citationCount: '', type: 'Journal',
-    },
-  },
-  {
     key: 'fundedProjects',
     title: 'Funded Projects',
     fields: [
@@ -235,7 +215,6 @@ export const sectionSchemas: SectionConfig[] = [
 // the form, and need to be split back into string[] on export.
 export const arrayStringFields: Record<string, string[]> = {
   skills: ['skills'],
-  publications: ['authors'],
   patents: ['inventors'],
   copyrights: ['owners'],
 };

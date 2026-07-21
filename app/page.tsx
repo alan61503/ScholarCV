@@ -13,6 +13,7 @@ import RolesRecognition from '../components/sections/RolesRecognition';
 import PatentsCopyrights from '../components/sections/PatentsCopyrights';
 import { FadeIn } from '../components/ui/FadeIn';
 
+
 const navItems = [
   { id: 'summary', label: 'Summary', icon: 'user' },
   { id: 'education-experience', label: 'Education & Skills', icon: 'education' },
@@ -27,10 +28,10 @@ const navItems = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-indigo-500/10 selection:text-indigo-650">
+    <div className="min-h-screen bg-background text-foreground">
       <Nav name={profile.personalInfo.name} title={profile.personalInfo.title} items={navItems} />
 
-      <main className="max-w-4xl mx-auto px-5 sm:px-8 py-10 md:py-14 space-y-14 md:space-y-16">
+      <main className="max-w-5xl mx-auto px-5 sm:px-8 py-10 md:py-14 space-y-14 md:space-y-16">
         <FadeIn>
           <ProfileSummary profile={profile} />
         </FadeIn>
@@ -77,8 +78,9 @@ export default function Home() {
         </FadeIn>
       </main>
 
-      <footer className="border-t border-slate-100 dark:border-slate-900 bg-white dark:bg-slate-950 py-8 text-center text-xs text-slate-400 dark:text-slate-600">
-        <div className="max-w-4xl mx-auto px-5 sm:px-8">
+      <footer className="border-t border-border-subtle bg-surface py-8 text-center text-xs text-foreground-muted">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 space-y-1">
+          <p className="font-serif text-foreground/70">{profile.personalInfo.institution}</p>
           <p>© {new Date().getFullYear()} {profile.personalInfo.name}. All rights reserved.</p>
         </div>
       </footer>

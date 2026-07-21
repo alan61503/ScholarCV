@@ -1,49 +1,142 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc; /* Slate-50 */
-  --foreground: #0f172a; /* Slate-900 */
-  --accent: #4f46e5; /* Indigo 600 */
-  --accent-light: #eef2ff; /* Indigo 50 */
+  /* Core surfaces */
+  --background: #f7f6f2; /* warm paper white */
+  --surface: #ffffff;
+  --surface-muted: #f1efe9;
+  --foreground: #1c1a17; /* near-black ink */
+  --foreground-muted: #5c5850;
+  --border-color: #e4e0d6;
+
+  /* Academic navy accent scale */
+  --accent-50: #eef2f8;
+  --accent-100: #dbe3f0;
+  --accent-200: #b3c4e0;
+  --accent-300: #85a1cd;
+  --accent-400: #5a7fb8;
+  --accent-500: #3c62a0;
+  --accent-600: #2c4c82;
+  --accent-700: #243d68;
+  --accent-800: #1d3255;
+  --accent-900: #172845;
+  --accent-950: #0d182b;
+
+  /* Secondary warm accent (brass / gold) for highlights */
+  --brass-500: #a9782f;
+  --brass-600: #8f6224;
+
+  --accent: var(--accent-700);
+  --accent-light: var(--accent-50);
 }
 
 .dark {
-  --background: #020617; /* Slate-950 */
-  --foreground: #f8fafc; /* Slate-50 */
-  --accent: #818cf8; /* Indigo 400 */
-  --accent-light: #1e1b4b; /* Indigo 950 */
+  --background: #0d1016;
+  --surface: #151920;
+  --surface-muted: #1b202a;
+  --foreground: #eeeef0;
+  --foreground-muted: #9a9ea8;
+  --border-color: #262c37;
+
+  --accent-50: #131d2d;
+  --accent-100: #182541;
+  --accent-200: #22355c;
+  --accent-300: #2e4977;
+  --accent-400: #4a6ba0;
+  --accent-500: #6f8fc0;
+  --accent-600: #93aed6;
+  --accent-700: #b1c5e2;
+  --accent-800: #cfdcee;
+  --accent-900: #e4ebf6;
+  --accent-950: #f4f7fb;
+
+  --brass-500: #c99a4c;
+  --brass-600: #d8ac63;
+
+  --accent: var(--accent-600);
+  --accent-light: var(--accent-100);
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border-subtle: var(--border-color);
+
   --color-primary-accent: var(--accent);
   --color-primary-accent-light: var(--accent-light);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-brass-500: var(--brass-500);
+  --color-brass-600: var(--brass-600);
+
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+  --color-accent-950: var(--accent-950);
+
+  --font-sans: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  border-color: var(--border-color);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Subtle animated background gradient keyframe */
-@keyframes gradient-anim {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Understated hairline texture on the page background for a print-like feel */
+.paper-texture {
+  background-image: radial-gradient(var(--border-color) 0.5px, transparent 0.5px);
+  background-size: 22px 22px;
+  opacity: 0.35;
 }
 
-.animate-gradient-slow {
-  background-size: 200% 200%;
-  animation: gradient-anim 15s ease infinite;
+::selection {
+  background: color-mix(in srgb, var(--accent-500) 25%, transparent);
 }
 
+/* Scrollbar - understated */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 8px;
+  border: 2px solid var(--background);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.5s ease both;
+}

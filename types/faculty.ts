@@ -40,6 +40,27 @@ export interface SkillGroup {
   skills: string[];
 }
 
+export interface PublicationAuthor {
+  id: string;
+  position: number;
+  name: string;
+  isCorresponding: boolean;
+  isStudent: boolean;
+  email?: string;
+  country?: string;
+  affiliation?: string;
+  institutionType?: string;
+}
+
+export interface IndexingEntry {
+  id: string;
+  agency: string; // e.g. ABDC, FT-50, Indian Citation Index, Not Indexed, Scopus, Web of Science, Others
+  quartileOrCategory?: string; // Quartile Ranking / ABDC Category / IF Category
+  percentile?: string;
+  publicationUrl?: string;
+  scopusWosLink?: string;
+}
+
 export interface Publication {
   id: string;
   title: string;
@@ -52,6 +73,29 @@ export interface Publication {
   doi?: string;
   citationCount?: number;
   type: 'Journal' | 'Conference' | 'Book' | 'Book Chapter';
+
+  // --- Extended fields for a fully detailed "Article in Research Journals" record ---
+  articleKeywords?: string[];
+  subjectAreas?: string[];
+  abstract?: string;
+  sdgCategory?: string;
+  language?: string;
+  medium?: 'Print Only' | 'Print and Online' | 'E Journal';
+  pageFrom?: string;
+  pageTo?: string;
+  authorship?: 'Sole Authored' | 'Co-Authored';
+  authorDetails?: PublicationAuthor[];
+  dateOfSubmission?: string;
+  dateOfRevision?: string;
+  dateOfPublication?: string;
+  issn?: string;
+  publisherName?: string;
+  publisherAddress?: string;
+  indexingEntries?: IndexingEntry[];
+  peerReviewStatus?: 'Peer-reviewed' | 'Not reviewed';
+  scope?: 'International' | 'National';
+  journalUrl?: string;
+  documentProofName?: string;
 }
 
 export interface FundedProject {

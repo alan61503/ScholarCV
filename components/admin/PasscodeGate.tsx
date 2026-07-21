@@ -32,17 +32,17 @@ export default function PasscodeGate() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 px-5">
+    <div className="min-h-screen flex items-center justify-center bg-background px-5">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-sm rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 space-y-5"
+        className="w-full max-w-sm rounded-lg border border-border-subtle bg-surface p-8 space-y-5"
       >
-        <div className="flex items-center justify-center h-12 w-12 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 mx-auto">
+        <div className="flex items-center justify-center h-12 w-12 rounded-full bg-accent-700 dark:bg-accent-600 text-white mx-auto">
           <Lock className="h-5 w-5" />
         </div>
         <div className="text-center space-y-1">
-          <h1 className="text-lg font-semibold text-slate-900 dark:text-white">Private Area</h1>
-          <p className="text-xs text-slate-400">Enter the passcode to manage portfolio content.</p>
+          <h1 className="text-lg font-semibold text-foreground">Private Area</h1>
+          <p className="text-xs text-foreground-muted">Enter the passcode to manage portfolio content.</p>
         </div>
         <input
           type="password"
@@ -50,13 +50,13 @@ export default function PasscodeGate() {
           value={passcode}
           onChange={(e) => setPasscode(e.target.value)}
           placeholder="Passcode"
-          className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-3 py-2.5 text-sm text-slate-800 dark:text-slate-100 text-center focus:outline-none focus:ring-2 focus:ring-slate-900/10 dark:focus:ring-white/10 focus:border-slate-400"
+          className="w-full rounded-lg border border-border-subtle bg-surface-muted px-3 py-2.5 text-sm text-foreground text-center focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-400"
         />
         {error && <p className="text-xs text-red-500 text-center">{error}</p>}
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-2.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
+          className="w-full py-2.5 rounded-lg bg-accent-700 dark:bg-accent-600 text-white text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
         >
           {loading ? 'Checking…' : 'Unlock'}
         </button>

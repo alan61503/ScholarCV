@@ -12,12 +12,12 @@ export default function ScholarsScholarly({ phdScholars }: ScholarsScholarlyProp
     <section id="scholars" className="scroll-mt-24 space-y-6">
       <Card>
         <CardContent className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-50 dark:border-slate-800/60">
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400">
+              <div className="p-2 rounded-lg bg-accent-50 dark:bg-accent-950/40 text-accent-600 dark:text-accent-400">
                 <Users className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-slate-900 dark:text-white">Research Scholars</h2>
+              <h2 className="text-xl font-bold font-serif text-foreground">Research Scholars</h2>
             </div>
             
             {/* Quick summary badges */}
@@ -32,7 +32,7 @@ export default function ScholarsScholarly({ phdScholars }: ScholarsScholarlyProp
           </div>
 
           {phdScholars.length === 0 ? (
-            <p className="text-sm text-slate-500 dark:text-slate-400 py-6 text-center">
+            <p className="text-sm text-foreground-muted py-6 text-center">
               No doctoral scholars guided.
             </p>
           ) : (
@@ -40,11 +40,11 @@ export default function ScholarsScholarly({ phdScholars }: ScholarsScholarlyProp
               {phdScholars.map((scholar) => (
                 <div
                   key={scholar.id}
-                  className="flex flex-col justify-between p-5 border border-slate-50 dark:border-slate-800/50 rounded-2xl hover:border-slate-150 dark:hover:border-slate-800/80 transition-all bg-slate-50/10 dark:bg-slate-900/5"
+                  className="flex flex-col justify-between p-5 border border-border-subtle rounded-lg hover:border-accent-200 dark:hover:border-accent-800 transition-all bg-surface-muted/40"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">
+                      <span className="text-xs font-semibold text-foreground-muted">
                         Joined: {scholar.joiningYear}
                       </span>
                       
@@ -71,22 +71,22 @@ export default function ScholarsScholarly({ phdScholars }: ScholarsScholarlyProp
                     </div>
 
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                        <GraduationCap className="h-4.5 w-4.5 text-slate-450 shrink-0" />
+                      <h3 className="text-base font-bold text-foreground flex items-center gap-2">
+                        <GraduationCap className="h-4.5 w-4.5 text-foreground-muted shrink-0" />
                         {scholar.scholarName}
                       </h3>
-                      <p className="text-xs font-semibold text-indigo-650 dark:text-indigo-400 mt-1">
+                      <p className="text-xs font-semibold text-accent-650 dark:text-accent-400 mt-1">
                         Role: {scholar.role}
                       </p>
                     </div>
 
-                    <p className="text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-50 dark:border-slate-800/40 pt-2 italic">
+                    <p className="text-xs md:text-sm text-foreground-muted leading-relaxed border-t border-border-subtle pt-2 italic">
                       "{scholar.thesisTitle}"
                     </p>
                   </div>
 
                   {scholar.completionYear && (
-                    <div className="text-xs text-slate-450 dark:text-slate-500 mt-4 pt-2 border-t border-slate-50 dark:border-slate-800/40">
+                    <div className="text-xs text-foreground-muted mt-4 pt-2 border-t border-border-subtle">
                       Completed in: <span className="font-bold">{scholar.completionYear}</span>
                     </div>
                   )}

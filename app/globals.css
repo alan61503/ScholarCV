@@ -1,49 +1,170 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc; /* Slate-50 */
-  --foreground: #0f172a; /* Slate-900 */
-  --accent: #4f46e5; /* Indigo 600 */
-  --accent-light: #eef2ff; /* Indigo 50 */
+  /* Core surfaces - Crisp, ultra-readable light mode */
+  --background: #f8fafc; /* crisp slate light background */
+  --surface: #ffffff;    /* pure white card surface */
+  --surface-muted: #f1f5f9;
+  --foreground: #0f172a; /* deep slate ink for high contrast */
+  --foreground-muted: #475569;
+  --border-color: #e2e8f0;
+
+  /* Academic royal navy accent scale */
+  --accent-50: #eff6ff;
+  --accent-100: #dbeafe;
+  --accent-200: #bfdbfe;
+  --accent-300: #93c5fd;
+  --accent-400: #60a5fa;
+  --accent-500: #3b82f6;
+  --accent-600: #2563eb;
+  --accent-700: #1d4ed8;
+  --accent-800: #1e40af;
+  --accent-900: #1e3a8a;
+  --accent-950: #0f172a;
+
+  /* Warm gold accent */
+  --brass-500: #d97706;
+  --brass-600: #b45309;
+
+  --accent: var(--accent-700);
+  --accent-light: var(--accent-50);
 }
 
 .dark {
-  --background: #020617; /* Slate-950 */
-  --foreground: #f8fafc; /* Slate-50 */
-  --accent: #818cf8; /* Indigo 400 */
-  --accent-light: #1e1b4b; /* Indigo 950 */
+  /* Core surfaces - High elegance midnight dark mode */
+  --background: #0b0f19; /* deep obsidian slate background */
+  --surface: #111827;    /* rich dark card surface */
+  --surface-muted: #1f2937;
+  --foreground: #f8fafc; /* high contrast bright white text */
+  --foreground-muted: #94a3b8;
+  --border-color: #1f2937;
+
+  /* Glowing electric blue accent scale */
+  --accent-50: #0f172a;
+  --accent-100: #1e293b;
+  --accent-200: #334155;
+  --accent-300: #475569;
+  --accent-400: #38bdf8;
+  --accent-500: #60a5fa;
+  --accent-600: #818cf8;
+  --accent-700: #a5b4fc;
+  --accent-800: #c7d2fe;
+  --accent-900: #e0e7ff;
+  --accent-950: #f8fafc;
+
+  --brass-500: #f59e0b;
+  --brass-600: #fbbf24;
+
+  --accent: var(--accent-400);
+  --accent-light: var(--accent-100);
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border-subtle: var(--border-color);
+
   --color-primary-accent: var(--accent);
   --color-primary-accent-light: var(--accent-light);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-brass-500: var(--brass-500);
+  --color-brass-600: var(--brass-600);
+
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+  --color-accent-950: var(--accent-950);
+
+  --font-sans: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  border-color: var(--border-color);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Subtle animated background gradient keyframe */
-@keyframes gradient-anim {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+::selection {
+  background: color-mix(in srgb, var(--accent-500) 30%, transparent);
 }
 
-.animate-gradient-slow {
-  background-size: 200% 200%;
-  animation: gradient-anim 15s ease infinite;
+/* Custom understated scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
 }
 
+/* Print Styles for Academic CV Export */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  /* Hide interactive web components when printing */
+  header,
+  footer,
+  nav,
+  button,
+  input,
+  select,
+  .no-print,
+  main {
+    display: none !important;
+  }
+
+  /* Display printable CV section */
+  .print-cv-root {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+
+  .print-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+}

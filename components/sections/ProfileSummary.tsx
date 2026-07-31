@@ -1,7 +1,7 @@
 import React from 'react';
 import { FacultyProfile } from '../../types/faculty';
 import { Card, CardContent } from '../ui/Card';
-import { Mail, Phone, MapPin, Globe, Award, BookOpen, Briefcase, FileCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Award, BookOpen, Briefcase, FileCheck, Printer } from 'lucide-react';
 
 interface ProfileSummaryProps {
   profile: FacultyProfile;
@@ -26,14 +26,11 @@ export default function ProfileSummary({ profile }: ProfileSummaryProps) {
 
   return (
     <section id="summary" className="scroll-mt-24 space-y-6">
-      {/* Hero Card */}
-      <Card className="relative overflow-hidden border-none bg-gradient-to-br from-slate-950 via-slate-900 to-primary-accent/40 text-white p-6 lg:p-8 animate-gradient-slow">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-accent/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-accent/10 rounded-full blur-2xl -ml-20 -mb-20 pointer-events-none" />
-        
-        <div className="relative flex flex-col md:flex-row gap-6 md:items-center">
+      {/* Hero Card - Solid Navy Background */}
+      <Card className="relative overflow-hidden border border-slate-800 bg-slate-900 text-white p-6 lg:p-10 shadow-lg">
+        <div className="relative flex flex-col md:flex-row gap-6 lg:gap-8 md:items-center">
           {personalInfo.avatarUrl && (
-            <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden border-2 border-white/20 shrink-0 bg-slate-800">
+            <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-2xl overflow-hidden border border-slate-700 shadow-xl shrink-0 bg-slate-800">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={personalInfo.avatarUrl}
@@ -42,29 +39,34 @@ export default function ProfileSummary({ profile }: ProfileSummaryProps) {
               />
             </div>
           )}
-          
+
           <div className="space-y-3 flex-1">
             <div>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold font-serif tracking-tight">{personalInfo.name}</h1>
-              <p className="text-indigo-200 font-medium text-sm md:text-base mt-1">{personalInfo.title}</p>
-              <p className="text-slate-300 text-xs md:text-sm">{personalInfo.department}</p>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/20 text-accent-300 text-xs font-semibold uppercase tracking-wider mb-2 border border-accent-500/30">
+                <span>Academic Profile</span>
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif tracking-tight text-white">
+                {personalInfo.name}
+              </h1>
+              <p className="text-accent-300 font-medium text-base md:text-lg mt-1">{personalInfo.title}</p>
+              <p className="text-slate-200 text-xs md:text-sm font-medium">{personalInfo.department}</p>
               <p className="text-slate-400 text-xs md:text-sm">{personalInfo.institution}</p>
             </div>
 
-            <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs md:text-sm text-slate-300 pt-2 border-t border-white/10">
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs md:text-sm text-slate-300 pt-3 border-t border-slate-800">
               <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
-                <Mail className="h-4 w-4 text-indigo-300" />
+                <Mail className="h-4 w-4 text-accent-400 shrink-0" />
                 <span>{personalInfo.email}</span>
               </a>
               {personalInfo.phone && (
                 <div className="flex items-center gap-1.5">
-                  <Phone className="h-4 w-4 text-indigo-300" />
+                  <Phone className="h-4 w-4 text-accent-400 shrink-0" />
                   <span>{personalInfo.phone}</span>
                 </div>
               )}
               {personalInfo.officeAddress && (
                 <div className="flex items-center gap-1.5 max-w-xs md:max-w-sm">
-                  <MapPin className="h-4 w-4 text-indigo-300 shrink-0" />
+                  <MapPin className="h-4 w-4 text-accent-400 shrink-0" />
                   <span className="truncate" title={personalInfo.officeAddress}>{personalInfo.officeAddress}</span>
                 </div>
               )}
@@ -73,52 +75,65 @@ export default function ProfileSummary({ profile }: ProfileSummaryProps) {
         </div>
 
         {/* Tagline */}
-        <div className="mt-6 pt-4 border-t border-white/10">
-          <p className="text-base md:text-lg italic text-slate-200 leading-relaxed font-serif">
-            "{personalInfo.biography.split('.')[0]}."
-          </p>
-        </div>
+        {personalInfo.biography && (
+          <div className="mt-6 pt-5 border-t border-slate-800">
+            <p className="text-base md:text-lg italic text-slate-200 leading-relaxed font-serif">
+              "{personalInfo.biography.split('.')[0]}."
+            </p>
+          </div>
+        )}
 
-        {/* Action Links */}
-        <div className="relative flex flex-wrap gap-3 mt-4 pt-4 border-t border-white/10 text-xs">
-          {personalInfo.websiteUrl && (
-            <a
-              href={personalInfo.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-all font-medium"
-            >
-              <Globe className="h-3.5 w-3.5" />
-              <span>Personal Website</span>
-            </a>
-          )}
-          {personalInfo.googleScholarUrl && (
-            <a
-              href={personalInfo.googleScholarUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-all font-medium"
-            >
-              <BookOpen className="h-3.5 w-3.5" />
-              <span>Google Scholar</span>
-            </a>
-          )}
-          {personalInfo.linkedInUrl && (
-            <a
-              href={personalInfo.linkedInUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition-all font-medium"
-            >
-              <Briefcase className="h-3.5 w-3.5" />
-              <span>LinkedIn</span>
-            </a>
-          )}
-          {personalInfo.orcid && (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/40 text-slate-300 font-mono">
-              <span>ORCID: {personalInfo.orcid}</span>
-            </div>
-          )}
+        {/* Action Links & Solid Badges */}
+        <div className="relative flex flex-wrap items-center justify-between gap-3 mt-5 pt-4 border-t border-slate-800 text-xs">
+          <div className="flex flex-wrap items-center gap-3">
+            {personalInfo.websiteUrl && (
+              <a
+                href={personalInfo.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors font-medium text-slate-100 border border-slate-700"
+              >
+                <Globe className="h-3.5 w-3.5 text-accent-400" />
+                <span>Personal Website</span>
+              </a>
+            )}
+            {personalInfo.googleScholarUrl && (
+              <a
+                href={personalInfo.googleScholarUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors font-medium text-slate-100 border border-slate-700"
+              >
+                <BookOpen className="h-3.5 w-3.5 text-accent-400" />
+                <span>Google Scholar</span>
+              </a>
+            )}
+            {personalInfo.linkedInUrl && (
+              <a
+                href={personalInfo.linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors font-medium text-slate-100 border border-slate-700"
+              >
+                <Briefcase className="h-3.5 w-3.5 text-accent-400" />
+                <span>LinkedIn</span>
+              </a>
+            )}
+            {personalInfo.orcid && (
+              <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800 text-slate-200 font-mono text-xs border border-slate-700">
+                <span>ORCID: {personalInfo.orcid}</span>
+              </div>
+            )}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => window.print()}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-accent-600 hover:bg-accent-500 text-white transition-all font-semibold text-xs shadow-md active:scale-95 ml-auto"
+          >
+            <Printer className="h-4 w-4" />
+            <span>Print Full CV / Resume</span>
+          </button>
         </div>
       </Card>
 
@@ -130,10 +145,10 @@ export default function ProfileSummary({ profile }: ProfileSummaryProps) {
             <Card key={stat.label}>
               <CardContent className="p-5 flex items-center justify-between">
                 <div>
-                  <p className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white font-serif">{stat.value}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{stat.label}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-foreground font-serif">{stat.value}</p>
+                  <p className="text-xs font-medium text-foreground-muted mt-1">{stat.label}</p>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                <div className="p-3 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400">
                   <Icon className="h-5 w-5" />
                 </div>
               </CardContent>
@@ -146,27 +161,29 @@ export default function ProfileSummary({ profile }: ProfileSummaryProps) {
       <Card>
         <CardContent className="p-6 md:p-8 space-y-6">
           <div className="space-y-3">
-            <h2 className="text-xl font-bold font-serif text-slate-900 dark:text-white">Biography</h2>
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">
+            <h2 className="text-xl font-bold font-serif text-foreground">Biography</h2>
+            <p className="text-foreground-muted leading-relaxed text-sm md:text-base">
               {personalInfo.biography}
             </p>
           </div>
 
-          <div className="space-y-3 pt-4 border-t border-slate-50 dark:border-slate-800/60">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-              Primary Research Interests
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {personalInfo.researchInterests.map((interest) => (
-                <span
-                  key={interest}
-                  className="px-3 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs md:text-sm font-medium border border-slate-100 dark:border-slate-800/40"
-                >
-                  {interest}
-                </span>
-              ))}
+          {personalInfo.researchInterests?.length > 0 && (
+            <div className="space-y-3 pt-5 border-t border-border-subtle/70">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
+                Primary Research Interests
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {personalInfo.researchInterests.map((interest) => (
+                  <span
+                    key={interest}
+                    className="px-3.5 py-1.5 rounded-full bg-accent-500/10 text-accent-700 dark:text-accent-400 text-xs md:text-sm font-medium border border-accent-500/20 hover:border-accent-500/40 transition-colors"
+                  >
+                    {interest}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </CardContent>
       </Card>
     </section>

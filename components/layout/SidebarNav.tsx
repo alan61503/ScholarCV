@@ -90,7 +90,7 @@ export default function SidebarNav({ items }: SidebarNavProps) {
   };
 
   return (
-    <aside className="w-full lg:w-64 lg:shrink-0 lg:sticky lg:top-24 self-start bg-slate-50 dark:bg-slate-900/40 p-4 lg:p-6 rounded-2xl border border-slate-100 dark:border-slate-800/80">
+    <aside className="w-full lg:w-64 lg:shrink-0 lg:sticky lg:top-24 self-start bg-slate-50 dark:bg-slate-900/40 p-4 lg:p-6 rounded-lg border border-slate-100 dark:border-slate-800/80">
       <h2 className="hidden lg:block text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4 px-3">
         Portfolio Sections
       </h2>
@@ -103,7 +103,7 @@ export default function SidebarNav({ items }: SidebarNavProps) {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 snap-center whitespace-nowrap lg:w-full text-left
+              className={`flex items-center gap-3 px-4 py-2.5 rounded-md text-sm font-medium transition-all duration-200 snap-center whitespace-nowrap lg:w-full text-left
                 ${
                   isActive
                     ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm'

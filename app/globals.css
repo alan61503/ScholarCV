@@ -332,9 +332,9 @@ body {
   }
 
   /* Hide interactive web components when printing */
-  header,
-  footer,
-  nav,
+  header:not(.print-cv-root *),
+  footer:not(.print-cv-root *),
+  nav:not(.print-cv-root *),
   button,
   input,
   select,

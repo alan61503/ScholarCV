@@ -11,7 +11,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
   return (
     <div className="hidden print:block print-cv-root text-slate-900 bg-white p-8 max-w-4xl mx-auto font-sans leading-normal">
       {/* 1. Header Section */}
-      <header className="border-b-2 border-slate-900 pb-5 mb-6 text-center space-y-2">
+      <div className="cv-header border-b-2 border-slate-900 pb-5 mb-6 text-center space-y-2">
         <h1 className="text-3xl font-bold font-serif uppercase tracking-widest text-slate-900 text-center">
           {personalInfo.name.toUpperCase()}
         </h1>
@@ -33,7 +33,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
           {personalInfo.googleScholarUrl && <span>• Google Scholar Profile</span>}
           {personalInfo.orcid && <span>• ORCID: {personalInfo.orcid}</span>}
         </div>
-      </header>
+      </div>
 
       {/* 2. Executive Summary / Biography */}
       {personalInfo.biography && (

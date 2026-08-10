@@ -11,16 +11,18 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
   return (
     <div className="hidden print:block print-cv-root text-slate-900 bg-white p-8 max-w-4xl mx-auto font-sans leading-normal">
       {/* 1. Header Section */}
-      <header className="border-b-2 border-slate-900 pb-4 mb-6 text-center space-y-1.5">
-        <h1 className="text-3xl font-bold font-serif uppercase tracking-wide text-slate-900">
-          {personalInfo.name}
+      <header className="border-b-2 border-slate-900 pb-5 mb-6 text-center space-y-2">
+        <h1 className="text-3xl font-bold font-serif uppercase tracking-widest text-slate-900 text-center">
+          {personalInfo.name.toUpperCase()}
         </h1>
-        <p className="text-sm font-semibold text-slate-800">
-          {personalInfo.title} • {personalInfo.department}
+        <p className="text-sm font-bold uppercase tracking-wider text-slate-800 text-center">
+          {personalInfo.title}
         </p>
-        <p className="text-xs text-slate-700">{personalInfo.institution}</p>
+        <p className="text-xs font-semibold text-slate-700 text-center">
+          {personalInfo.department} • {personalInfo.institution}
+        </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-700 pt-2 border-t border-slate-200 mt-2 font-mono">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-700 pt-2 border-t border-slate-300 mt-2 font-mono">
           <span>Email: {personalInfo.email}</span>
           {personalInfo.phone && <span>• Tel: {personalInfo.phone}</span>}
           {personalInfo.officeAddress && <span>• Office: {personalInfo.officeAddress}</span>}

@@ -319,16 +319,19 @@ body {
 @media print {
   @page {
     size: A4 portrait;
-    margin: 15mm 15mm 15mm 15mm;
+    margin: 0; /* Hides browser default header (date/title) and footer (URL/page numbers) */
   }
 
   body {
     background: #ffffff !important;
     color: #000000 !important;
-    font-size: 12pt;
+    font-size: 11pt;
     line-height: 1.4;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
+  /* Hide interactive web components when printing */
   header,
   footer,
   nav,
@@ -340,12 +343,13 @@ body {
     display: none !important;
   }
 
+  /* Display printable CV section with clean page padding */
   .print-cv-root {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 15mm 20mm !important;
     background: #ffffff !important;
     color: #000000 !important;
     box-shadow: none !important;

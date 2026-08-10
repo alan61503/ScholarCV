@@ -24,7 +24,7 @@ export default function HighlightsTicker({ profile }: HighlightsTickerProps) {
 
   return (
     <div
-      className="relative z-30 border-b overflow-hidden"
+      className="no-print relative z-30 border-b overflow-hidden"
       style={{
         background: 'linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 40%, #1e40af 60%, #1e3a8a 100%)',
         borderColor: 'rgba(212, 175, 55, 0.3)',

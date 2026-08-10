@@ -5,13 +5,15 @@ import { Sun, Moon } from 'lucide-react';
 
 const STORAGE_KEY = 'scholarcv-theme';
 
-export default function ThemeToggle() {
+interface ThemeToggleProps {
+  variant?: 'pill' | 'floating';
+}
+
+export default function ThemeToggle({ variant = 'pill' }: ThemeToggleProps) {
   const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- reading the class set by the
-    // blocking init script in <head>; this only runs once after hydration to sync local state.
     setIsDark(document.documentElement.classList.contains('dark'));
     setMounted(true);
   }, []);
@@ -22,6 +24,25 @@ export default function ThemeToggle() {
     document.documentElement.classList.toggle('dark', next);
     localStorage.setItem(STORAGE_KEY, next ? 'dark' : 'light');
   };
+
+  if (variant === 'floating') {
+    return (
+      <button
+        type="button"
+        onClick={toggle}
+        suppressHydrationWarning
+        aria-label={mounted && isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+        title={mounted && isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-2xl border border-slate-700 hover:scale-105 transition-all cursor-pointer no-print"
+      >
+        {mounted && isDark ? (
+          <Sun className="h-5 w-5 text-amber-400" strokeWidth={2} />
+        ) : (
+          <Moon className="h-5 w-5 text-slate-200" strokeWidth={2} />
+        )}
+      </button>
+    );
+  }
 
   return (
     <button

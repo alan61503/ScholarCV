@@ -1,6 +1,5 @@
 import React from 'react';
 import { Patent, Copyright } from '../../types/faculty';
-import { Card, CardContent } from '../ui/Card';
 import { FileText, Award, Calendar, Landmark, CheckCircle, HelpCircle } from 'lucide-react';
 
 interface PatentsCopyrightsProps {
@@ -13,13 +12,22 @@ export default function PatentsCopyrights({ patents, copyrights }: PatentsCopyri
     <section id="patents-copyrights" className="scroll-mt-24 space-y-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Patents */}
-        <Card>
-          <CardContent className="p-6 md:p-8 space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-border-subtle/80">
-              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
+        <div className="royal-card">
+          <div className="p-6 md:p-8 space-y-6">
+            <div className="flex items-center gap-3 pb-3 border-b border-border-subtle/80 relative">
+              <div 
+                className="p-2.5 rounded-xl shrink-0"
+                style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+              >
                 <Award className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Patents</h2>
+              <h2 
+                className="text-xl font-bold text-foreground tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Patents
+              </h2>
+              <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#1d4ed8] to-transparent" />
             </div>
 
             {patents.length === 0 ? (
@@ -36,13 +44,14 @@ export default function PatentsCopyrights({ patents, copyrights }: PatentsCopyri
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span
-                        className={`px-3 py-0.5 rounded-full text-xs font-semibold ${
+                        className="px-3 py-0.5 rounded-full text-xs font-semibold"
+                        style={
                           patent.status === 'Granted'
-                            ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
+                            ? { background: 'rgba(5,150,105,0.1)', color: '#059669', border: '1px solid rgba(5,150,105,0.2)' }
                             : patent.status === 'Published'
-                            ? 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20'
-                            : 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
-                        }`}
+                            ? { background: 'rgba(29,78,216,0.1)', color: '#1d4ed8', border: '1px solid rgba(29,78,216,0.2)' }
+                            : { background: 'rgba(212,175,55,0.1)', color: '#d4af37', border: '1px solid rgba(212,175,55,0.2)' }
+                        }
                       >
                         {patent.status}
                       </span>
@@ -52,7 +61,10 @@ export default function PatentsCopyrights({ patents, copyrights }: PatentsCopyri
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-foreground leading-snug font-serif">
+                    <h3 
+                      className="text-base font-bold text-foreground leading-snug"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                    >
                       {patent.title}
                     </h3>
 
@@ -77,17 +89,26 @@ export default function PatentsCopyrights({ patents, copyrights }: PatentsCopyri
                 ))}
               </div>
             )}
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Copyrights */}
-        <Card>
-          <CardContent className="p-6 md:p-8 space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-border-subtle/80">
-              <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 shrink-0">
+        <div className="royal-card">
+          <div className="p-6 md:p-8 space-y-6">
+            <div className="flex items-center gap-3 pb-3 border-b border-border-subtle/80 relative">
+              <div 
+                className="p-2.5 rounded-xl shrink-0"
+                style={{ background: 'rgba(212,175,55,0.1)', color: '#d4af37' }}
+              >
                 <FileText className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Registered Copyrights</h2>
+              <h2 
+                className="text-xl font-bold text-foreground tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Registered Copyrights
+              </h2>
+              <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#d4af37] to-transparent" />
             </div>
 
             {copyrights.length === 0 ? (
@@ -103,7 +124,10 @@ export default function PatentsCopyrights({ patents, copyrights }: PatentsCopyri
                     className="p-4 border border-border-subtle/80 rounded-xl space-y-2 hover:bg-surface-muted/40 transition-colors"
                   >
                     <div className="flex justify-between items-center gap-2">
-                      <span className="text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 px-3 py-0.5 rounded-full border border-emerald-500/20">
+                      <span 
+                        className="text-xs font-semibold px-3 py-0.5 rounded-full"
+                        style={{ background: 'rgba(5,150,105,0.1)', color: '#059669', border: '1px solid rgba(5,150,105,0.2)' }}
+                      >
                         {copyright.status}
                       </span>
                       <span className="text-xs text-foreground-muted font-mono font-semibold">
@@ -111,7 +135,10 @@ export default function PatentsCopyrights({ patents, copyrights }: PatentsCopyri
                       </span>
                     </div>
 
-                    <h3 className="text-base font-serif font-bold text-foreground leading-tight">
+                    <h3 
+                      className="text-base font-bold text-foreground leading-tight"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                    >
                       {copyright.title}
                     </h3>
 
@@ -127,8 +154,8 @@ export default function PatentsCopyrights({ patents, copyrights }: PatentsCopyri
                 ))}
               </div>
             )}
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

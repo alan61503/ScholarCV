@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Conference, Workshop } from '../../types/faculty';
-import { Card, CardContent } from '../ui/Card';
 import { Presentation, Landmark, Calendar, Settings, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface ConferencesWorkshopsProps {
@@ -15,7 +14,7 @@ export default function ConferencesWorkshops({
   conferencesAttended,
   workshopsAttended,
   workshopsConducted,
-}: ConferencesWorkshopsProps) {
+} : ConferencesWorkshopsProps) {
   const [showAllConferences, setShowAllConferences] = useState<boolean>(false);
   const [showAllConducted, setShowAllConducted] = useState<boolean>(false);
   const [showAllAttended, setShowAllAttended] = useState<boolean>(false);
@@ -35,18 +34,30 @@ export default function ConferencesWorkshops({
   return (
     <section id="conferences-workshops" className="scroll-mt-24 space-y-6">
       {/* Conferences Attended */}
-      <Card>
-        <CardContent className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80">
+      <div className="royal-card">
+        <div className="p-6 md:p-8 space-y-6">
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80 relative">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
+              <div 
+                className="p-2.5 rounded-xl shrink-0"
+                style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+              >
                 <Presentation className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Conferences Attended</h2>
+              <h2 
+                className="text-xl font-bold text-foreground tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Conferences Attended
+              </h2>
             </div>
-            <span className="text-xs font-semibold px-3 py-1 bg-accent-500/10 text-accent-700 dark:text-accent-400 rounded-full">
+            <span 
+              className="text-xs font-semibold px-3 py-1 rounded-full"
+              style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+            >
               {conferencesAttended.length} {conferencesAttended.length === 1 ? 'Conference' : 'Conferences'}
             </span>
+            <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#1d4ed8] to-transparent" />
           </div>
 
           {conferencesAttended.length === 0 ? (
@@ -79,7 +90,12 @@ export default function ConferencesWorkshops({
                       </span>
                     </div>
 
-                    <h3 className="text-base font-serif font-bold text-foreground">{conf.title}</h3>
+                    <h3 
+                      className="text-base font-bold text-foreground"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                    >
+                      {conf.title}
+                    </h3>
                     {conf.paperTitle && (
                       <p className="text-xs md:text-sm text-foreground-muted italic leading-relaxed">
                         Paper: "{conf.paperTitle}"
@@ -97,7 +113,7 @@ export default function ConferencesWorkshops({
                 <button
                   suppressHydrationWarning
                   onClick={() => setShowAllConferences(!showAllConferences)}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-border-subtle hover:bg-surface-muted text-xs font-semibold text-foreground-muted transition-colors"
+                  className="royal-show-more w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-semibold transition-colors"
                 >
                   {showAllConferences ? (
                     <>
@@ -114,19 +130,28 @@ export default function ConferencesWorkshops({
               )}
             </div>
           )}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* Workshops Grid (Attended & Conducted) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Workshops Conducted */}
-        <Card>
-          <CardContent className="p-6 md:p-8 space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-border-subtle/80">
-              <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 shrink-0">
+        <div className="royal-card">
+          <div className="p-6 md:p-8 space-y-6">
+            <div className="flex items-center gap-3 pb-3 border-b border-border-subtle/80 relative">
+              <div 
+                className="p-2.5 rounded-xl shrink-0"
+                style={{ background: 'rgba(5,150,105,0.1)', color: '#059669' }}
+              >
                 <Settings className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Workshops Conducted</h2>
+              <h2 
+                className="text-xl font-bold text-foreground tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Workshops Conducted
+              </h2>
+              <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#059669] to-transparent" />
             </div>
 
             {workshopsConducted.length === 0 ? (
@@ -137,7 +162,10 @@ export default function ConferencesWorkshops({
                   {displayedConducted.map((workshop) => (
                     <div key={workshop.id} className="p-4 border border-border-subtle/80 rounded-xl space-y-1.5">
                       <div className="flex justify-between items-start gap-2">
-                        <h3 className="text-sm md:text-base font-serif font-bold text-foreground leading-tight">
+                        <h3 
+                          className="text-sm md:text-base font-bold text-foreground leading-tight"
+                          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                        >
                           {workshop.title}
                         </h3>
                         <span className="text-[11px] shrink-0 font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
@@ -158,7 +186,7 @@ export default function ConferencesWorkshops({
                   <button
                     suppressHydrationWarning
                     onClick={() => setShowAllConducted(!showAllConducted)}
-                    className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl border border-border-subtle hover:bg-surface-muted text-xs font-semibold text-foreground-muted transition-colors"
+                    className="royal-show-more w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold transition-colors"
                   >
                     {showAllConducted ? (
                       <>
@@ -175,17 +203,26 @@ export default function ConferencesWorkshops({
                 )}
               </div>
             )}
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Workshops Attended */}
-        <Card>
-          <CardContent className="p-6 md:p-8 space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-border-subtle/80">
-              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
+        <div className="royal-card">
+          <div className="p-6 md:p-8 space-y-6">
+            <div className="flex items-center gap-3 pb-3 border-b border-border-subtle/80 relative">
+              <div 
+                className="p-2.5 rounded-xl shrink-0"
+                style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+              >
                 <BookOpen className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Workshops Attended</h2>
+              <h2 
+                className="text-xl font-bold text-foreground tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Workshops Attended
+              </h2>
+              <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#1d4ed8] to-transparent" />
             </div>
 
             {workshopsAttended.length === 0 ? (
@@ -196,7 +233,10 @@ export default function ConferencesWorkshops({
                   {displayedAttended.map((workshop) => (
                     <div key={workshop.id} className="p-4 border border-border-subtle/80 rounded-xl space-y-1.5">
                       <div className="flex justify-between items-start gap-2">
-                        <h3 className="text-sm md:text-base font-serif font-bold text-foreground leading-tight">
+                        <h3 
+                          className="text-sm md:text-base font-bold text-foreground leading-tight"
+                          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                        >
                           {workshop.title}
                         </h3>
                         <span className="text-[11px] shrink-0 font-semibold bg-accent-500/10 text-accent-700 dark:text-accent-400 px-2.5 py-0.5 rounded-full border border-accent-500/20">
@@ -217,7 +257,7 @@ export default function ConferencesWorkshops({
                   <button
                     suppressHydrationWarning
                     onClick={() => setShowAllAttended(!showAllAttended)}
-                    className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl border border-border-subtle hover:bg-surface-muted text-xs font-semibold text-foreground-muted transition-colors"
+                    className="royal-show-more w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold transition-colors"
                   >
                     {showAllAttended ? (
                       <>
@@ -234,8 +274,8 @@ export default function ConferencesWorkshops({
                 )}
               </div>
             )}
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

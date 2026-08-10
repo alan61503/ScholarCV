@@ -1,6 +1,5 @@
 import React from 'react';
 import { FundedProject, Grant } from '../../types/faculty';
-import { Card, CardContent } from '../ui/Card';
 import { Briefcase, CreditCard, Calendar, Landmark, CheckCircle, Clock } from 'lucide-react';
 
 interface ProjectsGrantsProps {
@@ -12,18 +11,30 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
   return (
     <section id="projects-grants" className="scroll-mt-24 space-y-6">
       {/* Funded Projects */}
-      <Card>
-        <CardContent className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80">
+      <div className="royal-card">
+        <div className="p-6 md:p-8 space-y-6">
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80 relative">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
+              <div 
+                className="p-2.5 rounded-xl shrink-0"
+                style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+              >
                 <Briefcase className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Funded Projects</h2>
+              <h2 
+                className="text-xl font-bold text-foreground tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Funded Projects
+              </h2>
             </div>
-            <span className="text-xs font-semibold px-3 py-1 bg-accent-500/10 text-accent-700 dark:text-accent-400 rounded-full">
+            <span 
+              className="text-xs font-semibold px-3 py-1 rounded-full"
+              style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+            >
               {fundedProjects.length} {fundedProjects.length === 1 ? 'Project' : 'Projects'}
             </span>
+            <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#1d4ed8] to-transparent" />
           </div>
 
           {fundedProjects.length === 0 ? (
@@ -35,16 +46,16 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
               {fundedProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="flex flex-col justify-between p-5 border border-border-subtle/80 rounded-xl hover:border-accent-500/30 transition-all hover:shadow-sm bg-surface-muted/30"
+                  className="flex flex-col justify-between project-card p-5 transition-all"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between gap-2">
                       <span
-                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold ${
-                          project.status === 'Ongoing'
-                            ? 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
-                            : 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
-                        }`}
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold"
+                        style={project.status === 'Ongoing' 
+                          ? { background: 'rgba(184,150,46,0.1)', color: '#b8962e', border: '1px solid rgba(184,150,46,0.2)' } 
+                          : { background: 'rgba(5,150,105,0.1)', color: '#059669', border: '1px solid rgba(5,150,105,0.2)' }
+                        }
                       >
                         {project.status === 'Ongoing' ? (
                           <Clock className="h-3 w-3" />
@@ -59,7 +70,10 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
                       </span>
                     </div>
 
-                    <h3 className="text-base font-serif font-bold text-foreground leading-snug">
+                    <h3 
+                      className="text-base font-bold text-foreground leading-snug"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                    >
                       {project.title}
                     </h3>
 
@@ -88,22 +102,34 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
               ))}
             </div>
           )}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* Grants Received */}
-      <Card>
-        <CardContent className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80">
+      <div className="royal-card">
+        <div className="p-6 md:p-8 space-y-6">
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80 relative">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
+              <div 
+                className="p-2.5 rounded-xl shrink-0"
+                style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+              >
                 <CreditCard className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Grants Received</h2>
+              <h2 
+                className="text-xl font-bold text-foreground tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Grants Received
+              </h2>
             </div>
-            <span className="text-xs font-semibold px-3 py-1 bg-accent-500/10 text-accent-700 dark:text-accent-400 rounded-full">
+            <span 
+              className="text-xs font-semibold px-3 py-1 rounded-full"
+              style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+            >
               {grantsReceived.length} {grantsReceived.length === 1 ? 'Grant' : 'Grants'}
             </span>
+            <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#1d4ed8] to-transparent" />
           </div>
 
           {grantsReceived.length === 0 ? (
@@ -115,11 +141,16 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
               {grantsReceived.map((grant) => (
                 <div
                   key={grant.id}
-                  className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 border border-border-subtle/80 rounded-xl hover:bg-surface-muted/40 transition-colors"
+                  className="grant-row p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 transition-colors"
                 >
                   <div className="space-y-1.5 flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-base font-bold text-foreground font-serif">{grant.title}</h3>
+                      <h3 
+                        className="text-base font-bold text-foreground"
+                        style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                      >
+                        {grant.title}
+                      </h3>
                       <span className="text-[11px] font-semibold bg-accent-500/10 text-accent-700 dark:text-accent-400 px-2 py-0.5 rounded-full font-mono">
                         {grant.year}
                       </span>
@@ -137,7 +168,10 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
                   </div>
 
                   <div className="text-right shrink-0">
-                    <span className="inline-block px-3 py-1.5 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 rounded-lg text-sm font-bold font-mono border border-emerald-500/20">
+                    <span 
+                      className="inline-block px-3 py-1.5 rounded-lg text-sm font-bold font-mono"
+                      style={{ background: 'rgba(5,150,105,0.1)', color: '#059669', border: '1px solid rgba(5,150,105,0.2)' }}
+                    >
                       {grant.amount}
                     </span>
                   </div>
@@ -145,8 +179,8 @@ export default function ProjectsGrants({ fundedProjects, grantsReceived }: Proje
               ))}
             </div>
           )}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </section>
   );
 }

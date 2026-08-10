@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo } from 'react';
 import { Publication } from '../../types/faculty';
-import { Card, CardContent, SectionEyebrow } from '../ui/Card';
 import {
   BookOpen,
   Search,
@@ -86,19 +85,31 @@ export default function Publications({ publications }: PublicationsProps) {
 
   return (
     <section id="publications" className="scroll-mt-24 space-y-6">
-      <Card>
-        <CardContent className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80">
+      <div className="royal-card">
+        <div className="p-6 md:p-8 space-y-6">
+          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80 relative">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-accent-500/10 text-accent-700 dark:text-accent-400 shrink-0">
+              <div 
+                className="p-2.5 rounded-xl shrink-0"
+                style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+              >
                 <BookOpen className="h-5 w-5" />
               </div>
-              <h2 className="text-xl font-bold font-serif text-foreground tracking-tight">Publications</h2>
+              <h2 
+                className="text-xl font-bold tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Publications
+              </h2>
             </div>
-
-            <span className="text-xs font-semibold px-3 py-1 bg-accent-500/10 text-accent-700 dark:text-accent-400 rounded-full">
+            
+            <span 
+              className="text-xs font-semibold px-3 py-1 rounded-full"
+              style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+            >
               {publications.length} {publications.length === 1 ? 'Publication' : 'Publications'}
             </span>
+            <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#1d4ed8] to-transparent" />
           </div>
 
           {/* Controls Bar */}
@@ -155,10 +166,11 @@ export default function Publications({ publications }: PublicationsProps) {
                   className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors
                     ${
                       isActive
-                        ? 'bg-accent-700 dark:bg-accent-600 text-white'
+                        ? 'text-white'
                         : 'bg-surface-muted text-foreground-muted hover:text-foreground'
                     }
                   `}
+                  style={isActive ? { background: 'linear-gradient(135deg, #1d4ed8, #1e40af)' } : undefined}
                 >
                   {type}
                 </button>
@@ -182,7 +194,7 @@ export default function Publications({ publications }: PublicationsProps) {
                   return (
                     <div
                       key={pub.id}
-                      className="group flex flex-col gap-2.5 p-5 border border-border-subtle rounded-md hover:border-accent-200 dark:hover:border-accent-800 transition-colors"
+                      className="group flex flex-col gap-2.5 pub-card p-5 transition-colors"
                     >
                       <div className="flex flex-wrap gap-2 items-center">
                         <TypeBadge type={pub.type} />
@@ -203,7 +215,10 @@ export default function Publications({ publications }: PublicationsProps) {
                         )}
                       </div>
 
-                      <h3 className="text-sm md:text-base font-serif font-bold text-foreground leading-snug group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
+                      <h3 
+                        className="text-sm md:text-base font-bold text-foreground leading-snug group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors"
+                        style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+                      >
                         {pub.title}
                       </h3>
 
@@ -296,7 +311,7 @@ export default function Publications({ publications }: PublicationsProps) {
                 <button
                   suppressHydrationWarning
                   onClick={() => setShowAll(!showAll)}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-md border border-border-subtle hover:bg-surface-muted text-sm font-semibold text-foreground-muted transition-colors"
+                  className="royal-show-more w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold transition-colors"
                 >
                   {showAll ? (
                     <>
@@ -313,8 +328,8 @@ export default function Publications({ publications }: PublicationsProps) {
               )}
             </div>
           )}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </section>
   );
 }

@@ -11,34 +11,21 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
   return (
     <div className="hidden print:block print-cv-root text-slate-900 bg-white p-8 max-w-4xl mx-auto font-sans leading-normal">
       {/* 1. Header Section */}
-      <div className="cv-header border-b-2 border-slate-900 pb-5 mb-6 text-center space-y-2">
-        <h1 className="text-3xl font-bold font-serif uppercase tracking-widest text-slate-900 text-center">
+      <div className="cv-header mb-6 text-center space-y-2">
+        <h1 className="text-3xl font-bold font-serif uppercase tracking-widest text-slate-900">
           {personalInfo.name.toUpperCase()}
         </h1>
-        <p className="text-sm font-bold uppercase tracking-wider text-slate-800 text-center">
-          {personalInfo.title}
+        <p className="text-sm font-serif text-slate-800 tracking-wide">
+          {personalInfo.phone && <span>{personalInfo.phone}</span>}
+          {personalInfo.phone && personalInfo.email && <span className="mx-2 text-slate-400">|</span>}
+          {personalInfo.email && <span>{personalInfo.email}</span>}
         </p>
-        <p className="text-xs font-semibold text-slate-700 text-center">
-          {personalInfo.department} • {personalInfo.institution}
-        </p>
-
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-700 pt-2 border-t border-slate-300 mt-2 font-mono">
-          <span>Email: {personalInfo.email}</span>
-          {personalInfo.phone && <span>• Tel: {personalInfo.phone}</span>}
-          {personalInfo.officeAddress && <span>• Office: {personalInfo.officeAddress}</span>}
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-600 font-mono">
-          {personalInfo.websiteUrl && <span>Website: {personalInfo.websiteUrl}</span>}
-          {personalInfo.googleScholarUrl && <span>• Google Scholar Profile</span>}
-          {personalInfo.orcid && <span>• ORCID: {personalInfo.orcid}</span>}
-        </div>
       </div>
 
       {/* 2. Executive Summary / Biography */}
       {personalInfo.biography && (
         <section className="mb-6 print-section">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2 font-serif">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
             Executive Summary
           </h2>
           <p className="text-xs leading-relaxed text-slate-800 text-justify">{personalInfo.biography}</p>
@@ -53,7 +40,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
       {/* 3. Education Background */}
       {profile.education?.length > 0 && (
         <section className="mb-6 print-section">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3 font-serif">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
             Education
           </h2>
           <div className="space-y-3">
@@ -80,7 +67,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
       {/* 4. Professional Appointments & Experience */}
       {profile.experience?.length > 0 && (
         <section className="mb-6 print-section">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3 font-serif">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
             Academic & Professional Appointments
           </h2>
           <div className="space-y-3">
@@ -107,7 +94,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
       {/* 5. Peer-Reviewed Publications */}
       {profile.publications?.length > 0 && (
         <section className="mb-6 print-section">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3 font-serif">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
             Peer-Reviewed Publications ({profile.publications.length})
           </h2>
           <ol className="list-decimal list-inside space-y-2 text-xs text-slate-800">
@@ -128,7 +115,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
       {/* 6. Sponsored Research Projects & Grants */}
       {(profile.fundedProjects?.length > 0 || profile.grantsReceived?.length > 0) && (
         <section className="mb-6 print-section">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3 font-serif">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
             Funded Research & Grants
           </h2>
           <div className="space-y-3 text-xs">
@@ -167,7 +154,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
       {/* 7. Honors & Awards */}
       {profile.awardsReceived?.length > 0 && (
         <section className="mb-6 print-section">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3 font-serif">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
             Honors & Awards
           </h2>
           <ul className="space-y-2 text-xs">
@@ -188,7 +175,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
       {/* 8. Patents & Intellectual Property */}
       {profile.patents?.length > 0 && (
         <section className="mb-6 print-section">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3 font-serif">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
             Patents & Intellectual Property
           </h2>
           <ul className="space-y-2 text-xs">
@@ -211,7 +198,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
       {/* 9. Doctoral Scholars Guided */}
       {profile.phdScholars?.length > 0 && (
         <section className="mb-6 print-section">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3 font-serif">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
             Doctoral Scholars Supervision
           </h2>
           <div className="space-y-2 text-xs">

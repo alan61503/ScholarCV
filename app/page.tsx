@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { profile as initialProfile } from '../data/profile';
 import { FacultyProfile } from '../types/faculty';
 import { subscribeToCloudProfile } from '../lib/profileService';
+import { sortByDateDesc } from '../lib/sortHelper';
 
 import HighlightsTicker from '../components/layout/HighlightsTicker';
 import Nav from '../components/layout/Nav';
@@ -69,44 +70,47 @@ export default function Home() {
             </FadeIn>
             <FadeIn>
               <EducationExperience
-                education={p.education || []}
-                experience={p.experience || []}
+                education={sortByDateDesc(p.education, 'year')}
+                experience={sortByDateDesc(p.experience, 'startDate')}
                 skills={p.skills || []}
               />
             </FadeIn>
             <FadeIn>
-              <Publications publications={p.publications || []} />
+              <Publications publications={sortByDateDesc(p.publications, 'year')} />
             </FadeIn>
             <FadeIn>
               <ProjectsGrants
-                fundedProjects={p.fundedProjects || []}
-                grantsReceived={p.grantsReceived || []}
+                fundedProjects={sortByDateDesc(p.fundedProjects, 'startDate')}
+                grantsReceived={sortByDateDesc(p.grantsReceived, 'year')}
               />
             </FadeIn>
             <FadeIn>
               <AwardsAchievements
-                awardsReceived={p.awardsReceived || []}
-                academicAchievements={p.academicAchievements || []}
+                awardsReceived={sortByDateDesc(p.awardsReceived, 'year')}
+                academicAchievements={sortByDateDesc(p.academicAchievements, 'date')}
               />
             </FadeIn>
             <FadeIn>
               <ConferencesWorkshops
-                conferencesAttended={p.conferencesAttended || []}
-                workshopsAttended={p.workshopsAttended || []}
-                workshopsConducted={p.workshopsConducted || []}
+                conferencesAttended={sortByDateDesc(p.conferencesAttended, 'date')}
+                workshopsAttended={sortByDateDesc(p.workshopsAttended, 'startDate')}
+                workshopsConducted={sortByDateDesc(p.workshopsConducted, 'startDate')}
               />
             </FadeIn>
             <FadeIn>
-              <ScholarsScholarly phdScholars={p.phdScholars || []} />
+              <ScholarsScholarly phdScholars={sortByDateDesc(p.phdScholars, 'joiningYear')} />
             </FadeIn>
             <FadeIn>
               <RolesRecognition
-                resourcePersonRoles={p.resourcePersonRoles || []}
-                externalExaminerRoles={p.externalExaminerRoles || []}
+                resourcePersonRoles={sortByDateDesc(p.resourcePersonRoles, 'date')}
+                externalExaminerRoles={sortByDateDesc(p.externalExaminerRoles, 'year')}
               />
             </FadeIn>
             <FadeIn>
-              <PatentsCopyrights patents={p.patents || []} copyrights={p.copyrights || []} />
+              <PatentsCopyrights 
+                patents={sortByDateDesc(p.patents, 'filingDate')} 
+                copyrights={sortByDateDesc(p.copyrights, 'year')} 
+              />
             </FadeIn>
           </div>
         </div>

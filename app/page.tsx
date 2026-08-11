@@ -40,6 +40,8 @@ export default function Home() {
     const unsubscribe = subscribeToCloudProfile((liveData) => {
       if (liveData && liveData.personalInfo) {
         setProfileData(liveData);
+        // Dynamically update the browser tab title to match the live loaded data
+        document.title = `${liveData.personalInfo.name} — ${liveData.personalInfo.title}`;
       }
     });
     return () => unsubscribe();

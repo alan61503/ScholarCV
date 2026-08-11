@@ -157,7 +157,7 @@ const categoryGroups = [
 
 export default function PortfolioForm() {
   const [draft, setDraft] = useState<Record<string, unknown> | null>(null);
-  const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'copied'>('idle');
+  const [status, setStatus] = useState<'idle' | 'saving' | 'saved-cloud' | 'saved-local' | 'copied'>('idle');
   const [activeGroupId, setActiveGroupId] = useState<string>('personal');
 
   useEffect(() => {
@@ -200,16 +200,20 @@ export default function PortfolioForm() {
       // 1. Save to local storage cache
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
       
-      // 2. Publish live to Cloud Firestore
+      // 2. Publish live to Cloud Firestore (with 2.5s timeout safety)
       const structuredProfile = fromDraft(draft);
-      await saveCloudProfile(structuredProfile);
+      const isCloudSaved = await saveCloudProfile(structuredProfile);
       
-      setStatus('saved');
-      setTimeout(() => setStatus('idle'), 3000);
+      if (isCloudSaved) {
+        setStatus('saved-cloud');
+      } else {
+        setStatus('saved-local');
+      }
+      setTimeout(() => setStatus('idle'), 4500);
     } catch (err) {
       console.error('Cloud save failed:', err);
-      setStatus('saved'); // Still saved locally
-      setTimeout(() => setStatus('idle'), 3000);
+      setStatus('saved-local');
+      setTimeout(() => setStatus('idle'), 4500);
     }
   };
 
@@ -298,9 +302,14 @@ export default function PortfolioForm() {
           </button>
         </div>
 
-        {status === 'saved' && (
+        {status === 'saved-cloud' && (
           <div className="w-full text-right text-xs font-medium text-emerald-600 dark:text-emerald-400 animate-pulse">
-            ✓ Published live to Firebase Cloud Database! Changes are now live for all visitors.
+            ✓ Published live to Firebase Cloud Database! Changes are live for all visitors.
+          </div>
+        )}
+        {status === 'saved-local' && (
+          <div className="w-full text-right text-xs font-medium text-amber-600 dark:text-amber-400">
+            ✓ Saved locally! (Firebase Cloud API is disabled. Enable Firestore in Firebase console or click Export JSON to update profile data).
           </div>
         )}
       </div>

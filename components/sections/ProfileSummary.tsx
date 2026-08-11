@@ -27,11 +27,27 @@ interface ProfileSummaryProps {
 export default function ProfileSummary({ profile }: ProfileSummaryProps) {
   const { personalInfo, experience, publications, fundedProjects } = profile;
 
-  const yearsOfExp = experience.reduce((acc, exp) => {
-    const startYear = parseInt(exp.startDate.split('-')[0]);
-    const endYear = exp.endDate === 'Present' ? new Date().getFullYear() : parseInt(exp.endDate.split('-')[0]);
-    return acc + (endYear - startYear);
-  }, 0);
+  let minYear = new Date().getFullYear();
+  let maxYear = minYear;
+  let hasExperience = false;
+
+  experience.forEach((exp) => {
+    if (!exp.startDate) return;
+    const start = parseInt(exp.startDate.split('-')[0], 10);
+    if (!isNaN(start)) {
+      hasExperience = true;
+      if (start < minYear) minYear = start;
+      
+      if (exp.endDate && exp.endDate.toLowerCase() !== 'present') {
+        const end = parseInt(exp.endDate.split('-')[0], 10);
+        if (!isNaN(end) && end > maxYear) maxYear = end;
+      } else {
+        maxYear = new Date().getFullYear();
+      }
+    }
+  });
+
+  const yearsOfExp = hasExperience ? Math.max(1, maxYear - minYear) : 0;
 
   const stats = [
     { label: 'Publications', sub: 'Indexed journals & conferences', value: publications.length, suffix: '+', icon: BookOpen, color: '#1d4ed8' },

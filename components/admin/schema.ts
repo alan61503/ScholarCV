@@ -116,7 +116,9 @@ export const sectionSchemas: SectionConfig[] = [
     description: 'Seminars attended with level, mode, date range, topic, and certificate details.',
     fields: [
       { key: 'title', label: 'Seminar Title', type: 'text', placeholder: 'International Seminar on Generative AI' },
-      { key: 'organizedBy', label: 'Organized By (Name, Address, Type)', type: 'text', placeholder: 'CHRIST University, Bangalore (Academic)' },
+      { key: 'organizerName', label: '1. Organization Name', type: 'text', placeholder: 'CHRIST (Deemed to be University)' },
+      { key: 'organizerAddress', label: '2. Organization Address / Location', type: 'text', placeholder: 'Kengeri Campus, Bangalore' },
+      { key: 'organizationType', label: '3. Type of Organization', type: 'select', options: ['Academic Institution', 'Government Body', 'Professional Association', 'Industry / Corporate', 'Research Institute', 'Non-Profit / NGO'] },
       { key: 'topic', label: 'Topic / Theme', type: 'text', placeholder: 'Transformative NLP Models' },
       { key: 'level', label: 'Level', type: 'select', options: ['International', 'National', 'State', 'Institutional'] },
       { key: 'mode', label: 'Mode of Session', type: 'select', options: ['Offline', 'Online', 'Hybrid'] },
@@ -127,7 +129,9 @@ export const sectionSchemas: SectionConfig[] = [
     ],
     emptyItem: {
       title: '',
-      organizedBy: '',
+      organizerName: '',
+      organizerAddress: '',
+      organizationType: 'Academic Institution',
       topic: '',
       level: 'International',
       mode: 'Offline',
@@ -157,7 +161,9 @@ export const sectionSchemas: SectionConfig[] = [
     fields: [
       { key: 'title', label: 'Workshop Name', type: 'text', placeholder: 'National Workshop on Safe AI' },
       { key: 'type', label: 'Workshop Type', type: 'select', options: ['Attended', 'Conducted'] },
-      { key: 'organizedBy', label: 'Organized By (Name, Address, Type)', type: 'text', placeholder: 'IEEE Robotics Society (Academic/Govt)' },
+      { key: 'organizerName', label: '1. Organization Name', type: 'text', placeholder: 'IEEE Robotics Society' },
+      { key: 'organizerAddress', label: '2. Organization Address / Location', type: 'text', placeholder: 'London, UK' },
+      { key: 'organizationType', label: '3. Type of Organization', type: 'select', options: ['Professional Association', 'Academic Institution', 'Government Body', 'Industry / Corporate', 'Research Institute', 'Non-Profit / NGO'] },
       { key: 'topic', label: 'Topic / Theme', type: 'text', placeholder: 'Safety Guarantees for Deep Learning' },
       { key: 'mode', label: 'Mode of Session', type: 'select', options: ['Offline', 'Online', 'Hybrid'] },
       { key: 'startDate', label: 'Start Date', type: 'text', placeholder: '2023-05-12' },
@@ -165,7 +171,7 @@ export const sectionSchemas: SectionConfig[] = [
       { key: 'description', label: 'Description & Conclusion', type: 'textarea' },
       { key: 'documentProofName', label: 'Document of Proof / Certificate Name', type: 'text', placeholder: 'Certificate_IEEE_Workshop.pdf' },
     ],
-    emptyItem: { title: '', type: 'Attended', organizedBy: '', topic: '', mode: 'Offline', startDate: '', endDate: '', description: '', documentProofName: '' },
+    emptyItem: { title: '', type: 'Attended', organizerName: '', organizerAddress: '', organizationType: 'Professional Association', topic: '', mode: 'Offline', startDate: '', endDate: '', description: '', documentProofName: '' },
   },
   {
     key: 'resourcePersonRoles',

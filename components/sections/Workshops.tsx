@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Workshop } from '../../types/faculty';
-import { Settings, Calendar, Landmark, BookOpen, Filter, ChevronDown, ChevronUp, FileCheck, Monitor } from 'lucide-react';
+import { Settings, Calendar, Landmark, BookOpen, Filter, ChevronDown, ChevronUp, FileCheck, Monitor, MapPin } from 'lucide-react';
 
 interface WorkshopsProps {
   workshopsAttended: Workshop[];
@@ -161,12 +161,26 @@ export default function Workshops({
                     </div>
                   )}
 
-                  {/* Organized By */}
-                  <div className="flex items-start gap-2 text-xs text-foreground-muted">
-                    <Landmark className="h-3.5 w-3.5 text-accent-500 shrink-0 mt-0.5" />
-                    <span>
-                      <strong className="text-foreground">Organized By:</strong> {ws.organizedBy} {ws.location && `(${ws.location})`}
-                    </span>
+                  {/* Organized By Parameters */}
+                  <div className="flex flex-col gap-1 text-xs text-foreground-muted">
+                    <div className="flex items-start gap-2">
+                      <Landmark className="h-3.5 w-3.5 text-accent-500 shrink-0 mt-0.5" />
+                      <span>
+                        <strong className="text-foreground">Organized By:</strong>{' '}
+                        {ws.organizerName || ws.organizedBy}
+                        {ws.organizationType && (
+                          <span className="ml-2 px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-muted border border-border-subtle text-foreground-muted">
+                            {ws.organizationType}
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                    {(ws.organizerAddress || ws.location) && (
+                      <div className="flex items-center gap-1.5 pl-5.5 text-[11px] text-foreground-muted/80">
+                        <MapPin className="h-3 w-3 text-accent-500 shrink-0" />
+                        <span>{ws.organizerAddress || ws.location}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Description & Conclusion */}

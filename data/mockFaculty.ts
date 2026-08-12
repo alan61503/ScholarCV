@@ -296,6 +296,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
       {
         id: 'sem-1',
         title: 'International Seminar on Advances in Deep Learning & Autonomous Systems',
+        organizerName: 'CHRIST (Deemed to be University)',
+        organizerAddress: 'Kengeri Campus, Bangalore, India',
+        organizationType: 'Academic Institution',
         organizedBy: 'CHRIST (Deemed to be University), Kengeri Campus, Bangalore (Academic Institution)',
         topic: 'Generative AI and Self-Supervised Vision Transformers',
         level: 'International',
@@ -308,6 +311,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
       {
         id: 'sem-2',
         title: 'National Seminar on Data Engineering and Cloud Analytics',
+        organizerName: 'Department of AI and DS Engineering, CHRIST University',
+        organizerAddress: 'Bangalore, Karnataka, India',
+        organizationType: 'Academic Institution',
         organizedBy: 'Department of AI and DS Engineering, CHRIST University (Academic)',
         topic: 'Scalable Big Data Pipelines and Real-time Stream Analytics',
         level: 'National',
@@ -320,6 +326,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
       {
         id: 'sem-3',
         title: 'State Level Seminar on Faculty Research Methodologies and Patent Filing',
+        organizerName: 'Karnataka State Council for Science and Technology',
+        organizerAddress: 'IISc Campus, Bangalore, India',
+        organizationType: 'Government Body',
         organizedBy: 'Karnataka State Council for Science and Technology (State Govt Agency)',
         topic: 'IPR, Patenting Process, and Academic Innovation',
         level: 'State',
@@ -370,6 +379,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
       {
         id: 'wsa-1',
         title: 'National Workshop on Safe and Reliable AI in Robotics',
+        organizerName: 'IEEE Robotics and Automation Society',
+        organizerAddress: 'London, United Kingdom',
+        organizationType: 'Professional Association',
         organizedBy: 'IEEE Robotics and Automation Society (Professional Body)',
         location: 'London, UK',
         startDate: '2023-05-12',
@@ -385,6 +397,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
       {
         id: 'wsc-1',
         title: 'Deep Learning Bootcamp: Theory to Edge Deployment',
+        organizerName: 'CHRIST (Deemed to be University)',
+        organizerAddress: 'Kengeri Campus, Bangalore, India',
+        organizationType: 'Academic Institution',
         organizedBy: 'CHRIST (Deemed to be University), Bangalore (Academic Institution)',
         location: 'Bangalore, India',
         startDate: '2024-01-15',
@@ -398,6 +413,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
       {
         id: 'wsc-2',
         title: 'Explainable AI Methods for Industry Practitioners',
+        organizerName: 'ACM Computer Society Chapter',
+        organizerAddress: 'San Jose, California, USA',
+        organizationType: 'Professional Association',
         organizedBy: 'ACM Computer Society Chapter (Professional Body)',
         location: 'San Jose, CA',
         startDate: '2022-09-08',

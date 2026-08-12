@@ -149,7 +149,10 @@ export interface PhdScholar {
 export interface Workshop {
   id: string;
   title: string;
-  organizedBy: string;
+  organizedBy?: string;
+  organizerName?: string;
+  organizerAddress?: string;
+  organizationType?: string;
   location?: string;
   startDate: string;
   endDate: string;
@@ -208,7 +211,10 @@ export interface Copyright {
 export interface Seminar {
   id: string;
   title: string;
-  organizedBy: string;
+  organizedBy?: string;
+  organizerName?: string;
+  organizerAddress?: string;
+  organizationType?: string;
   startDate: string;
   endDate?: string;
   topic?: string;

@@ -2,7 +2,7 @@
 // Adding a field here automatically adds it to the management form —
 // extend this file when new inputs are needed later.
 
-export type FieldType = 'text' | 'textarea' | 'number' | 'select';
+export type FieldType = 'text' | 'textarea' | 'number' | 'select' | 'file';
 
 export interface FieldConfig {
   key: string;
@@ -125,7 +125,7 @@ export const sectionSchemas: SectionConfig[] = [
       { key: 'startDate', label: 'Start Date', type: 'text', placeholder: '2024-03-15' },
       { key: 'endDate', label: 'End Date', type: 'text', placeholder: '2024-03-16' },
       { key: 'description', label: 'Description & Conclusion', type: 'textarea' },
-      { key: 'documentProofName', label: 'Document of Proof / Certificate Name', type: 'text', placeholder: 'Certificate_Seminar_2024.pdf' },
+      { key: 'documentProofName', label: 'Document of Proof / Certificate (Upload PDF File)', type: 'file' },
     ],
     emptyItem: {
       title: '',
@@ -139,6 +139,7 @@ export const sectionSchemas: SectionConfig[] = [
       endDate: '',
       description: '',
       documentProofName: '',
+      documentProofUrl: '',
     },
   },
   {
@@ -169,9 +170,9 @@ export const sectionSchemas: SectionConfig[] = [
       { key: 'startDate', label: 'Start Date', type: 'text', placeholder: '2023-05-12' },
       { key: 'endDate', label: 'End Date', type: 'text', placeholder: '2023-05-13' },
       { key: 'description', label: 'Description & Conclusion', type: 'textarea' },
-      { key: 'documentProofName', label: 'Document of Proof / Certificate Name', type: 'text', placeholder: 'Certificate_IEEE_Workshop.pdf' },
+      { key: 'documentProofName', label: 'Document of Proof / Certificate (Upload PDF File)', type: 'file' },
     ],
-    emptyItem: { title: '', type: 'Attended', organizerName: '', organizerAddress: '', organizationType: 'Professional Association', topic: '', mode: 'Offline', startDate: '', endDate: '', description: '', documentProofName: '' },
+    emptyItem: { title: '', type: 'Attended', organizerName: '', organizerAddress: '', organizationType: 'Professional Association', topic: '', mode: 'Offline', startDate: '', endDate: '', description: '', documentProofName: '', documentProofUrl: '' },
   },
   {
     key: 'resourcePersonRoles',

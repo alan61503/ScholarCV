@@ -188,9 +188,23 @@ export default function Seminars({ seminars = [] }: SeminarsProps) {
 
                   {/* Document Proof / Certificate Badge */}
                   {sem.documentProofName && (
-                    <div className="pt-1 flex items-center gap-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
-                      <FileCheck className="h-4 w-4 shrink-0" />
-                      <span>Document Proof: {sem.documentProofName}</span>
+                    <div className="pt-1 flex items-center gap-2 text-xs font-medium">
+                      {sem.documentProofUrl ? (
+                        <a
+                          href={sem.documentProofUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all cursor-pointer"
+                        >
+                          <FileCheck className="h-4 w-4 shrink-0" />
+                          <span>PDF Proof: {sem.documentProofName} (Click to View PDF)</span>
+                        </a>
+                      ) : (
+                        <span className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
+                          <FileCheck className="h-4 w-4 shrink-0" />
+                          <span>PDF Proof: {sem.documentProofName}</span>
+                        </span>
+                      )}
                     </div>
                   )}
                 </div>

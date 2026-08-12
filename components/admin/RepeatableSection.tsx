@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useState } from 'react';
-import { Plus, Trash2, ChevronDown, Check, Sparkles, ListFilter } from 'lucide-react';
+import { Plus, Trash2, ChevronDown, Check, Sparkles, ListFilter, FileText } from 'lucide-react';
 import { SectionConfig } from './schema';
 
 interface RepeatableSectionProps {
@@ -19,7 +17,7 @@ export default function RepeatableSection({ config, items, onChange }: Repeatabl
   const [justAdded, setJustAdded] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
-  const handleUpdateNewField = (key: string, value: string) => {
+  const handleUpdateNewField = (key: string, value: unknown) => {
     setNewItem((prev) => ({ ...prev, [key]: value }));
   };
 
@@ -40,8 +38,13 @@ export default function RepeatableSection({ config, items, onChange }: Repeatabl
     setTimeout(() => setJustAdded(false), 2500);
   };
 
-  const updateItem = (index: number, key: string, value: string) => {
+  const updateItem = (index: number, key: string, value: unknown) => {
     const next = items.map((item, i) => (i === index ? { ...item, [key]: value } : item));
+    onChange(next);
+  };
+
+  const updateItemMultiple = (index: number, updates: Record<string, unknown>) => {
+    const next = items.map((item, i) => (i === index ? { ...item, ...updates } : item));
     onChange(next);
   };
 
@@ -111,7 +114,7 @@ export default function RepeatableSection({ config, items, onChange }: Repeatabl
 
           <div className="grid sm:grid-cols-2 gap-4">
             {config.fields.map((field) => (
-              <div key={field.key} className={field.type === 'textarea' ? 'sm:col-span-2' : ''}>
+              <div key={field.key} className={field.type === 'textarea' || field.type === 'file' ? 'sm:col-span-2' : ''}>
                 <label className="block text-xs font-medium text-foreground-muted mb-1.5">
                   {field.label}
                 </label>
@@ -135,6 +138,34 @@ export default function RepeatableSection({ config, items, onChange }: Repeatabl
                       </option>
                     ))}
                   </select>
+                ) : field.type === 'file' ? (
+                  <div className="p-3.5 border border-dashed border-border-subtle rounded-xl bg-surface space-y-2">
+                    <input
+                      type="file"
+                      accept=".pdf,application/pdf"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (!file) return;
+                        const reader = new FileReader();
+                        reader.onload = (evt) => {
+                          handleUpdateNewField(field.key, file.name);
+                          handleUpdateNewField('documentProofUrl', evt.target?.result as string);
+                        };
+                        reader.readAsDataURL(file);
+                      }}
+                      className="block w-full text-xs text-foreground-muted file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-accent-500/10 file:text-accent-700 dark:file:text-accent-400 hover:file:bg-accent-500/20 cursor-pointer"
+                    />
+                    {newItem[field.key] ? (
+                      <div className="flex items-center gap-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium pt-1">
+                        <FileText className="h-4 w-4 shrink-0" />
+                        <span className="truncate">Attached PDF: {newItem[field.key] as string}</span>
+                      </div>
+                    ) : (
+                      <p className="text-[11px] text-foreground-muted/70">
+                        Upload certificate or proof as PDF document (.pdf)
+                      </p>
+                    )}
+                  </div>
                 ) : (
                   <input
                     type={field.type === 'number' ? 'number' : 'text'}
@@ -222,7 +253,7 @@ export default function RepeatableSection({ config, items, onChange }: Repeatabl
                     <div className="px-6 pb-6 pt-2 border-t border-border-subtle bg-surface-muted/20">
                       <div className="grid sm:grid-cols-2 gap-4">
                         {config.fields.map((field) => (
-                          <div key={field.key} className={field.type === 'textarea' ? 'sm:col-span-2' : ''}>
+                          <div key={field.key} className={field.type === 'textarea' || field.type === 'file' ? 'sm:col-span-2' : ''}>
                             <label className="block text-xs font-medium text-foreground-muted mb-1">
                               {field.label}
                             </label>
@@ -245,6 +276,48 @@ export default function RepeatableSection({ config, items, onChange }: Repeatabl
                                   </option>
                                 ))}
                               </select>
+                            ) : field.type === 'file' ? (
+                              <div className="p-3.5 border border-dashed border-border-subtle rounded-xl bg-surface space-y-2">
+                                <input
+                                  type="file"
+                                  accept=".pdf,application/pdf"
+                                  onChange={(e) => {
+                                    const file = e.target.files?.[0];
+                                    if (!file) return;
+                                    const reader = new FileReader();
+                                    reader.onload = (evt) => {
+                                      updateItemMultiple(index, {
+                                        [field.key]: file.name,
+                                        documentProofUrl: evt.target?.result as string,
+                                      });
+                                    };
+                                    reader.readAsDataURL(file);
+                                  }}
+                                  className="block w-full text-xs text-foreground-muted file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-accent-500/10 file:text-accent-700 dark:file:text-accent-400 hover:file:bg-accent-500/20 cursor-pointer"
+                                />
+                                {item[field.key] ? (
+                                  <div className="flex items-center justify-between gap-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium pt-1">
+                                    <div className="flex items-center gap-1.5 truncate">
+                                      <FileText className="h-4 w-4 shrink-0" />
+                                      <span className="truncate">Attached PDF: {item[field.key] as string}</span>
+                                    </div>
+                                    {Boolean(item.documentProofUrl) && (
+                                      <a
+                                        href={item.documentProofUrl as string}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[11px] underline font-semibold text-accent-600 dark:text-accent-400 shrink-0"
+                                      >
+                                        View PDF
+                                      </a>
+                                    )}
+                                  </div>
+                                ) : (
+                                  <p className="text-[11px] text-foreground-muted/70">
+                                    Upload certificate or proof as PDF document (.pdf)
+                                  </p>
+                                )}
+                              </div>
                             ) : (
                               <input
                                 type={field.type === 'number' ? 'number' : 'text'}

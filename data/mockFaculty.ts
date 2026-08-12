@@ -292,6 +292,44 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         role: 'Keynote Speaker'
       }
     ],
+    seminars: [
+      {
+        id: 'sem-1',
+        title: 'International Seminar on Advances in Deep Learning & Autonomous Systems',
+        organizedBy: 'CHRIST (Deemed to be University), Kengeri Campus, Bangalore (Academic Institution)',
+        topic: 'Generative AI and Self-Supervised Vision Transformers',
+        level: 'International',
+        mode: 'Hybrid',
+        startDate: '2024-04-10',
+        endDate: '2024-04-12',
+        description: 'Attended key sessions on transformer architectures and autonomous navigation. Participated in interactive roundtables discussing ethical deployment of AI in safety-critical systems.',
+        documentProofName: 'Certificate_International_Seminar_AI_2024.pdf'
+      },
+      {
+        id: 'sem-2',
+        title: 'National Seminar on Data Engineering and Cloud Analytics',
+        organizedBy: 'Department of AI and DS Engineering, CHRIST University (Academic)',
+        topic: 'Scalable Big Data Pipelines and Real-time Stream Analytics',
+        level: 'National',
+        mode: 'Offline',
+        startDate: '2023-11-15',
+        endDate: '2023-11-16',
+        description: 'Delved into modern cloud data warehouses and distributed stream processing frameworks. Explored case studies on enterprise analytics.',
+        documentProofName: 'National_Seminar_Certificate.pdf'
+      },
+      {
+        id: 'sem-3',
+        title: 'State Level Seminar on Faculty Research Methodologies and Patent Filing',
+        organizedBy: 'Karnataka State Council for Science and Technology (State Govt Agency)',
+        topic: 'IPR, Patenting Process, and Academic Innovation',
+        level: 'State',
+        mode: 'Online',
+        startDate: '2023-05-20',
+        endDate: '2023-05-20',
+        description: 'Gained comprehensive insight into patent drafting, prior art search, and technology transfer pathways for university researchers.',
+        documentProofName: 'KSCST_State_Seminar_Proof.pdf'
+      }
+    ],
     phdScholars: [
       {
         id: 'phd-1',

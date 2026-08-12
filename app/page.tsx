@@ -15,6 +15,7 @@ import Publications from '../components/sections/Publications';
 import ProjectsGrants from '../components/sections/ProjectsGrants';
 import AwardsAchievements from '../components/sections/AwardsAchievements';
 import ConferencesWorkshops from '../components/sections/ConferencesWorkshops';
+import Seminars from '../components/sections/Seminars';
 import ScholarsScholarly from '../components/sections/ScholarsScholarly';
 import RolesRecognition from '../components/sections/RolesRecognition';
 import PatentsCopyrights from '../components/sections/PatentsCopyrights';
@@ -29,6 +30,7 @@ const navItems = [
   { id: 'projects-grants', label: 'Projects & Grants', icon: 'projects' },
   { id: 'awards-achievements', label: 'Awards & Honors', icon: 'awards' },
   { id: 'conferences-workshops', label: 'Conferences', icon: 'conferences' },
+  { id: 'seminars', label: 'Seminars', icon: 'seminar' },
   { id: 'scholars', label: 'Research Scholars', icon: 'scholars' },
   { id: 'roles-recognition', label: 'Roles & Recognitions', icon: 'roles' },
   { id: 'patents-copyrights', label: 'Patents & Copyrights', icon: 'patents' },
@@ -96,6 +98,9 @@ export default function Home() {
                 workshopsAttended={sortByDateDesc(p.workshopsAttended, 'startDate')}
                 workshopsConducted={sortByDateDesc(p.workshopsConducted, 'startDate')}
               />
+            </FadeIn>
+            <FadeIn>
+              <Seminars seminars={sortByDateDesc(p.seminars, 'startDate')} />
             </FadeIn>
             <FadeIn>
               <ScholarsScholarly phdScholars={sortByDateDesc(p.phdScholars, 'joiningYear')} />

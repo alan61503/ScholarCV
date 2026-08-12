@@ -111,6 +111,33 @@ export const sectionSchemas: SectionConfig[] = [
     emptyItem: { title: '', paperTitle: '', location: '', date: '', role: 'Presenter' },
   },
   {
+    key: 'seminars',
+    title: 'Seminars Attended',
+    description: 'Seminars attended with level, mode, date range, topic, and certificate details.',
+    fields: [
+      { key: 'title', label: 'Seminar Title', type: 'text', placeholder: 'International Seminar on Generative AI' },
+      { key: 'organizedBy', label: 'Organized By (Name, Address, Type)', type: 'text', placeholder: 'CHRIST University, Bangalore (Academic)' },
+      { key: 'topic', label: 'Topic / Theme', type: 'text', placeholder: 'Transformative NLP Models' },
+      { key: 'level', label: 'Level', type: 'select', options: ['International', 'National', 'State', 'Institutional'] },
+      { key: 'mode', label: 'Mode of Session', type: 'select', options: ['Offline', 'Online', 'Hybrid'] },
+      { key: 'startDate', label: 'Start Date', type: 'text', placeholder: '2024-03-15' },
+      { key: 'endDate', label: 'End Date', type: 'text', placeholder: '2024-03-16' },
+      { key: 'description', label: 'Description & Conclusion', type: 'textarea' },
+      { key: 'documentProofName', label: 'Document of Proof / Certificate Name', type: 'text', placeholder: 'Certificate_Seminar_2024.pdf' },
+    ],
+    emptyItem: {
+      title: '',
+      organizedBy: '',
+      topic: '',
+      level: 'International',
+      mode: 'Offline',
+      startDate: '',
+      endDate: '',
+      description: '',
+      documentProofName: '',
+    },
+  },
+  {
     key: 'phdScholars',
     title: 'Research Scholars',
     fields: [

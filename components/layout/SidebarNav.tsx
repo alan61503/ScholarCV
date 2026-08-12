@@ -11,6 +11,7 @@ import {
   Users,
   Award,
   ShieldCheck,
+  Sparkles,
 } from 'lucide-react';
 
 interface NavItem {
@@ -33,6 +34,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   projects: Briefcase,
   awards: Trophy,
   conferences: Presentation,
+  seminar: Sparkles,
   scholars: Users,
   roles: ShieldCheck,
   patents: Award,

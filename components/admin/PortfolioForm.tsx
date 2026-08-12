@@ -140,6 +140,13 @@ const categoryGroups = [
     description: 'Conferences, workshops attended or conducted',
   },
   {
+    id: 'seminars',
+    label: 'Seminars Attended',
+    icon: Sparkles,
+    keys: ['seminars'],
+    description: 'Seminars attended with level, mode, date range, topic, and certificate proof',
+  },
+  {
     id: 'scholars-roles',
     label: 'Scholars & Key Roles',
     icon: Users,

@@ -199,6 +199,20 @@ export interface Copyright {
   status: 'Registered' | 'Pending';
 }
 
+export interface Seminar {
+  id: string;
+  title: string;
+  organizedBy: string;
+  startDate: string;
+  endDate?: string;
+  topic?: string;
+  level: 'International' | 'National' | 'State' | 'Institutional';
+  mode: 'Offline' | 'Online' | 'Hybrid';
+  description?: string;
+  documentProofName?: string;
+  documentProofUrl?: string;
+}
+
 export interface FacultyProfile {
   id: string;
   personalInfo: PersonalInfo;
@@ -210,6 +224,7 @@ export interface FacultyProfile {
   grantsReceived: Grant[];
   awardsReceived: Award[];
   conferencesAttended: Conference[];
+  seminars?: Seminar[];
   phdScholars: PhdScholar[];
   workshopsAttended: Workshop[];
   workshopsConducted: Workshop[];

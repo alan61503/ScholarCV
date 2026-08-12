@@ -216,6 +216,32 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
           </div>
         </section>
       )}
+
+      {/* 10. Seminars Attended */}
+      {profile.seminars && profile.seminars.length > 0 && (
+        <section className="mb-6 print-section">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
+            Seminars Attended ({profile.seminars.length})
+          </h2>
+          <div className="space-y-3 text-xs">
+            {profile.seminars.map((sem) => (
+              <div key={sem.id} className="flex justify-between items-start">
+                <div>
+                  <h3 className="font-bold text-slate-900">
+                    {sem.title} <span className="font-normal text-slate-600">({sem.level} Level • {sem.mode})</span>
+                  </h3>
+                  <p className="text-slate-700">Organized by: {sem.organizedBy}</p>
+                  {sem.topic && <p className="text-slate-700 font-medium">Topic: {sem.topic}</p>}
+                  {sem.description && <p className="text-slate-600 mt-0.5 leading-relaxed">{sem.description}</p>}
+                </div>
+                <div className="text-right shrink-0 font-mono font-semibold text-slate-800 ml-4">
+                  {sem.startDate}{sem.endDate && sem.endDate !== sem.startDate ? ` – ${sem.endDate}` : ''}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

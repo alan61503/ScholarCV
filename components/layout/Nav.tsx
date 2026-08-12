@@ -21,9 +21,10 @@ interface NavProps {
   institution: string;
   department: string;
   items: NavItem[];
+  onOpenPrintModal?: () => void;
 }
 
-export default function Nav({ name, institution, department }: NavProps) {
+export default function Nav({ name, institution, department, onOpenPrintModal }: NavProps) {
   return (
     <header className="sticky top-0 z-40 glass border-b" style={{ borderColor: 'var(--border-subtle)' }}>
       {/* Animated gradient top bar */}
@@ -91,16 +92,16 @@ export default function Nav({ name, institution, department }: NavProps) {
             <span className="truncate max-w-[140px]">{department}</span>
           </div>
 
-          {/* Print CV Button — PRESERVED */}
+          {/* Customize & Print CV Button */}
           <button
             type="button"
-            onClick={() => window.print()}
-            title="Print Resume / CV"
-            className="flex items-center gap-1.5 px-3.5 h-9 rounded-full border text-xs font-semibold tracking-wider uppercase shadow-xs transition-all"
+            onClick={onOpenPrintModal || (() => window.print())}
+            title="Customize and Print Academic CV"
+            className="flex items-center gap-1.5 px-3.5 h-9 rounded-full border text-xs font-semibold tracking-wider uppercase shadow-xs transition-all hover:bg-accent-500/10 cursor-pointer"
             style={{
-              borderColor: 'var(--border-color)',
+              borderColor: 'rgba(29,78,216,0.3)',
               background: 'var(--surface-muted)',
-              color: 'var(--foreground-muted)',
+              color: '#1d4ed8',
             }}
           >
             <Printer className="h-4 w-4" style={{ color: '#1d4ed8' }} />

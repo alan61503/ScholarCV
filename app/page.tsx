@@ -21,7 +21,8 @@ import ScholarsScholarly from '../components/sections/ScholarsScholarly';
 import RolesRecognition from '../components/sections/RolesRecognition';
 import Patents from '../components/sections/Patents';
 import Copyrights from '../components/sections/Copyrights';
-import PrintableCV from '../components/cv/PrintableCV';
+import PrintableCV, { SelectedChapters, defaultSelectedChapters } from '../components/cv/PrintableCV';
+import PrintCustomizationModal from '../components/cv/PrintCustomizationModal';
 import ThemeToggle from '../components/ui/ThemeToggle';
 import { FadeIn } from '../components/ui/FadeIn';
 
@@ -42,6 +43,8 @@ const navItems = [
 
 export default function Home() {
   const [profileData, setProfileData] = useState<FacultyProfile>(initialProfile);
+  const [isPrintModalOpen, setIsPrintModalOpen] = useState<boolean>(false);
+  const [selectedChapters, setSelectedChapters] = useState<SelectedChapters>(defaultSelectedChapters);
 
   useEffect(() => {
     const unsubscribe = subscribeToCloudProfile((liveData) => {
@@ -59,7 +62,14 @@ export default function Home() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
       <HighlightsTicker profile={p} />
-      <Nav name={p.personalInfo.name} title={p.personalInfo.title} institution={p.personalInfo.institution} department={p.personalInfo.department} items={navItems} />
+      <Nav
+        name={p.personalInfo.name}
+        title={p.personalInfo.title}
+        institution={p.personalInfo.institution}
+        department={p.personalInfo.department}
+        items={navItems}
+        onOpenPrintModal={() => setIsPrintModalOpen(true)}
+      />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="flex flex-col lg:flex-row gap-8">
@@ -137,7 +147,16 @@ export default function Home() {
       </footer>
 
       {/* Printable Academic CV view (rendered only when printing) */}
-      <PrintableCV profile={p} />
+      <PrintableCV profile={p} selectedChapters={selectedChapters} />
+
+      {/* Interactive CV Customization Modal */}
+      <PrintCustomizationModal
+        isOpen={isPrintModalOpen}
+        onClose={() => setIsPrintModalOpen(false)}
+        profile={p}
+        selectedChapters={selectedChapters}
+        onChangeSelectedChapters={setSelectedChapters}
+      />
 
       {/* Floating Theme Toggle (Bottom-Right) */}
       <ThemeToggle variant="floating" />

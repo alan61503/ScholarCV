@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Conference, Workshop } from '../../types/faculty';
-import { Presentation, Landmark, Calendar, Settings, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
+import { Presentation, Landmark, Calendar, Settings, BookOpen, ChevronDown, ChevronUp, Filter } from 'lucide-react';
 
 interface ConferencesWorkshopsProps {
   conferencesAttended: Conference[];
@@ -18,10 +18,42 @@ export default function ConferencesWorkshops({
   const [showAllConferences, setShowAllConferences] = useState<boolean>(false);
   const [showAllConducted, setShowAllConducted] = useState<boolean>(false);
   const [showAllAttended, setShowAllAttended] = useState<boolean>(false);
+  const [selectedRoleFilter, setSelectedRoleFilter] = useState<string>('All');
+
+  const filteredConferences = conferencesAttended.filter((conf) => {
+    if (selectedRoleFilter === 'All') return true;
+    const roleLower = (conf.role || '').toLowerCase();
+    if (selectedRoleFilter === 'Attended') {
+      return (
+        conf.role === 'Attendee' ||
+        conf.role === 'Presenter' ||
+        roleLower.includes('attend') ||
+        roleLower.includes('present')
+      );
+    }
+    if (selectedRoleFilter === 'Conducted') {
+      return (
+        conf.role === 'Conducted' ||
+        roleLower.includes('conduct') ||
+        roleLower.includes('organiz')
+      );
+    }
+    if (selectedRoleFilter === 'Session Chair') {
+      return conf.role === 'Session Chair' || roleLower.includes('chair');
+    }
+    if (selectedRoleFilter === 'Keynote Speaker') {
+      return (
+        conf.role === 'Keynote Speaker' ||
+        roleLower.includes('keynote') ||
+        roleLower.includes('speaker')
+      );
+    }
+    return conf.role === selectedRoleFilter;
+  });
 
   const displayedConferences = showAllConferences
-    ? conferencesAttended
-    : conferencesAttended.slice(0, 2);
+    ? filteredConferences
+    : filteredConferences.slice(0, 2);
 
   const displayedConducted = showAllConducted
     ? workshopsConducted
@@ -33,10 +65,10 @@ export default function ConferencesWorkshops({
 
   return (
     <section id="conferences-workshops" className="scroll-mt-24 space-y-6">
-      {/* Conferences Attended */}
+      {/* Conferences Section */}
       <div className="royal-card">
         <div className="p-6 md:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-border-subtle/80 relative">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-border-subtle/80 relative">
             <div className="flex items-center gap-3">
               <div 
                 className="p-2.5 rounded-xl shrink-0"
@@ -48,20 +80,47 @@ export default function ConferencesWorkshops({
                 className="text-xl font-bold text-foreground tracking-tight"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                Conferences Attended
+                Conferences
               </h2>
             </div>
-            <span 
-              className="text-xs font-semibold px-3 py-1 rounded-full"
-              style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
-            >
-              {conferencesAttended.length} {conferencesAttended.length === 1 ? 'Conference' : 'Conferences'}
-            </span>
+
+            <div className="flex items-center gap-3 flex-wrap">
+              {/* Role Filter Dropdown */}
+              <div className="flex items-center gap-1.5 bg-surface-muted/80 border border-border-subtle rounded-xl px-3 py-1.5 shadow-sm">
+                <Filter className="h-3.5 w-3.5 text-accent-500 shrink-0" />
+                <span className="text-xs font-medium text-foreground-muted hidden md:inline">Filter:</span>
+                <select
+                  aria-label="Filter conferences by role"
+                  value={selectedRoleFilter}
+                  onChange={(e) => {
+                    setSelectedRoleFilter(e.target.value);
+                    setShowAllConferences(true);
+                  }}
+                  className="bg-transparent text-xs font-semibold text-foreground focus:outline-none cursor-pointer pr-1"
+                >
+                  <option value="All" className="bg-surface text-foreground">All Conferences</option>
+                  <option value="Attended" className="bg-surface text-foreground">Attended / Presenter</option>
+                  <option value="Conducted" className="bg-surface text-foreground">Conducted</option>
+                  <option value="Session Chair" className="bg-surface text-foreground">Session Chair</option>
+                  <option value="Keynote Speaker" className="bg-surface text-foreground">Keynote Speaker</option>
+                </select>
+              </div>
+
+              <span 
+                className="text-xs font-semibold px-3 py-1.5 rounded-full"
+                style={{ background: 'rgba(29,78,216,0.1)', color: '#1d4ed8' }}
+              >
+                {filteredConferences.length} {filteredConferences.length === 1 ? 'Conference' : 'Conferences'}
+              </span>
+            </div>
+
             <div className="absolute bottom-0 left-0 h-[2px] w-16 bg-gradient-to-r from-[#1d4ed8] to-transparent" />
           </div>
 
-          {conferencesAttended.length === 0 ? (
-            <p className="text-sm text-foreground-muted py-4 text-center">No conferences recorded.</p>
+          {filteredConferences.length === 0 ? (
+            <p className="text-sm text-foreground-muted py-6 text-center">
+              No conferences found for role &quot;{selectedRoleFilter}&quot;.
+            </p>
           ) : (
             <div className="space-y-4">
               <div className="space-y-4">
@@ -77,8 +136,10 @@ export default function ConferencesWorkshops({
                             ? 'bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/20'
                             : conf.role === 'Session Chair'
                             ? 'bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20'
-                            : conf.role === 'Presenter'
+                            : conf.role === 'Presenter' || conf.role === 'Attendee'
                             ? 'bg-accent-500/10 text-accent-700 dark:text-accent-400 border border-accent-500/20'
+                            : conf.role === 'Conducted'
+                            ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20'
                             : 'bg-surface-muted text-foreground-muted border border-border-subtle'
                         }`}
                       >
@@ -98,7 +159,7 @@ export default function ConferencesWorkshops({
                     </h3>
                     {conf.paperTitle && (
                       <p className="text-xs md:text-sm text-foreground-muted italic leading-relaxed">
-                        Paper: "{conf.paperTitle}"
+                        Paper: &quot;{conf.paperTitle}&quot;
                       </p>
                     )}
                     <p className="text-xs text-foreground-muted flex items-center gap-1.5 pt-1">
@@ -109,7 +170,7 @@ export default function ConferencesWorkshops({
                 ))}
               </div>
 
-              {conferencesAttended.length > 2 && (
+              {filteredConferences.length > 2 && (
                 <button
                   suppressHydrationWarning
                   onClick={() => setShowAllConferences(!showAllConferences)}
@@ -122,7 +183,7 @@ export default function ConferencesWorkshops({
                     </>
                   ) : (
                     <>
-                      <span>Show More ({conferencesAttended.length - 2} additional)</span>
+                      <span>Show More ({filteredConferences.length - 2} additional)</span>
                       <ChevronDown className="h-4 w-4" />
                     </>
                   )}

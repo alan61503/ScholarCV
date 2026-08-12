@@ -106,7 +106,7 @@ export const sectionSchemas: SectionConfig[] = [
       { key: 'paperTitle', label: 'Paper Title', type: 'text' },
       { key: 'location', label: 'Location', type: 'text' },
       { key: 'date', label: 'Date', type: 'text' },
-      { key: 'role', label: 'Role', type: 'select', options: ['Presenter', 'Keynote Speaker', 'Session Chair', 'Attendee'] },
+      { key: 'role', label: 'Role', type: 'select', options: ['Presenter', 'Keynote Speaker', 'Session Chair', 'Attendee', 'Conducted'] },
     ],
     emptyItem: { title: '', paperTitle: '', location: '', date: '', role: 'Presenter' },
   },

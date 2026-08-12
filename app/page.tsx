@@ -15,6 +15,7 @@ import Publications from '../components/sections/Publications';
 import ProjectsGrants from '../components/sections/ProjectsGrants';
 import AwardsAchievements from '../components/sections/AwardsAchievements';
 import ConferencesWorkshops from '../components/sections/ConferencesWorkshops';
+import Workshops from '../components/sections/Workshops';
 import Seminars from '../components/sections/Seminars';
 import ScholarsScholarly from '../components/sections/ScholarsScholarly';
 import RolesRecognition from '../components/sections/RolesRecognition';
@@ -30,6 +31,7 @@ const navItems = [
   { id: 'projects-grants', label: 'Projects & Grants', icon: 'projects' },
   { id: 'awards-achievements', label: 'Awards & Honors', icon: 'awards' },
   { id: 'conferences-workshops', label: 'Conferences', icon: 'conferences' },
+  { id: 'workshops', label: 'Workshops', icon: 'workshops' },
   { id: 'seminars', label: 'Seminars', icon: 'seminar' },
   { id: 'scholars', label: 'Research Scholars', icon: 'scholars' },
   { id: 'roles-recognition', label: 'Roles & Recognitions', icon: 'roles' },
@@ -95,6 +97,10 @@ export default function Home() {
             <FadeIn>
               <ConferencesWorkshops
                 conferencesAttended={sortByDateDesc(p.conferencesAttended, 'date')}
+              />
+            </FadeIn>
+            <FadeIn>
+              <Workshops
                 workshopsAttended={sortByDateDesc(p.workshopsAttended, 'startDate')}
                 workshopsConducted={sortByDateDesc(p.workshopsConducted, 'startDate')}
               />

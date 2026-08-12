@@ -153,6 +153,12 @@ export interface Workshop {
   location?: string;
   startDate: string;
   endDate: string;
+  topic?: string;
+  mode?: 'Offline' | 'Online' | 'Hybrid';
+  type?: 'Attended' | 'Conducted';
+  description?: string;
+  documentProofName?: string;
+  documentProofUrl?: string;
 }
 
 export interface ResourcePersonRole {

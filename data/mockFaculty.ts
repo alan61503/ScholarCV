@@ -369,29 +369,44 @@ export const mockFacultyProfiles: FacultyProfile[] = [
     workshopsAttended: [
       {
         id: 'wsa-1',
-        title: 'Workshop on Safe and Reliable AI in Robotics',
-        organizedBy: 'IEEE Robotics and Automation Society',
+        title: 'National Workshop on Safe and Reliable AI in Robotics',
+        organizedBy: 'IEEE Robotics and Automation Society (Professional Body)',
         location: 'London, UK',
         startDate: '2023-05-12',
-        endDate: '2023-05-13'
+        endDate: '2023-05-13',
+        topic: 'Verification and Safety Guarantees for Deep Controllers',
+        mode: 'Offline',
+        type: 'Attended',
+        description: 'Hands-on intensive workshop focusing on formal verification of neural networks. Evaluated safety boundary conditions and mathematical guarantees for robotic arm motion.',
+        documentProofName: 'Certificate_IEEE_Robotics_Workshop.pdf'
       }
     ],
     workshopsConducted: [
       {
         id: 'wsc-1',
-        title: 'Deep Learning Bootcamp: Theory to Deployment',
-        organizedBy: 'Stanford AI Lab',
-        location: 'Stanford, CA',
+        title: 'Deep Learning Bootcamp: Theory to Edge Deployment',
+        organizedBy: 'CHRIST (Deemed to be University), Bangalore (Academic Institution)',
+        location: 'Bangalore, India',
         startDate: '2024-01-15',
-        endDate: '2024-01-19'
+        endDate: '2024-01-19',
+        topic: 'Model Optimization, Quantization, and TensorRT Deployment',
+        mode: 'Hybrid',
+        type: 'Conducted',
+        description: 'Conducted a 5-day hands-on workshop for faculty and PG scholars on deploying PyTorch models to embedded Jetson devices.',
+        documentProofName: 'Workshop_Conducted_Report_2024.pdf'
       },
       {
         id: 'wsc-2',
         title: 'Explainable AI Methods for Industry Practitioners',
-        organizedBy: 'ACM SF Bay Area Chapter',
+        organizedBy: 'ACM Computer Society Chapter (Professional Body)',
         location: 'San Jose, CA',
         startDate: '2022-09-08',
-        endDate: '2022-09-09'
+        endDate: '2022-09-09',
+        topic: 'SHAP, LIME, and Integrated Gradients for Deep Neural Networks',
+        mode: 'Online',
+        type: 'Conducted',
+        description: 'Demonstrated practical interpretability toolkits for enterprise ML models in healthcare and finance.',
+        documentProofName: 'ACM_XAI_Workshop_Proof.pdf'
       }
     ],
     resourcePersonRoles: [

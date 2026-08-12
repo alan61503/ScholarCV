@@ -172,21 +172,22 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
         </section>
       )}
 
-      {/* 8. Patents & Intellectual Property */}
+      {/* 8. Patents */}
       {profile.patents?.length > 0 && (
         <section className="mb-6 print-section">
           <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
-            Patents & Intellectual Property
+            Patents ({profile.patents.length})
           </h2>
-          <ul className="space-y-2 text-xs">
+          <ul className="space-y-3 text-xs">
             {profile.patents.map((pat) => (
               <li key={pat.id} className="flex justify-between items-start">
                 <div>
                   <span className="font-bold text-slate-900">{pat.title}</span> ({pat.status})
                   <p className="text-slate-700 text-[11px]">
-                    Inventors: {pat.inventors.join(', ')} • App No: {pat.applicationNumber}
+                    Inventors: {Array.isArray(pat.inventors) ? pat.inventors.join(', ') : pat.inventors} • App No: {pat.applicationNumber}
                     {pat.patentNumber && ` • Patent No: ${pat.patentNumber}`}
                   </p>
+                  {pat.description && <p className="text-slate-600 mt-0.5 leading-relaxed text-[11px]">{pat.description}</p>}
                 </div>
                 <span className="font-mono text-slate-700 shrink-0 ml-4">{pat.filingDate}</span>
               </li>
@@ -195,7 +196,30 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
         </section>
       )}
 
-      {/* 9. Doctoral Scholars Guided */}
+      {/* 9. Copyrights */}
+      {profile.copyrights?.length > 0 && (
+        <section className="mb-6 print-section">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
+            Copyrights ({profile.copyrights.length})
+          </h2>
+          <ul className="space-y-3 text-xs">
+            {profile.copyrights.map((cpy) => (
+              <li key={cpy.id} className="flex justify-between items-start">
+                <div>
+                  <span className="font-bold text-slate-900">{cpy.title}</span> ({cpy.status})
+                  <p className="text-slate-700 text-[11px]">
+                    Reg No: {cpy.registrationNumber} • Owners: {Array.isArray(cpy.owners) ? cpy.owners.join(', ') : cpy.owners}
+                  </p>
+                  {cpy.description && <p className="text-slate-600 mt-0.5 leading-relaxed text-[11px]">{cpy.description}</p>}
+                </div>
+                <span className="font-mono text-slate-700 shrink-0 ml-4">{cpy.year}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* 10. Doctoral Scholars Guided */}
       {profile.phdScholars?.length > 0 && (
         <section className="mb-6 print-section">
           <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">
@@ -258,7 +282,7 @@ export default function PrintableCV({ profile }: PrintableCVProps) {
         </section>
       )}
 
-      {/* 10. Seminars Attended */}
+      {/* 11. Seminars Attended */}
       {profile.seminars && profile.seminars.length > 0 && (
         <section className="mb-6 print-section">
           <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-900 pb-1 mb-3 font-serif">

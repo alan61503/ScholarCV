@@ -197,6 +197,8 @@ export interface Patent {
   country: string;
   filingDate: string;
   grantDate?: string;
+  description?: string;
+  url?: string;
 }
 
 export interface Copyright {
@@ -206,6 +208,8 @@ export interface Copyright {
   owners: string[];
   year: string;
   status: 'Registered' | 'Pending';
+  description?: string;
+  url?: string;
 }
 
 export interface Seminar {

@@ -40,6 +40,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   scholars: Users,
   roles: ShieldCheck,
   patents: Award,
+  copyrights: BookOpen,
 };
 
 export default function SidebarNav({ items, name, title, avatarUrl }: SidebarNavProps) {

@@ -19,7 +19,8 @@ import Workshops from '../components/sections/Workshops';
 import Seminars from '../components/sections/Seminars';
 import ScholarsScholarly from '../components/sections/ScholarsScholarly';
 import RolesRecognition from '../components/sections/RolesRecognition';
-import PatentsCopyrights from '../components/sections/PatentsCopyrights';
+import Patents from '../components/sections/Patents';
+import Copyrights from '../components/sections/Copyrights';
 import PrintableCV from '../components/cv/PrintableCV';
 import ThemeToggle from '../components/ui/ThemeToggle';
 import { FadeIn } from '../components/ui/FadeIn';
@@ -35,7 +36,8 @@ const navItems = [
   { id: 'seminars', label: 'Seminars', icon: 'seminar' },
   { id: 'scholars', label: 'Research Scholars', icon: 'scholars' },
   { id: 'roles-recognition', label: 'Roles & Recognitions', icon: 'roles' },
-  { id: 'patents-copyrights', label: 'Patents & Copyrights', icon: 'patents' },
+  { id: 'patents', label: 'Patents', icon: 'patents' },
+  { id: 'copyrights', label: 'Copyrights', icon: 'copyrights' },
 ];
 
 export default function Home() {
@@ -118,10 +120,10 @@ export default function Home() {
               />
             </FadeIn>
             <FadeIn>
-              <PatentsCopyrights 
-                patents={sortByDateDesc(p.patents, 'filingDate')} 
-                copyrights={sortByDateDesc(p.copyrights, 'year')} 
-              />
+              <Patents patents={sortByDateDesc(p.patents, 'filingDate')} />
+            </FadeIn>
+            <FadeIn>
+              <Copyrights copyrights={sortByDateDesc(p.copyrights, 'year')} />
             </FadeIn>
           </div>
         </div>

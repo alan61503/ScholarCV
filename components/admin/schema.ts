@@ -218,10 +218,12 @@ export const sectionSchemas: SectionConfig[] = [
       { key: 'country', label: 'Country', type: 'text' },
       { key: 'filingDate', label: 'Filing Date', type: 'text' },
       { key: 'grantDate', label: 'Grant Date', type: 'text' },
+      { key: 'description', label: 'Patent Description', type: 'textarea' },
+      { key: 'url', label: 'Document / Patent Link (URL)', type: 'text', placeholder: 'https://patents.google.com/patent/...' },
     ],
     emptyItem: {
       title: '', inventors: '', patentNumber: '', applicationNumber: '',
-      status: 'Filed', country: '', filingDate: '', grantDate: '',
+      status: 'Filed', country: '', filingDate: '', grantDate: '', description: '', url: '',
     },
   },
   {
@@ -233,8 +235,10 @@ export const sectionSchemas: SectionConfig[] = [
       { key: 'owners', label: 'Owners (comma-separated)', type: 'text' },
       { key: 'year', label: 'Year', type: 'text' },
       { key: 'status', label: 'Status', type: 'select', options: ['Registered', 'Pending'] },
+      { key: 'description', label: 'Copyright Description', type: 'textarea' },
+      { key: 'url', label: 'Document / Content Link (URL)', type: 'text', placeholder: 'https://copyright.gov/...' },
     ],
-    emptyItem: { title: '', registrationNumber: '', owners: '', year: '', status: 'Registered' },
+    emptyItem: { title: '', registrationNumber: '', owners: '', year: '', status: 'Registered', description: '', url: '' },
   },
 ];
 

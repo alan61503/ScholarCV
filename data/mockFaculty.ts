@@ -482,7 +482,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         status: 'Granted',
         country: 'United States',
         filingDate: '2020-03-24',
-        grantDate: '2022-05-31'
+        grantDate: '2022-05-31',
+        description: 'Patented neural network architecture enabling low-latency monocular visual depth estimation for micro-mobility drones and ground robotics.',
+        url: 'https://patents.google.com/patent/US11345982B2/en'
       },
       {
         id: 'pat-2',
@@ -491,7 +493,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         applicationNumber: 'US 18/204,506',
         status: 'Published',
         country: 'United States',
-        filingDate: '2023-06-01'
+        filingDate: '2023-06-01',
+        description: 'Method for fusing asynchronously sampled LiDAR point clouds with high-resolution optical video streams in transformer attention layers.',
+        url: 'https://patents.google.com/patent/US20230601A1/en'
       }
     ],
     copyrights: [
@@ -501,7 +505,9 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         registrationNumber: 'TX 9-182-374',
         owners: ['Board of Trustees of the Leland Stanford Junior University'],
         year: '2021',
-        status: 'Registered'
+        status: 'Registered',
+        description: 'Open-source interactive visual annotation and 3D bounding box tracking software suite for autonomous driving research datasets.',
+        url: 'https://copyright.gov/registration/TX9182374'
       }
     ]
   }

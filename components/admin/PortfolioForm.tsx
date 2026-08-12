@@ -162,11 +162,18 @@ const categoryGroups = [
     description: 'PhD scholars guided, key resource roles, and examiner appointments',
   },
   {
-    id: 'patents-copyrights',
-    label: 'Patents & Copyrights',
+    id: 'patents',
+    label: 'Patents',
     icon: Award,
-    keys: ['patents', 'copyrights'],
-    description: 'Filed/granted patents and registered copyrights',
+    keys: ['patents'],
+    description: 'Filed, published, and granted patents with status filter, description, and link',
+  },
+  {
+    id: 'copyrights',
+    label: 'Copyrights',
+    icon: BookOpen,
+    keys: ['copyrights'],
+    description: 'Registered and pending copyrights with status filter, description, and link',
   },
 ];
 

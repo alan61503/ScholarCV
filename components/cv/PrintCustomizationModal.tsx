@@ -163,7 +163,7 @@ export default function PrintCustomizationModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/70 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/70 backdrop-blur-md animate-fade-in print:hidden">
       <div className="bg-surface border border-border-subtle rounded-2xl shadow-2xl w-full max-w-6xl max-h-[92vh] flex flex-col overflow-hidden transition-all duration-300">
         {/* Header */}
         <div className="px-6 py-4 border-b border-border-subtle bg-surface-muted/40 flex items-center justify-between gap-4">

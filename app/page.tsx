@@ -60,7 +60,8 @@ export default function Home() {
   const p = profileData;
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
+    <>
+      <div className="min-h-screen print:hidden" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
       <HighlightsTicker profile={p} />
       <Nav
         name={p.personalInfo.name}
@@ -146,20 +147,21 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Printable Academic CV view (rendered only when printing) */}
-      <PrintableCV profile={p} selectedChapters={selectedChapters} />
-
-      {/* Interactive CV Customization Modal */}
-      <PrintCustomizationModal
-        isOpen={isPrintModalOpen}
-        onClose={() => setIsPrintModalOpen(false)}
-        profile={p}
-        selectedChapters={selectedChapters}
-        onChangeSelectedChapters={setSelectedChapters}
-      />
-
       {/* Floating Theme Toggle (Bottom-Right) */}
       <ThemeToggle variant="floating" />
     </div>
-  );
+
+    {/* Printable Academic CV view (rendered only when printing) */}
+    <PrintableCV profile={p} selectedChapters={selectedChapters} />
+
+    {/* Interactive CV Customization Modal (hidden when printing) */}
+    <PrintCustomizationModal
+      isOpen={isPrintModalOpen}
+      onClose={() => setIsPrintModalOpen(false)}
+      profile={p}
+      selectedChapters={selectedChapters}
+      onChangeSelectedChapters={setSelectedChapters}
+    />
+  </>
+);
 }

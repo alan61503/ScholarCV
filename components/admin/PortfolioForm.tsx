@@ -2,25 +2,25 @@
 
 import React, { useEffect, useState } from 'react';
 import {
-  Download,
-  Copy,
-  Check,
-  RotateCcw,
   Save,
+  RotateCcw,
+  Check,
+  Copy,
+  Download,
   User,
-  BookOpen,
   GraduationCap,
+  BookOpen,
   Briefcase,
   Trophy,
   Presentation,
   Users,
   Award,
-  Sparkles,
-  Settings,
-  Lock,
-  CloudCheck,
   Cloud,
+  Settings,
+  Sparkles,
+  FileSpreadsheet,
 } from 'lucide-react';
+import { exportProfileToExcelWorkbook, exportSingleSectionToExcel } from '../../lib/excelHelper';
 import { profile as defaultProfile } from '../../data/profile';
 import { FacultyProfile, Publication } from '../../types/faculty';
 import { sectionSchemas, arrayStringFields } from './schema';
@@ -225,6 +225,9 @@ export default function PortfolioForm() {
       // 2. Publish live to Cloud Firestore (with 2.5s timeout safety)
       const structuredProfile = fromDraft(draft);
       const isCloudSaved = await saveCloudProfile(structuredProfile);
+
+      // 3. Automatically export & download Excel spreadsheet (.xlsx) with 12 section sheets
+      exportProfileToExcelWorkbook(structuredProfile);
       
       if (isCloudSaved) {
         setStatus('saved-cloud');
@@ -236,6 +239,20 @@ export default function PortfolioForm() {
       console.error('Cloud save failed:', err);
       setStatus('saved-local');
       setTimeout(() => setStatus('idle'), 4500);
+    }
+  };
+
+  const handleExportMasterExcel = () => {
+    if (draft) {
+      const structuredProfile = fromDraft(draft);
+      exportProfileToExcelWorkbook(structuredProfile);
+    }
+  };
+
+  const handleExportSingleExcel = (sectionKey: string, sectionTitle: string) => {
+    if (draft) {
+      const structuredProfile = fromDraft(draft);
+      exportSingleSectionToExcel(structuredProfile, sectionKey, sectionTitle);
     }
   };
 
@@ -277,12 +294,13 @@ export default function PortfolioForm() {
             <Cloud className="h-4 w-4" />
           </span>
           <div>
-            <h2 className="text-sm font-semibold font-serif text-foreground">Cloud Live Management</h2>
-            <p className="text-[11px] text-foreground-muted">Connected to Firebase Firestore (`aruna-portfolio-663fd`)</p>
+            <h2 className="text-sm font-semibold font-serif text-foreground">Cloud Live Management & Excel Hub</h2>
+            <p className="text-[11px] text-foreground-muted">Publish to Firebase Cloud & Export Excel Sheets (.xlsx)</p>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 ml-auto">
+          {/* Main Save & Publish Button */}
           <button
             type="button"
             onClick={handleSave}
@@ -292,21 +310,34 @@ export default function PortfolioForm() {
             {status === 'saving' ? (
               <>
                 <div className="animate-spin h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full" />
-                <span>Publishing...</span>
+                <span>Publishing & Exporting...</span>
               </>
             ) : (
               <>
-                <Save className="h-3.5 w-3.5" /> Save & Publish Live
+                <Save className="h-3.5 w-3.5" /> Save & Publish Live (Auto Excel Export)
               </>
             )}
           </button>
+
+          {/* Master Excel Download Button */}
+          <button
+            type="button"
+            onClick={handleExportMasterExcel}
+            title="Download Master Excel Workbook containing all 12 section sheets"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-semibold hover:bg-emerald-500/20 transition-all shadow-xs cursor-pointer"
+          >
+            <FileSpreadsheet className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+            <span>Export Master Excel (.xlsx)</span>
+          </button>
+
           <button
             type="button"
             onClick={handleDownload}
             className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border-subtle bg-surface-muted text-xs font-medium text-foreground hover:bg-surface transition-all"
           >
-            <Download className="h-3.5 w-3.5 text-accent-500" /> Export
+            <Download className="h-3.5 w-3.5 text-accent-500" /> JSON
           </button>
+
           <button
             type="button"
             onClick={handleCopy}
@@ -314,6 +345,7 @@ export default function PortfolioForm() {
           >
             {status === 'copied' ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5 text-accent-500" />} Copy JSON
           </button>
+
           <button
             type="button"
             onClick={handleReset}
@@ -326,14 +358,52 @@ export default function PortfolioForm() {
 
         {status === 'saved-cloud' && (
           <div className="w-full text-right text-xs font-medium text-emerald-600 dark:text-emerald-400 animate-pulse">
-            ✓ Published live to Firebase Cloud Database! Changes are live for all visitors.
+            ✓ Published live to Firebase Cloud & Master Excel file (.xlsx) downloaded!
           </div>
         )}
         {status === 'saved-local' && (
           <div className="w-full text-right text-xs font-medium text-amber-600 dark:text-amber-400">
-            ✓ Saved locally! (Firebase Cloud API is disabled. Enable Firestore in Firebase console or click Export JSON to update profile data).
+            ✓ Saved locally & Master Excel file (.xlsx) downloaded!
           </div>
         )}
+      </div>
+
+      {/* Individual Section Excel Export Bar */}
+      <div className="rounded-xl border border-border-subtle bg-surface-muted/40 p-3.5 flex flex-wrap items-center justify-between gap-3 shadow-xs">
+        <div className="flex items-center gap-2">
+          <FileSpreadsheet className="h-4 w-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+          <span className="text-xs font-bold text-foreground">Section Excel Export Hub:</span>
+          <span className="text-[11px] text-foreground-muted hidden md:inline">Download a separate standalone Excel sheet (.xlsx) for any individual section</span>
+        </div>
+
+        <div className="flex items-center gap-2 flex-wrap">
+          <select
+            aria-label="Download standalone section Excel file"
+            onChange={(e) => {
+              if (e.target.value) {
+                const [secKey, secTitle] = e.target.value.split('|');
+                handleExportSingleExcel(secKey, secTitle);
+                e.target.value = '';
+              }
+            }}
+            defaultValue=""
+            className="rounded-lg border border-border-subtle bg-surface px-3 py-1.5 text-xs font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 cursor-pointer"
+          >
+            <option value="" disabled>-- Download Standalone Section Excel Sheet --</option>
+            <option value="summary|Summary">01. Summary</option>
+            <option value="education|Education_and_Skills">02. Education & Skills</option>
+            <option value="publications|Publications">03. Publications</option>
+            <option value="projects|Projects_and_Grants">04. Projects & Grants</option>
+            <option value="awards|Awards_and_Honors">05. Awards & Honors</option>
+            <option value="conferences|Conferences">06. Conferences</option>
+            <option value="workshops|Workshops">07. Workshops</option>
+            <option value="seminars|Seminars">08. Seminars</option>
+            <option value="scholars|Research_Scholars">09. Research Scholars</option>
+            <option value="roles|Roles_and_Recognitions">10. Roles & Recognitions</option>
+            <option value="patents|Patents">11. Patents</option>
+            <option value="copyrights|Copyrights">12. Copyrights</option>
+          </select>
+        </div>
       </div>
 
       {/* Main Workspace Layout (Sidebar Navigation + Form Content) */}

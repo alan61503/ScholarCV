@@ -133,7 +133,7 @@ export interface Conference {
   paperTitle?: string;
   location: string;
   date: string;
-  role: 'Presenter' | 'Keynote Speaker' | 'Session Chair' | 'Attendee';
+  role: 'Presenter' | 'Keynote Speaker' | 'Session Chair' | 'Attendee' | 'Conducted' | string;
 }
 
 export interface PhdScholar {

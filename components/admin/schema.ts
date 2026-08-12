@@ -152,9 +152,11 @@ export const sectionSchemas: SectionConfig[] = [
   },
   {
     key: 'workshopsAttended',
-    title: 'Workshops Attended',
+    title: 'Workshops',
+    description: 'Add and edit workshops with Type (Attended / Conducted), date range, topic, and proof details.',
     fields: [
       { key: 'title', label: 'Workshop Name', type: 'text', placeholder: 'National Workshop on Safe AI' },
+      { key: 'type', label: 'Workshop Type', type: 'select', options: ['Attended', 'Conducted'] },
       { key: 'organizedBy', label: 'Organized By (Name, Address, Type)', type: 'text', placeholder: 'IEEE Robotics Society (Academic/Govt)' },
       { key: 'topic', label: 'Topic / Theme', type: 'text', placeholder: 'Safety Guarantees for Deep Learning' },
       { key: 'mode', label: 'Mode of Session', type: 'select', options: ['Offline', 'Online', 'Hybrid'] },
@@ -163,22 +165,7 @@ export const sectionSchemas: SectionConfig[] = [
       { key: 'description', label: 'Description & Conclusion', type: 'textarea' },
       { key: 'documentProofName', label: 'Document of Proof / Certificate Name', type: 'text', placeholder: 'Certificate_IEEE_Workshop.pdf' },
     ],
-    emptyItem: { title: '', organizedBy: '', topic: '', mode: 'Offline', startDate: '', endDate: '', description: '', documentProofName: '' },
-  },
-  {
-    key: 'workshopsConducted',
-    title: 'Workshops Conducted',
-    fields: [
-      { key: 'title', label: 'Workshop Name', type: 'text', placeholder: 'Deep Learning Bootcamp' },
-      { key: 'organizedBy', label: 'Organized By (Name, Address, Type)', type: 'text', placeholder: 'CHRIST University (Academic)' },
-      { key: 'topic', label: 'Topic / Theme', type: 'text', placeholder: 'Model Optimization and Edge Deployment' },
-      { key: 'mode', label: 'Mode of Session', type: 'select', options: ['Offline', 'Online', 'Hybrid'] },
-      { key: 'startDate', label: 'Start Date', type: 'text', placeholder: '2024-01-15' },
-      { key: 'endDate', label: 'End Date', type: 'text', placeholder: '2024-01-19' },
-      { key: 'description', label: 'Description & Conclusion', type: 'textarea' },
-      { key: 'documentProofName', label: 'Document of Proof / Certificate Name', type: 'text', placeholder: 'Workshop_Conducted_Report.pdf' },
-    ],
-    emptyItem: { title: '', organizedBy: '', topic: '', mode: 'Offline', startDate: '', endDate: '', description: '', documentProofName: '' },
+    emptyItem: { title: '', type: 'Attended', organizedBy: '', topic: '', mode: 'Offline', startDate: '', endDate: '', description: '', documentProofName: '' },
   },
   {
     key: 'resourcePersonRoles',

@@ -144,8 +144,8 @@ const categoryGroups = [
     id: 'workshops',
     label: 'Workshops',
     icon: Settings,
-    keys: ['workshopsAttended', 'workshopsConducted'],
-    description: 'Workshops attended or conducted with date range, topic, and proof',
+    keys: ['workshopsAttended'],
+    description: 'Add and edit workshops with Type (Attended / Conducted), date range, topic, and proof',
   },
   {
     id: 'seminars',

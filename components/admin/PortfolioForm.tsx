@@ -391,17 +391,16 @@ export default function PortfolioForm() {
           >
             <option value="" disabled>-- Download Standalone Section Excel Sheet --</option>
             <option value="summary|Summary">01. Summary</option>
-            <option value="education|Education_and_Skills">02. Education & Skills</option>
+            <option value="education|Education_and_Experience">02. Education & Experience</option>
             <option value="publications|Publications">03. Publications</option>
             <option value="projects|Projects_and_Grants">04. Projects & Grants</option>
-            <option value="awards|Awards_and_Honors">05. Awards & Honors</option>
+            <option value="awards|Academic_Achievements_and_Awards">05. Academic Achievements & Awards</option>
             <option value="conferences|Conferences">06. Conferences</option>
             <option value="workshops|Workshops">07. Workshops</option>
             <option value="seminars|Seminars">08. Seminars</option>
-            <option value="scholars|Research_Scholars">09. Research Scholars</option>
-            <option value="roles|Roles_and_Recognitions">10. Roles & Recognitions</option>
-            <option value="patents|Patents">11. Patents</option>
-            <option value="copyrights|Copyrights">12. Copyrights</option>
+            <option value="research|Research">09. Research (Scholars & Roles)</option>
+            <option value="patents|Patents">10. Patents</option>
+            <option value="copyrights|Copyrights">11. Copyrights</option>
           </select>
         </div>
       </div>

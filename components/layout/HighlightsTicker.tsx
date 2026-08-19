@@ -9,15 +9,120 @@ interface HighlightsTickerProps {
 }
 
 export default function HighlightsTicker({ profile }: HighlightsTickerProps) {
-  const highlights = [
-    { icon: Star, text: 'NAAC Accredited Institution' },
-    { icon: BookOpen, text: `Research Excellence in AI & Machine Learning` },
-    { icon: Award, text: 'Best Faculty Award 2024' },
-    { icon: Lightbulb, text: `${profile.fundedProjects.length}+ Funded Research Projects` },
-    { icon: Sparkles, text: `${profile.publications.length}+ Publications in Indexed Journals` },
-    { icon: Star, text: `PhD Scholars Mentored: ${profile.phdScholars.length}` },
-    { icon: BookOpen, text: 'International Collaborations & Exchange Programs' },
+  // 1. Basic Title & Institution (Dynamic)
+  const title = profile.personalInfo?.title || 'Academic';
+  const institution = profile.personalInfo?.institution || '';
+  const institutionHighlight = institution ? `${title} at ${institution}` : title;
+
+  // 2. Highest Education / PhD information (Dynamic)
+  const phdBg = profile.education?.find(e => e.degree.toLowerCase().includes('phd') || e.degree.toLowerCase().includes('ph.d'));
+  const eduHighlight = phdBg 
+    ? `Ph.D. from ${phdBg.institution}`
+    : profile.education?.length > 0 
+      ? `Educated at ${profile.education[0].institution}`
+      : '';
+
+  // 3. Research Area of Expertise (Dynamic)
+  const researchInterests = profile.personalInfo?.researchInterests;
+  const researchAreaHighlight = researchInterests && researchInterests.length > 0
+    ? `Research Focus: ${researchInterests.slice(0, 3).join(', ')}`
+    : '';
+
+  // 4. Years of Experience (Dynamic)
+  let minYear = new Date().getFullYear();
+  let maxYear = minYear;
+  let hasExperience = false;
+  profile.experience?.forEach((exp) => {
+    if (!exp.startDate) return;
+    const start = parseInt(exp.startDate.split('-')[0], 10);
+    if (!isNaN(start)) {
+      hasExperience = true;
+      if (start < minYear) minYear = start;
+      if (exp.endDate && exp.endDate.toLowerCase() !== 'present') {
+        const end = parseInt(exp.endDate.split('-')[0], 10);
+        if (!isNaN(end) && end > maxYear) maxYear = end;
+      } else {
+        maxYear = new Date().getFullYear();
+      }
+    }
+  });
+  const yearsOfExp = hasExperience ? Math.max(1, maxYear - minYear) : 0;
+  const expHighlight = yearsOfExp > 0 ? `${yearsOfExp}+ Years of Academic & Research Experience` : '';
+
+  // 5. Publications (Dynamic)
+  const publicationsCount = profile.publications?.length || 0;
+  const pubHighlight = publicationsCount > 0
+    ? `${publicationsCount}+ Peer-Reviewed Research Publications`
+    : '';
+
+  // 6. Funded Projects & Grants (Dynamic)
+  const fundedProjectsCount = profile.fundedProjects?.length || 0;
+  const grantsCount = profile.grantsReceived?.length || 0;
+  const totalProjects = fundedProjectsCount + grantsCount;
+  const projHighlight = totalProjects > 0
+    ? `${totalProjects}+ Research Projects & Grants`
+    : '';
+
+  // 7. PhD Scholars Supervised (Dynamic)
+  const scholarsCount = profile.phdScholars?.length || 0;
+  const scholarsHighlight = scholarsCount > 0
+    ? `PhD Scholars Mentored: ${scholarsCount}`
+    : '';
+
+  // 8. Patents Filed/Granted (Dynamic)
+  const patentsCount = profile.patents?.length || 0;
+  const patentHighlight = patentsCount > 0
+    ? `${patentsCount} Patent${patentsCount > 1 ? 's' : ''} Filed/Granted`
+    : '';
+
+  // 9. Copyrights Registered (Dynamic)
+  const copyrightsCount = profile.copyrights?.length || 0;
+  const copyrightHighlight = copyrightsCount > 0
+    ? `${copyrightsCount} Registered Work Copyright${copyrightsCount > 1 ? 's' : ''}`
+    : '';
+
+  // 10. Awards received (Dynamic)
+  const awardsCount = profile.awardsReceived?.length || 0;
+  const recentAward = profile.awardsReceived?.[0]?.title;
+  const awardHighlight = recentAward 
+    ? `Recipient of ${recentAward}`
+    : awardsCount > 0
+      ? `${awardsCount} Academic Awards & Honors`
+      : '';
+
+  // 11. Key Roles / Resource Person (Dynamic)
+  const resourceRolesCount = profile.resourcePersonRoles?.length || 0;
+  const examinerRolesCount = profile.externalExaminerRoles?.length || 0;
+  const totalRoles = resourceRolesCount + examinerRolesCount;
+  const rolesHighlight = totalRoles > 0
+    ? `Served as Resource Person / Examiner ${totalRoles} times`
+    : '';
+
+  // Assemble dynamic list of highlights
+  const rawHighlights = [
+    { icon: Star, text: institutionHighlight },
+    { icon: BookOpen, text: researchAreaHighlight },
+    { icon: Award, text: awardHighlight },
+    { icon: Lightbulb, text: projHighlight },
+    { icon: Sparkles, text: pubHighlight },
+    { icon: Star, text: scholarsHighlight },
+    { icon: BookOpen, text: expHighlight },
+    { icon: Award, text: patentHighlight },
+    { icon: Sparkles, text: copyrightHighlight },
+    { icon: Lightbulb, text: rolesHighlight },
+    { icon: Star, text: eduHighlight },
   ];
+
+  // Filter out empty items
+  const highlights = rawHighlights.filter(h => h.text);
+
+  // Fallback to static defaults if not enough dynamic info is present
+  if (highlights.length < 3) {
+    highlights.push(
+      { icon: Star, text: 'NAAC Accredited Institution' },
+      { icon: BookOpen, text: 'International Collaborations & Exchange Programs' }
+    );
+  }
 
   // Duplicate for seamless loop
   const allHighlights = [...highlights, ...highlights];

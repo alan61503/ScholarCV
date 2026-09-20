@@ -2,299 +2,30 @@ import { FacultyProfile } from '../types/faculty';
 
 export const mockFacultyProfiles: FacultyProfile[] = [
 {
-  "seminars": [],
-  "experience": [
-    {
-      "role": "Lecturer",
-      "description": "",
-      "location": "Trichy District, Tamil Nadu, India",
-      "organization": "Department of CSE, Trichy Engineering College",
-      "endDate": "2008-12",
-      "startDate": "2004-06",
-      "id": "experience-1786443720597"
-    },
-    {
-      "location": "Namakkal District, Tamil Nadu, India",
-      "organization": "Department of CSE, Paavai Engineering College",
-      "id": "experience-1786443633956",
-      "endDate": "2009-08",
-      "role": "Lecturer",
-      "description": "",
-      "startDate": "2009-01"
-    },
-    {
-      "startDate": "2011-06",
-      "endDate": "2017-05",
-      "role": "Assistant Professor",
-      "description": "",
-      "id": "experience-1786443536881",
-      "organization": "Department of CSE, Paavai Engineering College",
-      "location": "Namakkal District, Tamil Nadu, India"
-    },
-    {
-      "description": "",
-      "location": "Namakkal District, Tamil Nadu, India",
-      "startDate": "2017-06",
-      "endDate": "2018-05",
-      "id": "experience-1786443409443",
-      "organization": "Department of CSE, Paavai Engineering College",
-      "role": "Associate Professor"
-    },
-    {
-      "location": "Bangalore, Karnataka, India.",
-      "endDate": "2022-06",
-      "role": "Assistant Professor ",
-      "id": "experience-1786443342334",
-      "description": "",
-      "organization": "Department of CSE, CHRIST (Deemed to be University",
-      "startDate": "2018-06"
-    },
-    {
-      "endDate": "present",
-      "startDate": "2022-07",
-      "organization": "CHRIST (Deemed to be University)",
-      "id": "experience-1786442711454",
-      "role": "Associate Professor",
-      "description": "",
-      "location": "Bangalore, KA, IN."
-    }
-  ],
-  "fundedProjects": [
-    {
-      "fundingAgency": "Ministry of Micro, Small and Medium Enterprises (MSME), Government of India",
-      "endDate": "",
-      "startDate": "2022-08",
-      "id": "proj-1",
-      "title": "Biodegradable Hydrogel gauze from Nano Sericin & Gelatin, IDEAKR005232",
-      "status": "Ongoing",
-      "description": "",
-      "amount": "₹21,00,000",
-      "role": "Principal Investigator"
-    },
-    {
-      "amount": "₹4,46,000",
-      "title": "AI- Powered Drone Monitoring Systems at Christ University Bangalore Kengeri Campus",
-      "startDate": "2025-01-31",
-      "endDate": "2027-01-31",
-      "description": "",
-      "id": "proj-2",
-      "status": "Ongoing",
-      "role": "Co-Principal Investigator",
-      "fundingAgency": "CHRIST (Deemed to be University)"
-    },
-    {
-      "fundingAgency": "CHRIST (Deemed to be University)",
-      "startDate": "2025-01-31",
-      "description": "",
-      "id": "proj-3",
-      "status": "Ongoing",
-      "title": "Investigation on incorporation of the Blockchain technology for authentication and assurance of digital media for mitigating deepfakes and fake documents in the social media",
-      "role": "Principal Investigator",
-      "endDate": "2026-01-31",
-      "amount": "₹1,30,000"
-    },
-    {
-      "amount": "₹2,50,000",
-      "description": "",
-      "title": "Women Empowerment Program (UiPath RPA)",
-      "id": "proj-4",
-      "role": "Co-Principal Investigator",
-      "endDate": "",
-      "fundingAgency": "Honeywell (Implementing Agency: ICT Academy)",
-      "status": "Ongoing",
-      "startDate": "2021-08"
-    },
-    {
-      "startDate": "2022-04-07",
-      "id": "proj-5",
-      "endDate": "2022-04-28",
-      "fundingAgency": "SRUSHTI / Capgemini",
-      "title": "Support in projects via Upskilling Training for the fresh Employees of Capgemini",
-      "status": "Completed",
-      "amount": "₹80,000",
-      "role": "Principal Investigator",
-      "description": ""
-    },
-    {
-      "title": "Proof of Concept support (Student Empowerment) session 1",
-      "endDate": "2022-04-23",
-      "startDate": "2022-01-05",
-      "status": "Completed",
-      "fundingAgency": "ICT Academy (Honeywell CSR Activities)",
-      "id": "proj-6",
-      "role": "Co-Principal Investigator",
-      "amount": "₹7,00,000",
-      "description": ""
-    }
-  ],
-  "awardsReceived": [
-    {
-      "description": "Conferred Rashtrapati Guide Award by The President of India.",
-      "awardingBody": "The President of India / Bharat Scouts and Guides",
-      "id": "award-1",
-      "year": "National Honor",
-      "title": "Rashtrapati Guide Award"
-    },
-    {
-      "year": "2023",
-      "title": "Excellence and Innovation Award (2023)",
-      "id": "award-2",
-      "awardingBody": "CHRIST (Deemed to be University)",
-      "description": "Awarded in recognition of contributions to the MSME-funded research project."
-    },
-    {
-      "year": "2024-05",
-      "title": "Letter of Appreciation for Institutional Contribution",
-      "description": "Letter of appreciation in recognition of valuable contribution and service to the institution.",
-      "awardingBody": "School of Engineering and Technology, CHRIST (Deemed to be University)",
-      "id": "award-3"
-    },
-    {
-      "id": "award-4",
-      "description": "Recognized as Silver Partner Faculty under Inspire - The Campus Connect Faculty Partnership Model.",
-      "title": "Infosys Silver Partner Faculty Award",
-      "awardingBody": "Infosys Campus Connect",
-      "year": "2018"
-    },
-    {
-      "title": "IEEE CIS Conference Session Chair Distinction",
-      "year": "2021 & 2024",
-      "id": "award-5",
-      "awardingBody": "IEEE / CIS Conference Committee",
-      "description": "Certificate of Appreciation for Session Chairing at International Conference on Contemporary Computing and Applications."
-    }
-  ],
-  "education": [
-    {
-      "institution": "Anna University",
-      "degree": "Ph.D. ",
-      "id": "education-1786442800046",
-      "thesisTitle": "",
-      "grade": "",
-      "field": "Information and Communication Engineering",
-      "year": "2017"
-    },
-    {
-      "thesisTitle": "",
-      "institution": "Periyar University",
-      "degree": "MBA",
-      "id": "education-1786442757759",
-      "year": "2016",
-      "field": "Master of Business Administration (International Business)",
-      "grade": "First Class"
-    },
-    {
-      "year": "2011",
-      "degree": "M.E.",
-      "institution": "Anna University of Technology",
-      "field": "Computer Science & Engineering",
-      "grade": "91%",
-      "id": "education-1786442711450",
-      "thesisTitle": ""
-    },
-    {
-      "degree": "B.E.",
-      "thesisTitle": "",
-      "institution": "Bharathidasan University",
-      "id": "education-1786433284953",
-      "year": "2004",
-      "field": "Computer Science & Engineering",
-      "grade": " 77%"
-    }
-  ],
-  "conferencesAttended": [
-    {
-      "location": "Bangalore, India",
-      "role": "Technical Committee & Session Chair",
-      "id": "conf-1",
-      "paperTitle": "",
-      "title": "1st IEEE International Conference on Contemporary Computing and Communications (InC4 2023)",
-      "date": "2023-04-21 to 2023-04-22"
-    },
-    {
-      "date": "11-12, June 2024",
-      "paperTitle": "Malpractice Detection in Examination Hall using Deep Learning",
-      "location": "S.E.A. College of Engineering and Technology, Bengaluru, India",
-      "id": "conf-2",
-      "title": "Second International Conference on Inventive Computing and Informatics (ICICI 2024)",
-      "role": "Author / Presenter"
-    },
-    {
-      "location": "",
-      "title": "AIP Conference Proceedings (Volume 3137)",
-      "role": "Author",
-      "paperTitle": "Prediction of CO and NOx emission from gas turbine using machine learning",
-      "date": "2025-03-25",
-      "id": "conf-3"
-    },
-    {
-      "paperTitle": "Machine Learning Based Time Series Analysis for COVID-19 Cases in India",
-      "title": "International Conference on Advances in Computing, Communication, Automation and Biomedical Technology (ICACCABT 2022)",
-      "date": "28th and 29th January 2022",
-      "id": "conf-4",
-      "location": "KPR Institute of Engineering and Technology, Coimbatore, Tamil Nadu",
-      "role": "Author / Presenter"
-    },
-    {
-      "role": "Presenter",
-      "location": "Er. Perumal Manimekalai College of Engineering, Hosur, Tamil Nadu",
-      "id": "conf-5",
-      "title": "National Conference on Emerging Trends in Information & Communication Technology (NCETICT'21)",
-      "date": "13-05-2021",
-      "paperTitle": "Segmentation of Brain Tumor using U-net and Res-Unet"
-    },
-    {
-      "role": "Presenter",
-      "title": "2nd International Conference on Innovations in Computing, Automation and Intelligent Information Systems (ICAIIS-2019)",
-      "location": "MVJ College of Engineering, Bangalore",
-      "date": "29th & 30th May 2019",
-      "paperTitle": "A unique Adventure Unity Based 3D game.",
-      "id": "conf-6"
-    },
-    {
-      "role": "Presenter",
-      "id": "conf-7",
-      "location": "M. Kumarasamy College of Engineering, Thalavapalayam, Karur, Tamil Nadu",
-      "paperTitle": "Survey on Cyber Threats",
-      "title": "National Conference on 'Big Data & Business Analytics'",
-      "date": "2019-03-29"
-    },
-    {
-      "location": "CSI College of Engineering, Ketti, The Nilgiris, Tamil Nadu",
-      "role": "Presenter",
-      "id": "conf-8",
-      "title": "Seventh National Conference on Advanced Computing",
-      "date": "2013-03-15",
-      "paperTitle": "Enhancing Flexibility and Scalablity in Cloud Computing using Hierarchical Attribute-Set Based Encryption"
-    }
-  ],
+  "personalInfo": {
+    "avatarUrl": "",
+    "officeAddress": "CHRIST (Deemed to be University)-Kengeri Campus, Bangalore -560074.",
+    "name": "Dr Aruna S K",
+    "linkedInUrl": "https://www.linkedin.com/in/aruna-s-k-8b121a34/",
+    "googleScholarUrl": "https://scholar.google.com/citations?user=MD0YkOEAAAAJ&hl=en",
+    "websiteUrl": "https://scholarcv.vercel.app/",
+    "researchInterests": [
+      "Information and Communication Engineering",
+      "Image Processing",
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "email": "sksaruna@yahoo.co.in, aruna.sk@christuniversity.in",
+    "department": " Department of AI and Data Science Engineering",
+    "orcid": "0000-0002-6638-2772",
+    "biography": "Dr Aruna S.K. is an Associate Professor in the Department of AI and Data Science Engineering at CHRIST (Deemed to be University), Bengaluru. She is a distinguished researcher, academician, and innovation mentor specializing in Information and Communication Engineering. Alongside her teaching duties, she serves as an impactful catalyst for institutional growth and student entrepreneurship",
+    "phone": " +91 9994338269",
+    "title": "Associate Professor",
+    "institution": "CHRIST (Deemed to be University)"
+  },
+  "externalExaminerRoles": [],
   "publications": [
     {
-      "journalName": "International Journal of Intelligent Systems and Applications",
-      "pageFrom": "132",
-      "issue": "1",
-      "title": "Classification of Medicinal Plant Leaves using Deep Learning Algorithms",
-      "doi": "10.5815/ijisa.2026.01.10",
-      "abstract": "This research presents an automated system for medicinal plant identification using leaf images and advanced machine/deep learning models. Two datasets with pre-processing techniques, including PCA, were analysed using SVM, CNN, ANN, YOLOv8, ResNet, and ViT. Results show CNN and ANN outperform others (~96% accuracy), demonstrating the potential of deep learning for accurate, scalable plant classification in healthcare, pharmaceuticals, and environmental conservation.",
-      "dateOfSubmission": "2025-07-15",
-      "journalUrl": "https://www.mecs-press.org/ijisa/index.html",
-      "articleKeywords": [
-        "plant disease",
-        "deep learning",
-        "leaf pattern recognition",
-        "medicinal plants classification"
-      ],
-      "citationCount": 342,
-      "pageTo": "149",
-      "peerReviewStatus": "Peer-reviewed",
-      "sdgCategory": "SDG 12: Responsible consumption and production ; SDG 3: Good Health and Well-being ; SDG 4: Quality Education",
-      "issn": "2074-904",
-      "subjectAreas": [
-        "Deep learning",
-        "Medicinal plant leaf classification"
-      ],
-      "dateOfRevision": "2025-09-21",
-      "language": "English",
       "authors": [
         "Aruna S",
         "P. Praveen",
@@ -303,100 +34,160 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         "Keerthana Jaganathan",
         "Karthick K"
       ],
-      "pages": "3120-3135",
-      "id": "pub-1",
+      "pageFrom": "132",
+      "journalUrl": "https://www.mecs-press.org/ijisa/index.html",
+      "title": "Classification of Medicinal Plant Leaves using Deep Learning Algorithms",
       "year": "2026",
+      "pages": "3120-3135",
+      "scope": "International",
+      "medium": "Print and Online",
+      "peerReviewStatus": "Peer-reviewed",
+      "dateOfRevision": "2025-09-21",
+      "articleKeywords": [
+        "plant disease",
+        "deep learning",
+        "leaf pattern recognition",
+        "medicinal plants classification"
+      ],
+      "publisherName": "MECS Press",
       "publisherAddress": "Hong Kong",
+      "doi": "10.5815/ijisa.2026.01.10",
       "authorDetails": [
         {
-          "name": "Aruna S",
           "country": "India",
           "isStudent": false,
-          "email": "aruna.sk@christuniversity.in",
+          "name": "Aruna S",
           "affiliation": "Christ University",
           "institutionType": "",
           "position": 1,
+          "isCorresponding": true,
           "id": "a1",
-          "isCorresponding": true
+          "email": "aruna.sk@christuniversity.in"
         },
         {
-          "country": "India",
-          "affiliation": "",
+          "isStudent": false,
           "name": "P. Praveen",
           "id": "a2",
           "email": "praveenabhinav7890@gmail.com",
+          "country": "India",
           "position": 2,
+          "affiliation": "",
+          "isCorresponding": false,
+          "institutionType": ""
+        },
+        {
+          "id": "a3",
+          "name": "Gowtham K",
+          "position": 3,
+          "institutionType": "",
           "isStudent": false,
+          "isCorresponding": false,
+          "email": "gowthamks266@gmail.com",
+          "affiliation": "",
+          "country": "India"
+        },
+        {
+          "name": "Khashif S Mohammed",
+          "isCorresponding": false,
+          "institutionType": "",
+          "affiliation": "",
+          "email": "mohammedkhashif02@gmail.com",
+          "country": "India",
+          "id": "author-1786456252114-nq80l",
+          "isStudent": false,
+          "position": 4
+        },
+        {
+          "country": "United Kingdom",
+          "isStudent": false,
+          "name": "Keerthana Jaganathan",
+          "affiliation": "",
+          "email": "keerthana.jaganathan@northumbria.ac.uk",
+          "id": "author-1786456253973-x7rku",
+          "position": 5,
           "institutionType": "",
           "isCorresponding": false
         },
         {
-          "country": "India",
-          "name": "Gowtham K",
           "affiliation": "",
-          "institutionType": "",
-          "isCorresponding": false,
-          "id": "a3",
-          "position": 3,
-          "email": "gowthamks266@gmail.com",
-          "isStudent": false
-        },
-        {
-          "isStudent": false,
-          "name": "Khashif S Mohammed",
-          "affiliation": "",
-          "country": "India",
-          "position": 4,
-          "institutionType": "",
-          "isCorresponding": false,
-          "email": "mohammedkhashif02@gmail.com",
-          "id": "author-1786456252114-nq80l"
-        },
-        {
-          "affiliation": "",
-          "id": "author-1786456253973-x7rku",
-          "isStudent": false,
-          "name": "Keerthana Jaganathan",
-          "country": "United Kingdom",
-          "isCorresponding": false,
-          "position": 5,
-          "email": "keerthana.jaganathan@northumbria.ac.uk",
-          "institutionType": ""
-        },
-        {
-          "name": "Karthick K",
-          "institutionType": "",
-          "id": "author-1786456255233-24msp",
-          "affiliation": "",
-          "isCorresponding": false,
-          "position": 6,
-          "isStudent": false,
           "email": "karthick.k@gmrit.edu.in",
-          "country": "India"
+          "id": "author-1786456255233-24msp",
+          "isStudent": false,
+          "country": "India",
+          "position": 6,
+          "institutionType": "",
+          "isCorresponding": false,
+          "name": "Karthick K"
         }
       ],
+      "issue": "1",
+      "abstract": "This research presents an automated system for medicinal plant identification using leaf images and advanced machine/deep learning models. Two datasets with pre-processing techniques, including PCA, were analysed using SVM, CNN, ANN, YOLOv8, ResNet, and ViT. Results show CNN and ANN outperform others (~96% accuracy), demonstrating the potential of deep learning for accurate, scalable plant classification in healthcare, pharmaceuticals, and environmental conservation.",
+      "issn": "2074-904",
+      "id": "pub-1",
       "authorship": "Co-Authored",
-      "medium": "Print and Online",
-      "dateOfPublication": "2026-02-08",
+      "type": "Journal",
+      "dateOfSubmission": "2025-07-15",
+      "pageTo": "149",
+      "subjectAreas": [
+        "Deep learning",
+        "Medicinal plant leaf classification"
+      ],
+      "sdgCategory": "SDG 12: Responsible consumption and production ; SDG 3: Good Health and Well-being ; SDG 4: Quality Education",
+      "language": "English",
+      "journalName": "International Journal of Intelligent Systems and Applications",
       "indexingEntries": [
         {
+          "publicationUrl": "https://www.mecs-press.org/ijisa/ijisa-v18-n1/IJISA-V18-N1-10.pdf",
           "scopusWosLink": "https://www.scopus.com/sourceid/21100787766",
-          "agency": "Scopus",
           "id": "idx1",
-          "percentile": "",
           "quartileOrCategory": "Q4",
-          "publicationUrl": "https://www.mecs-press.org/ijisa/ijisa-v18-n1/IJISA-V18-N1-10.pdf"
+          "agency": "Scopus",
+          "percentile": ""
         }
       ],
-      "type": "Journal",
-      "scope": "International",
+      "citationCount": 342,
       "volume": "18",
-      "publisherName": "MECS Press"
+      "dateOfPublication": "2026-02-08"
     },
     {
-      "issn": "2227-9717",
+      "type": "Journal",
       "doi": "10.3390/pr13040961",
+      "issue": "4",
+      "pageTo": "32",
+      "authorship": "Co-Authored",
+      "journalName": "Processes",
+      "volume": "13",
+      "dateOfSubmission": "",
+      "sdgCategory": "SDG 7: Affordable and clean energy",
+      "indexingEntries": [
+        {
+          "agency": "Scopus",
+          "percentile": "14",
+          "scopusWosLink": "https://www.scopus.com/sourceid/21100838131",
+          "id": "idx-1786466158663-k1mnp",
+          "publicationUrl": "https://www.mdpi.com/2227-9717/13/4/961",
+          "quartileOrCategory": "Q2"
+        },
+        {
+          "publicationUrl": "",
+          "quartileOrCategory": "SCIE",
+          "scopusWosLink": "https://mjl.clarivate.com/search-results?issn=2227-9717",
+          "id": "idx-1786466742351-p451p",
+          "percentile": "48.6th",
+          "agency": "Web of Science"
+        }
+      ],
+      "dateOfPublication": "2026-02-08",
+      "pageFrom": "1",
+      "issn": "2227-9717",
       "publisherAddress": "MDPI, Grosspeteranlage 5, 4052 Basel, Switzerland",
+      "documentProofName": "",
+      "peerReviewStatus": "Peer-reviewed",
+      "year": "2025",
+      "medium": "Print and Online",
+      "journalUrl": "https://www.mdpi.com/journal/processes",
+      "language": "English",
+      "dateOfRevision": "",
       "articleKeywords": [
         "YOLOv8",
         "Machine Learning",
@@ -404,110 +195,85 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         "Medicinal plants",
         "PCA"
       ],
-      "title": "AI-Driven Stacking Ensemble for Predicting Total Power Output of Wave Energy Converters: A Data-Driven Approach to Renewable Energy Processes",
-      "dateOfPublication": "2026-02-08",
-      "issue": "4",
-      "journalUrl": "https://www.mdpi.com/journal/processes",
-      "pageTo": "32",
-      "id": "pub-1786466158663",
-      "language": "English",
-      "dateOfRevision": "",
-      "indexingEntries": [
-        {
-          "agency": "Scopus",
-          "scopusWosLink": "https://www.scopus.com/sourceid/21100838131",
-          "publicationUrl": "https://www.mdpi.com/2227-9717/13/4/961",
-          "percentile": "14",
-          "quartileOrCategory": "Q2",
-          "id": "idx-1786466158663-k1mnp"
-        },
-        {
-          "quartileOrCategory": "SCIE",
-          "publicationUrl": "",
-          "scopusWosLink": "https://mjl.clarivate.com/search-results?issn=2227-9717",
-          "id": "idx-1786466742351-p451p",
-          "agency": "Web of Science",
-          "percentile": "48.6th"
-        }
-      ],
-      "type": "Journal",
-      "authors": [
-        "T Muthamizhan ",
-        "K Karthick",
-        "ARUNA S K ",
-        "P Velmurugan"
-      ],
-      "journalName": "Processes",
-      "publisherName": "MDPI",
-      "dateOfSubmission": "",
-      "year": "2025",
-      "medium": "Print and Online",
-      "authorDetails": [
-        {
-          "name": "T Muthamizhan ",
-          "country": "India",
-          "affiliation": "Sri Sai Ram Institute of Technology",
-          "email": "muthamizhan.eee@sairamit.edu.in",
-          "position": 1,
-          "isCorresponding": false,
-          "isStudent": false,
-          "institutionType": "Private engineering college",
-          "id": "author-1786466158663-nbnmn"
-        },
-        {
-          "institutionType": "Private engineering college",
-          "isCorresponding": false,
-          "id": "author-1786466280172-adu5i",
-          "position": 2,
-          "email": "karthick.k@gmrit.edu.in",
-          "isStudent": false,
-          "affiliation": "GMR Institute of Technology",
-          "name": "K Karthick",
-          "country": "India"
-        },
-        {
-          "institutionType": "Private engineering college",
-          "isCorresponding": true,
-          "position": 3,
-          "email": "aruna.sk@christuniversity.in",
-          "name": "ARUNA S K ",
-          "country": "India",
-          "affiliation": "CHRIST (Deemed to be University)",
-          "id": "author-1786466281679-smpqs",
-          "isStudent": false
-        },
-        {
-          "institutionType": "Engineering college",
-          "affiliation": "St. Joseph’s College of Engineering, Tamil Nadu",
-          "isCorresponding": false,
-          "position": 4,
-          "country": "India",
-          "email": "",
-          "name": "P Velmurugan",
-          "id": "author-1786466283080-si790",
-          "isStudent": false
-        }
-      ],
-      "sdgCategory": "SDG 7: Affordable and clean energy",
-      "scope": "International",
-      "authorship": "Co-Authored",
-      "peerReviewStatus": "Peer-reviewed",
       "subjectAreas": [
         "Computer Science",
         "AI",
         "Classification"
       ],
-      "volume": "13",
-      "pageFrom": "1",
-      "documentProofName": "",
-      "abstract": "This research presents an automated system for medicinal plant identification using leaf images and advanced machine/deep learning models. Two datasets with preprocessing techniques, including PCA, were analyzed using SVM, CNN, ANN, YOLOv8, ResNet, and ViT. Results show CNN and ANN outperform others (~96% accuracy), demonstrating the potential of deep learning for accurate, scalable plant classification in healthcare, pharmaceuticals, and environmental conservation."
+      "publisherName": "MDPI",
+      "authorDetails": [
+        {
+          "name": "T Muthamizhan ",
+          "position": 1,
+          "affiliation": "Sri Sai Ram Institute of Technology",
+          "institutionType": "Private engineering college",
+          "isCorresponding": false,
+          "country": "India",
+          "isStudent": false,
+          "id": "author-1786466158663-nbnmn",
+          "email": "muthamizhan.eee@sairamit.edu.in"
+        },
+        {
+          "isCorresponding": false,
+          "name": "K Karthick",
+          "institutionType": "Private engineering college",
+          "isStudent": false,
+          "country": "India",
+          "email": "karthick.k@gmrit.edu.in",
+          "position": 2,
+          "id": "author-1786466280172-adu5i",
+          "affiliation": "GMR Institute of Technology"
+        },
+        {
+          "position": 3,
+          "isStudent": false,
+          "id": "author-1786466281679-smpqs",
+          "institutionType": "Private engineering college",
+          "affiliation": "CHRIST (Deemed to be University)",
+          "isCorresponding": true,
+          "country": "India",
+          "email": "aruna.sk@christuniversity.in",
+          "name": "ARUNA S K "
+        },
+        {
+          "isStudent": false,
+          "affiliation": "St. Joseph’s College of Engineering, Tamil Nadu",
+          "position": 4,
+          "institutionType": "Engineering college",
+          "isCorresponding": false,
+          "name": "P Velmurugan",
+          "email": "",
+          "country": "India",
+          "id": "author-1786466283080-si790"
+        }
+      ],
+      "id": "pub-1786466158663",
+      "title": "AI-Driven Stacking Ensemble for Predicting Total Power Output of Wave Energy Converters: A Data-Driven Approach to Renewable Energy Processes",
+      "scope": "International",
+      "abstract": "This research presents an automated system for medicinal plant identification using leaf images and advanced machine/deep learning models. Two datasets with preprocessing techniques, including PCA, were analyzed using SVM, CNN, ANN, YOLOv8, ResNet, and ViT. Results show CNN and ANN outperform others (~96% accuracy), demonstrating the potential of deep learning for accurate, scalable plant classification in healthcare, pharmaceuticals, and environmental conservation.",
+      "authors": [
+        "T Muthamizhan ",
+        "K Karthick",
+        "ARUNA S K ",
+        "P Velmurugan"
+      ]
     },
     {
-      "volume": "3137",
-      "issn": "0094-243X",
-      "journalUrl": "https://pubs.aip.org/aip/acp",
-      "documentProofName": "",
       "issue": "1",
+      "type": "Journal",
+      "id": "pub-1786505137246",
+      "abstract": "",
+      "authorship": "Sole Authored",
+      "doi": "10.1063/5.0262087",
+      "peerReviewStatus": "Peer-reviewed",
+      "sdgCategory": "Not Mapped",
+      "authors": [
+        "K. Karthick",
+        "ARUNA S K ",
+        "S. Ravivarman"
+      ],
+      "language": "English",
+      "medium": "Print and Online",
       "articleKeywords": [
         "Gas turbine emissions",
         "Carbon monoxide (CO)",
@@ -517,107 +283,99 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         "Power plant emissions",
         "Air pollution modeling"
       ],
-      "medium": "Print and Online",
+      "journalName": "AIP Conference Proceedings",
+      "issn": "0094-243X",
+      "year": "2025",
+      "documentProofName": "",
+      "dateOfSubmission": "",
+      "pageFrom": "",
+      "dateOfRevision": "",
+      "journalUrl": "https://pubs.aip.org/aip/acp",
+      "authorDetails": [
+        {
+          "affiliation": "",
+          "email": "",
+          "country": "India",
+          "isStudent": false,
+          "position": 1,
+          "isCorresponding": false,
+          "name": "K. Karthick",
+          "institutionType": "",
+          "id": "author-1786505137246-ua7v9"
+        },
+        {
+          "affiliation": "",
+          "id": "author-1786505746335-54636",
+          "email": "aruna.sk@christuniversity.in",
+          "position": 2,
+          "country": "India",
+          "isStudent": false,
+          "isCorresponding": true,
+          "name": "ARUNA S K ",
+          "institutionType": ""
+        },
+        {
+          "isStudent": false,
+          "position": 3,
+          "name": "S. Ravivarman",
+          "institutionType": "",
+          "isCorresponding": false,
+          "country": "India",
+          "id": "author-1786505747932-l550v",
+          "affiliation": "",
+          "email": ""
+        }
+      ],
       "title": "Prediction of CO and NOx emission from gas turbine using machine learning",
+      "volume": "3137",
       "publisherName": "AIP Publishing, American Institute of Physics",
-      "language": "English",
+      "scope": "International",
+      "dateOfPublication": "2025-03-25",
+      "publisherAddress": "AIP Publishing, American Institute of Physics",
+      "indexingEntries": [
+        {
+          "agency": "Scopus",
+          "percentile": "10",
+          "id": "idx-1786505137246-qf29t",
+          "quartileOrCategory": "Q4",
+          "publicationUrl": "https://pubs.aip.org/aip/acp",
+          "scopusWosLink": "https://www.scopus.com/sourceid/26916"
+        }
+      ],
+      "pageTo": "",
       "subjectAreas": [
         "Environmental Engineering",
         "Energy Engineering / Power Systems",
         "Mechanical Engineering (Thermal/Combustion)",
         "Chemical Engineering (Process & Emissions)"
-      ],
-      "publisherAddress": "AIP Publishing, American Institute of Physics",
-      "authorDetails": [
-        {
-          "name": "K. Karthick",
-          "id": "author-1786505137246-ua7v9",
-          "institutionType": "",
-          "isCorresponding": false,
-          "affiliation": "",
-          "country": "India",
-          "email": "",
-          "isStudent": false,
-          "position": 1
-        },
-        {
-          "affiliation": "",
-          "country": "India",
-          "email": "aruna.sk@christuniversity.in",
-          "isCorresponding": true,
-          "name": "ARUNA S K ",
-          "institutionType": "",
-          "id": "author-1786505746335-54636",
-          "isStudent": false,
-          "position": 2
-        },
-        {
-          "name": "S. Ravivarman",
-          "isCorresponding": false,
-          "institutionType": "",
-          "country": "India",
-          "position": 3,
-          "affiliation": "",
-          "id": "author-1786505747932-l550v",
-          "isStudent": false,
-          "email": ""
-        }
-      ],
-      "peerReviewStatus": "Peer-reviewed",
-      "doi": "10.1063/5.0262087",
-      "indexingEntries": [
-        {
-          "scopusWosLink": "https://www.scopus.com/sourceid/26916",
-          "agency": "Scopus",
-          "id": "idx-1786505137246-qf29t",
-          "quartileOrCategory": "Q4",
-          "percentile": "10",
-          "publicationUrl": "https://pubs.aip.org/aip/acp"
-        }
-      ],
-      "abstract": "",
-      "type": "Journal",
-      "dateOfRevision": "",
-      "id": "pub-1786505137246",
-      "pageFrom": "",
-      "authorship": "Sole Authored",
-      "journalName": "AIP Conference Proceedings",
-      "pageTo": "",
-      "scope": "International",
-      "sdgCategory": "Not Mapped",
-      "dateOfPublication": "2025-03-25",
-      "year": "2025",
-      "authors": [
-        "K. Karthick",
-        "ARUNA S K ",
-        "S. Ravivarman"
-      ],
-      "dateOfSubmission": ""
+      ]
     },
     {
-      "subjectAreas": [
-        "Electrical and Electronic Engineering",
-        "Automotive Engineering"
+      "indexingEntries": [
+        {
+          "publicationUrl": "https://www.mdpi.com/journal/processes",
+          "quartileOrCategory": "",
+          "agency": "Scopus",
+          "percentile": "",
+          "scopusWosLink": "https://www.scopus.com/sourceid/21100838131",
+          "id": "idx-1786592655454-0ke8g"
+        },
+        {
+          "scopusWosLink": "",
+          "publicationUrl": "",
+          "agency": "Web of Science",
+          "percentile": "",
+          "quartileOrCategory": "",
+          "id": "idx-1786593651086-8rnkp"
+        }
       ],
-      "year": "2024",
-      "medium": "Print and Online",
-      "language": "English",
-      "journalName": "Processes",
+      "dateOfRevision": "",
       "authorship": "Co-Authored",
-      "articleKeywords": [
-        "Fault classification",
-        "Machine learning",
-        "Data transformation",
-        "CatBoost",
-        "Electric vehicle drive motors"
-      ],
-      "volume": "12",
-      "documentProofName": "",
-      "title": "Optimized Fault Classification in Electric Vehicle Drive Motors Using Advanced Machine Learning and Data Transformation Techniques",
-      "publisherAddress": "Basel, Switzerland",
-      "doi": "10.3390/pr12122648",
       "type": "Journal",
-      "issue": "2648",
+      "dateOfSubmission": "",
+      "id": "pub-1786592655453",
+      "issn": "2227-9717",
+      "sdgCategory": "-",
       "authors": [
         "S. Thirunavukkarasu",
         "ARUNA S K ",
@@ -625,101 +383,98 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         "K. Karthick",
         "R. Manikandan"
       ],
-      "sdgCategory": "-",
       "pageTo": "19",
-      "abstract": "The increasing use of electric vehicles has made fault diagnosis in electric drive motors, particularly in variable speed drives using three-phase induction motors, a critical area of research. This article presents a fault classification model based on machine learning algorithms to identify various faults under six operating conditions: normal operating mode, phase-to-phase fault, phase-to-ground fault, overloading fault, over-voltage fault, and under-voltage fault. A dataset simulating real-world operating conditions, consisting of 39,034 instances and nine key motor features, was analyzed. Comprehensive data preprocessing steps, including missing value removal, duplicate detection, and data transformation, were applied to enhance the dataset’s suitability for machine learning models. Yeo–Johnson and Hyperbolic Sine transformations were used to reduce skewness and improve the normality of the features. Several machine learning classifiers were evaluated, including CatBoost, XGBoost, Random Forest, and others. The CatBoost model achieved the best performance, with an accuracy of 94.1%, making it the most suitable model for fault classification in electric vehicle drive motors.",
-      "indexingEntries": [
-        {
-          "scopusWosLink": "https://www.scopus.com/sourceid/21100838131",
-          "agency": "Scopus",
-          "id": "idx-1786592655454-0ke8g",
-          "publicationUrl": "https://www.mdpi.com/journal/processes",
-          "percentile": "",
-          "quartileOrCategory": ""
-        },
-        {
-          "agency": "Web of Science",
-          "id": "idx-1786593651086-8rnkp",
-          "percentile": "",
-          "scopusWosLink": "",
-          "publicationUrl": "",
-          "quartileOrCategory": ""
-        }
-      ],
-      "dateOfRevision": "",
+      "journalName": "Processes",
       "pageFrom": "1",
-      "journalUrl": "https://www.mdpi.com/journal/processes",
+      "subjectAreas": [
+        "Electrical and Electronic Engineering",
+        "Automotive Engineering"
+      ],
+      "publisherAddress": "Basel, Switzerland",
+      "volume": "12",
+      "issue": "2648",
+      "language": "English",
       "peerReviewStatus": "Peer-reviewed",
+      "articleKeywords": [
+        "Fault classification",
+        "Machine learning",
+        "Data transformation",
+        "CatBoost",
+        "Electric vehicle drive motors"
+      ],
+      "documentProofName": "",
+      "journalUrl": "https://www.mdpi.com/journal/processes",
+      "doi": "10.3390/pr12122648",
       "scope": "International",
+      "title": "Optimized Fault Classification in Electric Vehicle Drive Motors Using Advanced Machine Learning and Data Transformation Techniques",
+      "year": "2024",
+      "medium": "Print and Online",
+      "dateOfPublication": "2024-11-24",
+      "abstract": "The increasing use of electric vehicles has made fault diagnosis in electric drive motors, particularly in variable speed drives using three-phase induction motors, a critical area of research. This article presents a fault classification model based on machine learning algorithms to identify various faults under six operating conditions: normal operating mode, phase-to-phase fault, phase-to-ground fault, overloading fault, over-voltage fault, and under-voltage fault. A dataset simulating real-world operating conditions, consisting of 39,034 instances and nine key motor features, was analyzed. Comprehensive data preprocessing steps, including missing value removal, duplicate detection, and data transformation, were applied to enhance the dataset’s suitability for machine learning models. Yeo–Johnson and Hyperbolic Sine transformations were used to reduce skewness and improve the normality of the features. Several machine learning classifiers were evaluated, including CatBoost, XGBoost, Random Forest, and others. The CatBoost model achieved the best performance, with an accuracy of 94.1%, making it the most suitable model for fault classification in electric vehicle drive motors.",
+      "publisherName": "Multidisciplinary Digital Publishing Institute (MDPI)",
       "authorDetails": [
         {
-          "name": "S. Thirunavukkarasu",
-          "institutionType": "Private engineering college",
-          "email": "",
-          "country": "India",
-          "isCorresponding": false,
           "position": 1,
+          "isStudent": false,
           "id": "author-1786592655453-qyvu1",
           "affiliation": "Department of Electrical and Electronics Engineering, Paavai Engineering College, Namakkal 637018",
-          "isStudent": false
+          "isCorresponding": false,
+          "name": "S. Thirunavukkarasu",
+          "institutionType": "Private engineering college",
+          "country": "India",
+          "email": ""
         },
         {
+          "isCorresponding": false,
+          "institutionType": "Private deemed university",
+          "isStudent": false,
+          "id": "author-1786592936784-v4fok",
+          "country": "India",
           "email": "aruna.sk@christuniversity.in",
           "position": 2,
-          "isStudent": false,
           "name": "ARUNA S K ",
-          "institutionType": "Private deemed university",
-          "affiliation": "Department of AI and Data Science Engineering, School of Engineering and Technology, CHRIST (Deemed to be University), Bangalore 560029",
-          "isCorresponding": false,
-          "id": "author-1786592936784-v4fok",
-          "country": "India"
+          "affiliation": "Department of AI and Data Science Engineering, School of Engineering and Technology, CHRIST (Deemed to be University), Bangalore 560029"
         },
         {
-          "isCorresponding": false,
-          "name": "Mejdl Safran",
-          "position": 3,
-          "institutionType": "Public research university",
           "country": "Saudi Arabia",
+          "name": "Mejdl Safran",
+          "isStudent": false,
+          "email": "mejdl@ksu.edu.sa",
+          "institutionType": "Public research university",
+          "isCorresponding": false,
+          "position": 3,
           "affiliation": "Department of Computer Science, College of Computer and Information Sciences, King Saud University, Riyadh 11543",
-          "isStudent": false,
-          "id": "author-1786592938193-3bb3s",
-          "email": "mejdl@ksu.edu.sa"
+          "id": "author-1786592938193-3bb3s"
         },
         {
-          "id": "author-1786592939288-8le8a",
-          "isStudent": false,
           "affiliation": "Department of Electrical and Electronics Engineering, GMR Institute of Technology, Rajam 532127",
-          "country": "India",
-          "email": "karthick.k@gmrit.edu.in",
-          "isCorresponding": false,
           "name": "K. Karthick",
+          "id": "author-1786592939288-8le8a",
+          "position": 4,
+          "isCorresponding": false,
           "institutionType": "Private engineering college",
-          "position": 4
+          "isStudent": false,
+          "country": "India",
+          "email": "karthick.k@gmrit.edu.in"
         },
         {
-          "email": "",
-          "country": "India",
-          "institutionType": "Private engineering college",
-          "name": "R. Manikandan",
           "isCorresponding": false,
+          "isStudent": false,
+          "email": "",
           "id": "author-1786592940337-8bk5j",
-          "affiliation": "Department of ECE, Panimalar Engineering College, Chennai 600123",
           "position": 5,
-          "isStudent": false
+          "institutionType": "Private engineering college",
+          "affiliation": "Department of ECE, Panimalar Engineering College, Chennai 600123",
+          "country": "India",
+          "name": "R. Manikandan"
         }
-      ],
-      "dateOfSubmission": "",
-      "issn": "2227-9717",
-      "id": "pub-1786592655453",
-      "dateOfPublication": "2024-11-24",
-      "publisherName": "Multidisciplinary Digital Publishing Institute (MDPI)"
+      ]
     },
     {
-      "type": "Journal",
-      "dateOfSubmission": "",
-      "journalName": "Earth Science Informatics",
-      "documentProofName": "",
-      "publisherName": "Springer Heidelberg",
+      "journalUrl": "https://link.springer.com/journal/12145",
+      "year": "2024",
+      "publisherAddress": "Springer-Verlag GmbH Germany",
+      "medium": "Print and Online",
       "articleKeywords": [
         "AQI (Air Quality Index)",
         "Prediction model",
@@ -727,119 +482,196 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         "Machine learning",
         "Insights into pollutant dynamics"
       ],
-      "year": "2024",
-      "id": "pub-1787128804873",
-      "language": "English",
-      "peerReviewStatus": "Peer-reviewed",
-      "title": "Integrating machine learning techniques for Air Quality Index forecasting and insights from pollutant-meteorological dynamics in sustainable urban environments",
-      "pageTo": " 3748",
-      "journalUrl": "https://link.springer.com/journal/12145",
-      "issue": "",
-      "sdgCategory": "",
-      "authorDetails": [
-        {
-          "position": 1,
-          "name": "Aruna S K",
-          "email": "aruna.sk@christuniversity.in",
-          "institutionType": "",
-          "country": "India",
-          "isStudent": false,
-          "isCorresponding": false,
-          "affiliation": "",
-          "id": "author-1787128804873-fb3bw"
-        },
-        {
-          "institutionType": "",
-          "name": "Dharmaprakash R",
-          "isCorresponding": false,
-          "isStudent": false,
-          "affiliation": "",
-          "position": 2,
-          "id": "author-1787131357882-wjwsy",
-          "country": "",
-          "email": ""
-        },
-        {
-          "isStudent": false,
-          "id": "author-1787131359291-jq8b4",
-          "position": 3,
-          "isCorresponding": false,
-          "email": "",
-          "name": "Gokulan Ravindiran",
-          "institutionType": "",
-          "affiliation": "",
-          "country": ""
-        },
-        {
-          "country": "",
-          "id": "author-1787131360425-1tkyg",
-          "name": "Karthick K",
-          "isStudent": false,
-          "institutionType": "",
-          "isCorresponding": false,
-          "affiliation": "",
-          "email": "",
-          "position": 4
-        }
-      ],
-      "subjectAreas": [
-        "Environmental Science / Earth Sciences",
-        "Pollutant-meteorological relationship analysis"
-      ],
-      "scope": "International",
-      "publisherAddress": "Springer-Verlag GmbH Germany",
-      "issn": "1865-0481",
-      "dateOfRevision": "",
-      "abstract": "This study integrates machine learning techniques to forecast Air Quality Index (AQI) in Delhi, India, using CPCB data (2016–2022). Random Forest and XGBoost models predict AQI while analyzing pollutant-meteorological dynamics. PM₂.₅ and CO emerge as dominant predictors, alongside temperature and humidity. The framework offers actionable insights for sustainable urban air quality management and public health policy in rapidly urbanizing environments.",
-      "volume": "17",
-      "pageFrom": "3733 ",
-      "authorship": "Co-Authored",
-      "medium": "Print and Online",
-      "indexingEntries": [
-        {
-          "publicationUrl": "",
-          "percentile": "",
-          "quartileOrCategory": "",
-          "scopusWosLink": "https://www.scopus.com/sourceid/14500154730",
-          "id": "idx-1787128804873-dpxa6",
-          "agency": "Scopus"
-        }
-      ],
       "authors": [
         "Aruna S K",
         "Dharmaprakash R",
         "Gokulan Ravindiran",
         "Karthick K"
       ],
+      "issue": "",
+      "doi": "10.1007/s12145-024-01382-8",
+      "dateOfSubmission": "",
+      "pageFrom": "3733 ",
+      "sdgCategory": "",
+      "dateOfRevision": "",
+      "journalName": "Earth Science Informatics",
+      "volume": "17",
+      "publisherName": "Springer Heidelberg",
+      "scope": "International",
+      "authorDetails": [
+        {
+          "id": "author-1787128804873-fb3bw",
+          "institutionType": "",
+          "name": "Aruna S K",
+          "isCorresponding": false,
+          "email": "aruna.sk@christuniversity.in",
+          "affiliation": "",
+          "isStudent": false,
+          "country": "India",
+          "position": 1
+        },
+        {
+          "affiliation": "",
+          "id": "author-1787131357882-wjwsy",
+          "email": "",
+          "name": "Dharmaprakash R",
+          "isStudent": false,
+          "institutionType": "",
+          "isCorresponding": false,
+          "country": "",
+          "position": 2
+        },
+        {
+          "email": "",
+          "isStudent": false,
+          "country": "",
+          "position": 3,
+          "isCorresponding": false,
+          "institutionType": "",
+          "affiliation": "",
+          "name": "Gokulan Ravindiran",
+          "id": "author-1787131359291-jq8b4"
+        },
+        {
+          "affiliation": "",
+          "position": 4,
+          "id": "author-1787131360425-1tkyg",
+          "isStudent": false,
+          "email": "",
+          "isCorresponding": false,
+          "name": "Karthick K",
+          "institutionType": "",
+          "country": ""
+        }
+      ],
+      "authorship": "Co-Authored",
+      "title": "Integrating machine learning techniques for Air Quality Index forecasting and insights from pollutant-meteorological dynamics in sustainable urban environments",
       "dateOfPublication": "",
-      "doi": "10.1007/s12145-024-01382-8"
+      "language": "English",
+      "pageTo": " 3748",
+      "subjectAreas": [
+        "Environmental Science / Earth Sciences",
+        "Pollutant-meteorological relationship analysis"
+      ],
+      "type": "Journal",
+      "id": "pub-1787128804873",
+      "peerReviewStatus": "Peer-reviewed",
+      "issn": "1865-0481",
+      "abstract": "This study integrates machine learning techniques to forecast Air Quality Index (AQI) in Delhi, India, using CPCB data (2016–2022). Random Forest and XGBoost models predict AQI while analyzing pollutant-meteorological dynamics. PM₂.₅ and CO emerge as dominant predictors, alongside temperature and humidity. The framework offers actionable insights for sustainable urban air quality management and public health policy in rapidly urbanizing environments.",
+      "documentProofName": "",
+      "indexingEntries": [
+        {
+          "percentile": "",
+          "agency": "Scopus",
+          "id": "idx-1787128804873-dpxa6",
+          "scopusWosLink": "https://www.scopus.com/sourceid/14500154730",
+          "quartileOrCategory": "",
+          "publicationUrl": ""
+        }
+      ]
     },
     {
-      "doi": "10.3390/su151813424",
-      "type": "Journal",
-      "sdgCategory": "",
-      "authorship": "Co-Authored",
-      "peerReviewStatus": "Peer-reviewed",
-      "dateOfSubmission": "",
-      "journalName": "Sustainability",
       "year": "2023",
-      "articleKeywords": [],
-      "language": "English",
-      "volume": "15",
-      "documentProofName": "",
-      "medium": "Print and Online",
-      "scope": "International",
-      "title": "Enhancing Sustainable Urban Energy Management through Short-Term Wind Power Forecasting Using LSTM Neural Network",
-      "issn": "2071-1050",
+      "indexingEntries": [
+        {
+          "agency": "Scopus",
+          "scopusWosLink": "https://www.scopus.com/sourceid/21100240100",
+          "id": "idx-1787131545973-kyizt",
+          "percentile": "",
+          "quartileOrCategory": "",
+          "publicationUrl": "https://www.mdpi.com/2071-1050/15/18/13424"
+        },
+        {
+          "scopusWosLink": "",
+          "agency": "Web of Science",
+          "publicationUrl": "",
+          "id": "idx-1787131774517-vpnip",
+          "percentile": "",
+          "quartileOrCategory": ""
+        }
+      ],
+      "pageTo": "",
+      "authorDetails": [
+        {
+          "name": "Mejdl Safran",
+          "country": "",
+          "institutionType": "",
+          "isCorresponding": false,
+          "position": 1,
+          "isStudent": false,
+          "email": "",
+          "id": "author-1787131545973-ldv1t",
+          "affiliation": ""
+        },
+        {
+          "email": "",
+          "isCorresponding": false,
+          "institutionType": "",
+          "id": "author-1787131713519-ht4h4",
+          "country": "",
+          "position": 2,
+          "isStudent": false,
+          "affiliation": "",
+          "name": "S. Ravivarman "
+        },
+        {
+          "name": "Waleed Alrajhi",
+          "position": 3,
+          "affiliation": "",
+          "isStudent": false,
+          "email": "",
+          "country": "",
+          "id": "author-1787131715209-fl93j",
+          "institutionType": "",
+          "isCorresponding": false
+        },
+        {
+          "institutionType": "",
+          "isCorresponding": false,
+          "id": "author-1787131716308-4cufk",
+          "affiliation": "",
+          "position": 4,
+          "email": "",
+          "isStudent": false,
+          "name": "Karthick Kanagarathinam",
+          "country": ""
+        },
+        {
+          "position": 5,
+          "country": "India",
+          "email": "aruna.sk@christuniversity.in",
+          "id": "author-1787131717491-y6e26",
+          "isCorresponding": false,
+          "isStudent": false,
+          "institutionType": "",
+          "affiliation": "",
+          "name": "ARUNA S K "
+        },
+        {
+          "position": 6,
+          "name": "Sultan Alfarhood",
+          "isStudent": false,
+          "isCorresponding": false,
+          "country": "",
+          "institutionType": "",
+          "id": "author-1787131718760-8e7c6",
+          "affiliation": "",
+          "email": ""
+        }
+      ],
       "issue": "18",
-      "id": "pub-1787131545973",
-      "journalUrl": "https://www.mdpi.com/journal/sustainability",
-      "dateOfPublication": "2023-10-05",
       "publisherName": "Multidisciplinary Digital Publishing Institute (MDPI)",
+      "volume": "15",
+      "peerReviewStatus": "Peer-reviewed",
+      "authorship": "Co-Authored",
       "pageFrom": "",
-      "publisherAddress": "Multidisciplinary Digital Publishing Institute (MDPI)",
-      "abstract": "",
-      "dateOfRevision": "",
+      "sdgCategory": "",
+      "subjectAreas": [],
+      "medium": "Print and Online",
+      "journalName": "Sustainability",
+      "language": "English",
+      "articleKeywords": [],
+      "type": "Journal",
       "authors": [
         "Mejdl Safran",
         "S. Ravivarman ",
@@ -848,519 +680,457 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         "ARUNA S K ",
         "Sultan Alfarhood"
       ],
-      "subjectAreas": [],
-      "pageTo": "",
-      "indexingEntries": [
-        {
-          "quartileOrCategory": "",
-          "scopusWosLink": "https://www.scopus.com/sourceid/21100240100",
-          "publicationUrl": "https://www.mdpi.com/2071-1050/15/18/13424",
-          "agency": "Scopus",
-          "id": "idx-1787131545973-kyizt",
-          "percentile": ""
-        },
-        {
-          "publicationUrl": "",
-          "agency": "Web of Science",
-          "id": "idx-1787131774517-vpnip",
-          "scopusWosLink": "",
-          "quartileOrCategory": "",
-          "percentile": ""
-        }
-      ],
-      "authorDetails": [
-        {
-          "position": 1,
-          "name": "Mejdl Safran",
-          "country": "",
-          "id": "author-1787131545973-ldv1t",
-          "isStudent": false,
-          "affiliation": "",
-          "isCorresponding": false,
-          "institutionType": "",
-          "email": ""
-        },
-        {
-          "id": "author-1787131713519-ht4h4",
-          "country": "",
-          "name": "S. Ravivarman ",
-          "email": "",
-          "isStudent": false,
-          "isCorresponding": false,
-          "institutionType": "",
-          "position": 2,
-          "affiliation": ""
-        },
-        {
-          "country": "",
-          "position": 3,
-          "institutionType": "",
-          "affiliation": "",
-          "isCorresponding": false,
-          "name": "Waleed Alrajhi",
-          "id": "author-1787131715209-fl93j",
-          "isStudent": false,
-          "email": ""
-        },
-        {
-          "name": "Karthick Kanagarathinam",
-          "email": "",
-          "country": "",
-          "position": 4,
-          "isCorresponding": false,
-          "isStudent": false,
-          "institutionType": "",
-          "id": "author-1787131716308-4cufk",
-          "affiliation": ""
-        },
-        {
-          "country": "India",
-          "id": "author-1787131717491-y6e26",
-          "position": 5,
-          "isStudent": false,
-          "isCorresponding": false,
-          "affiliation": "",
-          "institutionType": "",
-          "email": "aruna.sk@christuniversity.in",
-          "name": "ARUNA S K "
-        },
-        {
-          "name": "Sultan Alfarhood",
-          "country": "",
-          "affiliation": "",
-          "isStudent": false,
-          "institutionType": "",
-          "position": 6,
-          "isCorresponding": false,
-          "id": "author-1787131718760-8e7c6",
-          "email": ""
-        }
-      ]
+      "documentProofName": "",
+      "id": "pub-1787131545973",
+      "publisherAddress": "Multidisciplinary Digital Publishing Institute (MDPI)",
+      "dateOfRevision": "",
+      "journalUrl": "https://www.mdpi.com/journal/sustainability",
+      "abstract": "",
+      "dateOfPublication": "2023-10-05",
+      "dateOfSubmission": "",
+      "doi": "10.3390/su151813424",
+      "title": "Enhancing Sustainable Urban Energy Management through Short-Term Wind Power Forecasting Using LSTM Neural Network",
+      "issn": "2071-1050",
+      "scope": "International"
     },
     {
-      "dateOfPublication": "2023-06-27",
-      "pageTo": "447",
-      "indexingEntries": [
-        {
-          "publicationUrl": "https://link.springer.com/chapter/10.1007/978-981-19-8669-7 38",
-          "percentile": "",
-          "agency": "Scopus",
-          "scopusWosLink": "https://www.scopus.com/sourceid/21100204111",
-          "id": "idx-1787131834115-qcqyk",
-          "quartileOrCategory": ""
-        }
-      ],
+      "doi": "10.1007/978-981-19-8669-7 38",
       "year": "",
+      "pageFrom": "439",
+      "publisherAddress": "",
+      "documentProofName": "",
+      "pageTo": "447",
+      "subjectAreas": [],
+      "issue": "",
+      "volume": "",
+      "authorship": "Co-Authored",
+      "articleKeywords": [],
+      "dateOfSubmission": "",
+      "dateOfPublication": "2023-06-27",
+      "id": "pub-1787131834114",
       "authors": [
         "ARUNA S K ",
         "DIVYA VETRIVEERAN ",
         "RAKOTH KANDAN SAMBANDAM ",
         "S. Thaiyalnayaki"
       ],
-      "scope": "International",
-      "publisherAddress": "",
-      "authorship": "Co-Authored",
-      "pageFrom": "439",
       "type": "Journal",
+      "medium": "E Journal",
       "abstract": "",
+      "journalUrl": "https://www.springer.com/series/8767",
       "journalName": "Smart Innovation, Systems and Technologies",
+      "publisherName": "Springer Nature",
       "authorDetails": [
         {
-          "country": "India",
-          "isCorresponding": false,
           "position": 1,
+          "isCorresponding": false,
           "institutionType": "",
-          "name": "ARUNA S K ",
-          "affiliation": "",
-          "email": "aruna.sk@christuniversity.in",
           "id": "author-1787131834115-gvtf4",
-          "isStudent": false
+          "affiliation": "",
+          "isStudent": false,
+          "email": "aruna.sk@christuniversity.in",
+          "name": "ARUNA S K ",
+          "country": "India"
         },
         {
-          "country": "India",
+          "position": 2,
+          "name": "DIVYA VETRIVEERAN ",
           "id": "author-1787131915006-hjssl",
           "isStudent": false,
-          "institutionType": "",
-          "name": "DIVYA VETRIVEERAN ",
-          "position": 2,
-          "isCorresponding": false,
+          "country": "India",
           "affiliation": "",
-          "email": "divya.vetriveeran@christuniversity.in"
+          "institutionType": "",
+          "email": "divya.vetriveeran@christuniversity.in",
+          "isCorresponding": false
         },
         {
+          "position": 3,
+          "isCorresponding": false,
+          "institutionType": "",
           "name": "RAKOTH KANDAN SAMBANDAM ",
-          "affiliation": "",
-          "email": "rakoth.kandan@christuniversity.in",
           "id": "author-1787131916656-z9c1o",
           "isStudent": false,
-          "isCorresponding": false,
-          "position": 3,
+          "affiliation": "",
           "country": "India",
-          "institutionType": ""
+          "email": "rakoth.kandan@christuniversity.in"
         },
         {
-          "country": "",
-          "email": "",
-          "position": 4,
-          "institutionType": "",
           "isCorresponding": false,
-          "isStudent": false,
+          "institutionType": "",
           "id": "author-1787131917708-bf96u",
           "name": "S. Thaiyalnayaki",
-          "affiliation": ""
+          "email": "",
+          "affiliation": "",
+          "isStudent": false,
+          "position": 4,
+          "country": ""
         }
       ],
-      "medium": "E Journal",
-      "id": "pub-1787131834114",
-      "peerReviewStatus": "Peer-reviewed",
-      "issue": "",
-      "volume": "",
-      "subjectAreas": [],
-      "articleKeywords": [],
-      "title": "An Advanced and Ideal Method for Tumor Detection and Classification from MRI Image Using Gamma Distribution and Support Vector Machine",
-      "publisherName": "Springer Nature",
-      "dateOfSubmission": "",
-      "sdgCategory": "",
-      "documentProofName": "",
-      "language": "English",
       "dateOfRevision": "",
-      "doi": "10.1007/978-981-19-8669-7 38",
-      "journalUrl": "https://www.springer.com/series/8767",
-      "issn": "2190-3026"
-    },
-    {
+      "sdgCategory": "",
       "indexingEntries": [
         {
-          "scopusWosLink": "https://www.scopus.com/sourceid/19926",
-          "percentile": "",
-          "id": "idx-1787132070076-gho3t",
-          "publicationUrl": "https://www.hindawi.com/journals/sp/2023/2556066/",
           "agency": "Scopus",
-          "quartileOrCategory": ""
+          "percentile": "",
+          "id": "idx-1787131834115-qcqyk",
+          "quartileOrCategory": "",
+          "scopusWosLink": "https://www.scopus.com/sourceid/21100204111",
+          "publicationUrl": "https://link.springer.com/chapter/10.1007/978-981-19-8669-7 38"
         }
       ],
-      "type": "Journal",
-      "dateOfPublication": "2023-04-21",
+      "language": "English",
+      "issn": "2190-3026",
+      "title": "An Advanced and Ideal Method for Tumor Detection and Classification from MRI Image Using Gamma Distribution and Support Vector Machine",
+      "peerReviewStatus": "Peer-reviewed",
+      "scope": "International"
+    },
+    {
+      "peerReviewStatus": "Peer-reviewed",
+      "dateOfRevision": "",
       "publisherName": "Hindawi",
-      "publisherAddress": "",
+      "pageTo": "21",
       "authorDetails": [
         {
-          "isStudent": false,
-          "country": "India",
-          "position": 1,
-          "isCorresponding": false,
           "email": "aruna.sk@christuniversity.in",
-          "id": "author-1787132070076-l9ism",
-          "name": "ARUNA S K ",
-          "institutionType": "",
-          "affiliation": ""
-        },
-        {
-          "id": "author-1787132169155-olslw",
-          "institutionType": "",
-          "isCorresponding": false,
-          "email": "",
-          "name": "Karthick Kanagarathinam",
-          "country": "",
-          "isStudent": false,
-          "position": 2,
-          "affiliation": ""
-        },
-        {
-          "position": 3,
-          "email": "",
-          "institutionType": "",
           "affiliation": "",
           "isCorresponding": false,
+          "country": "India",
+          "institutionType": "",
+          "position": 1,
+          "id": "author-1787132070076-l9ism",
           "isStudent": false,
-          "name": "S. Krishnan",
+          "name": "ARUNA S K "
+        },
+        {
+          "isCorresponding": false,
+          "institutionType": "",
           "country": "",
-          "id": "author-1787132170412-hjmoz"
+          "isStudent": false,
+          "email": "",
+          "id": "author-1787132169155-olslw",
+          "position": 2,
+          "affiliation": "",
+          "name": "Karthick Kanagarathinam"
+        },
+        {
+          "id": "author-1787132170412-hjmoz",
+          "country": "",
+          "isCorresponding": false,
+          "institutionType": "",
+          "affiliation": "",
+          "email": "",
+          "position": 3,
+          "isStudent": false,
+          "name": "S. Krishnan"
         }
       ],
-      "year": "2023",
-      "volume": "",
-      "id": "pub-1787132070076",
       "abstract": "",
-      "pageFrom": "1",
-      "medium": "Print and Online",
-      "scope": "International",
       "journalUrl": "https://www.hindawi.com/journals/sp/about/",
-      "title": "Identification of Dry Bean Varieties Based on Multiple Attributes Using CatBoost Machine Learning Algorithm",
-      "issue": "",
       "issn": "1058-9244",
-      "sdgCategory": "",
-      "peerReviewStatus": "Peer-reviewed",
-      "articleKeywords": [],
+      "issue": "",
+      "subjectAreas": [],
+      "volume": "",
+      "type": "Journal",
+      "language": "English",
       "authors": [
         "ARUNA S K ",
         "Karthick Kanagarathinam",
         "S. Krishnan"
       ],
-      "subjectAreas": [],
-      "journalName": "Scientific Programming",
-      "dateOfRevision": "",
-      "documentProofName": "",
-      "dateOfSubmission": "",
+      "articleKeywords": [],
       "doi": "10.1155/2023/2556066",
-      "pageTo": "21",
+      "medium": "Print and Online",
+      "pageFrom": "1",
       "authorship": "Co-Authored",
-      "language": "English"
+      "dateOfSubmission": "",
+      "documentProofName": "",
+      "id": "pub-1787132070076",
+      "year": "2023",
+      "publisherAddress": "",
+      "journalName": "Scientific Programming",
+      "title": "Identification of Dry Bean Varieties Based on Multiple Attributes Using CatBoost Machine Learning Algorithm",
+      "indexingEntries": [
+        {
+          "quartileOrCategory": "",
+          "percentile": "",
+          "scopusWosLink": "https://www.scopus.com/sourceid/19926",
+          "id": "idx-1787132070076-gho3t",
+          "agency": "Scopus",
+          "publicationUrl": "https://www.hindawi.com/journals/sp/2023/2556066/"
+        }
+      ],
+      "sdgCategory": "",
+      "dateOfPublication": "2023-04-21",
+      "scope": "International"
     },
     {
-      "scope": "International",
       "subjectAreas": [],
+      "year": "2022",
+      "articleKeywords": [],
+      "title": "Improved Henon Chaotic Map-based Progressive Block-based visual cryptography strategy for securing sensitive data in a cloud EHR system",
+      "scope": "International",
+      "dateOfSubmission": "",
+      "language": "English",
+      "documentProofName": "",
+      "journalUrl": "https://www.sciencedirect.com/journal/international-journal-of-intelligent-networks",
+      "dateOfRevision": "",
+      "publisherAddress": "KeAi Communications Co.",
+      "abstract": "",
+      "dateOfPublication": "2022-08-24",
+      "id": "pub-1787132267716",
+      "medium": "E Journal",
       "peerReviewStatus": "Peer-reviewed",
       "type": "Journal",
-      "dateOfPublication": "2022-08-24",
+      "indexingEntries": [
+        {
+          "publicationUrl": "https://www.sciencedirect.com/science/article/pii/S2666603022000124",
+          "quartileOrCategory": "",
+          "agency": "Scopus",
+          "scopusWosLink": "https://www.scopus.com/sourceid/21101101955",
+          "percentile": "",
+          "id": "idx-1787132267716-6ktgy"
+        },
+        {
+          "percentile": "",
+          "quartileOrCategory": "",
+          "agency": "Web of Science",
+          "publicationUrl": "",
+          "id": "idx-1787132407138-xmnhr",
+          "scopusWosLink": ""
+        }
+      ],
+      "issue": "",
+      "authorship": "Co-Authored",
+      "volume": "3",
+      "pageFrom": "109",
+      "doi": "10.1016/j.ijin.2022.08.004",
+      "publisherName": "KeAi Communications Co.",
+      "pageTo": "112",
+      "authorDetails": [
+        {
+          "name": "ARUNA S K ",
+          "institutionType": "",
+          "affiliation": "",
+          "isCorresponding": false,
+          "isStudent": false,
+          "id": "author-1787132267716-g1o0s",
+          "position": 1,
+          "country": "",
+          "email": "aruna.sk@christuniversity.in"
+        },
+        {
+          "country": "",
+          "name": "AneruthMohanasundaram",
+          "email": "",
+          "institutionType": "",
+          "id": "author-1787132352987-rlej9",
+          "isCorresponding": false,
+          "isStudent": false,
+          "affiliation": "",
+          "position": 2
+        }
+      ],
       "authors": [
         "ARUNA S K ",
         "AneruthMohanasundaram"
       ],
-      "authorDetails": [
-        {
-          "country": "",
-          "id": "author-1787132267716-g1o0s",
-          "name": "ARUNA S K ",
-          "position": 1,
-          "email": "aruna.sk@christuniversity.in",
-          "affiliation": "",
-          "institutionType": "",
-          "isStudent": false,
-          "isCorresponding": false
-        },
-        {
-          "isCorresponding": false,
-          "email": "",
-          "isStudent": false,
-          "id": "author-1787132352987-rlej9",
-          "institutionType": "",
-          "affiliation": "",
-          "name": "AneruthMohanasundaram",
-          "position": 2,
-          "country": ""
-        }
-      ],
-      "pageTo": "112",
-      "abstract": "",
-      "authorship": "Co-Authored",
-      "pageFrom": "109",
-      "doi": "10.1016/j.ijin.2022.08.004",
-      "dateOfSubmission": "",
-      "year": "2022",
-      "articleKeywords": [],
-      "publisherName": "KeAi Communications Co.",
-      "volume": "3",
-      "sdgCategory": "",
-      "issn": "2666-6030",
-      "medium": "E Journal",
-      "dateOfRevision": "",
       "journalName": "International Journal of Intelligent Networks",
+      "issn": "2666-6030",
+      "sdgCategory": ""
+    },
+    {
+      "medium": "Print and Online",
+      "id": "pub-1787132553238",
+      "doi": "10.1109/ICACCS54159.2022.9785100",
+      "year": "2022",
       "indexingEntries": [
         {
           "agency": "Scopus",
           "quartileOrCategory": "",
-          "percentile": "",
-          "id": "idx-1787132267716-6ktgy",
-          "publicationUrl": "https://www.sciencedirect.com/science/article/pii/S2666603022000124",
-          "scopusWosLink": "https://www.scopus.com/sourceid/21101101955"
-        },
-        {
+          "scopusWosLink": "https://www.scopus.com/sourceid/5100152904",
           "publicationUrl": "",
-          "scopusWosLink": "",
-          "percentile": "",
-          "quartileOrCategory": "",
-          "id": "idx-1787132407138-xmnhr",
-          "agency": "Web of Science"
+          "id": "idx-1787132553238-ezyr2",
+          "percentile": ""
         }
       ],
-      "language": "English",
-      "journalUrl": "https://www.sciencedirect.com/journal/international-journal-of-intelligent-networks",
-      "id": "pub-1787132267716",
-      "publisherAddress": "KeAi Communications Co.",
-      "documentProofName": "",
-      "issue": "",
-      "title": "Improved Henon Chaotic Map-based Progressive Block-based visual cryptography strategy for securing sensitive data in a cloud EHR system"
-    },
-    {
+      "journalName": "2022 8th International Conference on Advanced Computing and Communication Systems (ICACCS)",
       "authorship": "Co-Authored",
-      "documentProofName": "",
-      "sdgCategory": "",
+      "issue": "",
       "peerReviewStatus": "Peer-reviewed",
-      "issn": "2575-7288",
+      "dateOfRevision": "",
+      "authorDetails": [
+        {
+          "email": "sagaya.aurelia@christuniversity.in",
+          "country": "India",
+          "isStudent": false,
+          "affiliation": "",
+          "name": "SAGAYA AURELIA P ",
+          "position": 1,
+          "isCorresponding": false,
+          "institutionType": "",
+          "id": "author-1787132553238-vlqg9"
+        },
+        {
+          "isStudent": false,
+          "name": "REKHA V",
+          "position": 2,
+          "country": "India",
+          "institutionType": "",
+          "isCorresponding": false,
+          "email": "rekha.v@christuniversity.in",
+          "affiliation": "",
+          "id": "author-1787132609796-pdz26"
+        },
+        {
+          "email": "aruna.sk@christuniversity.in",
+          "position": 3,
+          "isCorresponding": false,
+          "id": "author-1787132611028-ukxir",
+          "institutionType": "",
+          "affiliation": "",
+          "country": "India",
+          "name": "ARUNA S K ",
+          "isStudent": false
+        }
+      ],
+      "sdgCategory": "",
+      "pageFrom": "",
+      "publisherName": "IEEE Xplore",
+      "language": "English",
+      "publisherAddress": "IEEE Xplore",
+      "volume": "",
+      "title": "Machine Learning Based Time Series Analysis for COVID-19 Cases in India",
       "authors": [
         "SAGAYA AURELIA P ",
         "REKHA V",
         "ARUNA S K "
       ],
-      "articleKeywords": [],
-      "abstract": "",
-      "volume": "",
-      "scope": "International",
-      "journalName": "2022 8th International Conference on Advanced Computing and Communication Systems (ICACCS)",
-      "pageFrom": "",
-      "subjectAreas": [],
-      "medium": "Print and Online",
-      "dateOfSubmission": "",
-      "journalUrl": "https://ieeexplore.ieee.org/xpl/conhome/9784926/proceeding",
-      "indexingEntries": [
-        {
-          "percentile": "",
-          "publicationUrl": "",
-          "quartileOrCategory": "",
-          "scopusWosLink": "https://www.scopus.com/sourceid/5100152904",
-          "id": "idx-1787132553238-ezyr2",
-          "agency": "Scopus"
-        }
-      ],
-      "dateOfRevision": "",
-      "issue": "",
-      "authorDetails": [
-        {
-          "country": "India",
-          "institutionType": "",
-          "name": "SAGAYA AURELIA P ",
-          "isCorresponding": false,
-          "affiliation": "",
-          "isStudent": false,
-          "id": "author-1787132553238-vlqg9",
-          "position": 1,
-          "email": "sagaya.aurelia@christuniversity.in"
-        },
-        {
-          "affiliation": "",
-          "email": "rekha.v@christuniversity.in",
-          "position": 2,
-          "country": "India",
-          "name": "REKHA V",
-          "isCorresponding": false,
-          "id": "author-1787132609796-pdz26",
-          "institutionType": "",
-          "isStudent": false
-        },
-        {
-          "affiliation": "",
-          "email": "aruna.sk@christuniversity.in",
-          "position": 3,
-          "country": "India",
-          "isCorresponding": false,
-          "id": "author-1787132611028-ukxir",
-          "institutionType": "",
-          "isStudent": false,
-          "name": "ARUNA S K "
-        }
-      ],
-      "doi": "10.1109/ICACCS54159.2022.9785100",
-      "title": "Machine Learning Based Time Series Analysis for COVID-19 Cases in India",
-      "type": "Journal",
+      "issn": "2575-7288",
       "dateOfPublication": "2022-06-07",
-      "language": "English",
-      "publisherName": "IEEE Xplore",
-      "id": "pub-1787132553238",
-      "publisherAddress": "IEEE Xplore",
-      "year": "2022",
-      "pageTo": ""
+      "pageTo": "",
+      "scope": "International",
+      "type": "Journal",
+      "abstract": "",
+      "dateOfSubmission": "",
+      "articleKeywords": [],
+      "journalUrl": "https://ieeexplore.ieee.org/xpl/conhome/9784926/proceeding",
+      "documentProofName": "",
+      "subjectAreas": []
     },
     {
+      "type": "Journal",
+      "subjectAreas": [],
+      "volume": "",
+      "doi": "10.1155/2022/6517716",
+      "pageTo": "14",
+      "language": "English",
+      "dateOfPublication": "2022-05-22",
+      "journalUrl": "https://www.hindawi.com/journals/cmmm/",
+      "dateOfSubmission": "",
+      "title": "Implementation of a Heart Disease Risk Prediction Model Using Machine Learning",
+      "id": "pub-1787132718683",
+      "scope": "International",
+      "articleKeywords": [],
+      "abstract": "",
       "issn": "1748-670X",
-      "publisherName": "",
+      "documentProofName": "",
       "publisherAddress": "",
+      "dateOfRevision": "",
+      "issue": "",
+      "journalName": "Computational and Mathematical Methods in Medicine",
+      "peerReviewStatus": "Peer-reviewed",
+      "sdgCategory": "",
+      "year": "2022",
+      "authorship": "Co-Authored",
+      "medium": "Print and Online",
       "indexingEntries": [
         {
-          "percentile": "",
-          "publicationUrl": "https://doi.org/10.1155/2022/6517716",
-          "scopusWosLink": "https://www.scopus.com/sourceid/11000153760",
           "agency": "Scopus",
+          "percentile": "",
           "id": "idx-1787132718683-sa8as",
-          "quartileOrCategory": ""
+          "scopusWosLink": "https://www.scopus.com/sourceid/11000153760",
+          "quartileOrCategory": "",
+          "publicationUrl": "https://doi.org/10.1155/2022/6517716"
         },
         {
-          "quartileOrCategory": "",
           "publicationUrl": "",
-          "id": "idx-1787132852145-5odkk",
-          "percentile": "",
+          "quartileOrCategory": "",
           "agency": "Web of Science",
-          "scopusWosLink": ""
+          "scopusWosLink": "",
+          "id": "idx-1787132852145-5odkk",
+          "percentile": ""
         }
       ],
-      "id": "pub-1787132718683",
-      "journalUrl": "https://www.hindawi.com/journals/cmmm/",
+      "pageFrom": "1",
       "authorDetails": [
         {
-          "email": "aruna.sk@christuniversity.in",
-          "position": 1,
-          "institutionType": "",
-          "affiliation": "",
-          "isCorresponding": false,
-          "isStudent": false,
-          "name": "ARUNA S K ",
           "id": "author-1787132718683-3bvo8",
-          "country": "India"
-        },
-        {
-          "name": "Yuvaraja Teekaraman",
-          "position": 2,
-          "email": "",
+          "country": "India",
+          "name": "ARUNA S K ",
           "isStudent": false,
           "affiliation": "",
-          "id": "author-1787132789844-m6deo",
-          "country": "",
+          "position": 1,
+          "email": "aruna.sk@christuniversity.in",
           "institutionType": "",
           "isCorresponding": false
         },
         {
-          "isStudent": false,
+          "email": "",
+          "position": 2,
+          "institutionType": "",
+          "id": "author-1787132789844-m6deo",
           "isCorresponding": false,
+          "country": "",
+          "name": "Yuvaraja Teekaraman",
+          "isStudent": false,
+          "affiliation": ""
+        },
+        {
+          "affiliation": "",
+          "email": "",
+          "country": "",
           "name": "Ravi Samikannu",
-          "institutionType": "",
-          "email": "",
-          "country": "",
           "position": 3,
+          "isStudent": false,
           "id": "author-1787132790937-g7paz",
-          "affiliation": ""
+          "institutionType": "",
+          "isCorresponding": false
         },
         {
           "isCorresponding": false,
-          "affiliation": "",
-          "institutionType": "",
-          "position": 4,
-          "isStudent": false,
+          "country": "",
           "name": "Ramya Kuppusamy",
-          "id": "author-1787132792710-hdnde",
+          "institutionType": "",
           "email": "",
-          "country": ""
-        },
-        {
-          "country": "",
-          "name": "K. Karthick",
-          "id": "author-1787132793807-2u2lk",
           "affiliation": "",
-          "email": "",
-          "position": 5,
-          "isCorresponding": false,
           "isStudent": false,
-          "institutionType": ""
+          "id": "author-1787132792710-hdnde",
+          "position": 4
         },
         {
           "institutionType": "",
           "isCorresponding": false,
-          "name": "Amruth Ramesh Thelkar",
-          "id": "author-1787132794925-0uhmb",
-          "position": 6,
           "isStudent": false,
+          "position": 5,
+          "name": "K. Karthick",
           "country": "",
-          "email": "",
-          "affiliation": ""
+          "affiliation": "",
+          "id": "author-1787132793807-2u2lk",
+          "email": ""
+        },
+        {
+          "name": "Amruth Ramesh Thelkar",
+          "institutionType": "",
+          "isCorresponding": false,
+          "affiliation": "",
+          "country": "",
+          "position": 6,
+          "id": "author-1787132794925-0uhmb",
+          "isStudent": false,
+          "email": ""
         }
       ],
-      "scope": "International",
-      "language": "English",
-      "dateOfPublication": "2022-05-22",
-      "pageTo": "14",
-      "subjectAreas": [],
-      "dateOfRevision": "",
-      "articleKeywords": [],
-      "type": "Journal",
+      "publisherName": "",
       "authors": [
         "ARUNA S K ",
         "Yuvaraja Teekaraman",
@@ -1368,964 +1138,1163 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         "Ramya Kuppusamy",
         "K. Karthick",
         "Amruth Ramesh Thelkar"
-      ],
-      "title": "Implementation of a Heart Disease Risk Prediction Model Using Machine Learning",
-      "dateOfSubmission": "",
-      "sdgCategory": "",
-      "issue": "",
-      "documentProofName": "",
-      "volume": "",
-      "year": "2022",
-      "doi": "10.1155/2022/6517716",
-      "peerReviewStatus": "Peer-reviewed",
-      "authorship": "Co-Authored",
-      "pageFrom": "1",
-      "medium": "Print and Online",
-      "journalName": "Computational and Mathematical Methods in Medicine",
-      "abstract": ""
+      ]
     },
     {
-      "authorship": "Co-Authored",
-      "authorDetails": [
-        {
-          "affiliation": "",
-          "isStudent": false,
-          "country": "",
-          "id": "author-1787132921663-v8128",
-          "isCorresponding": false,
-          "email": "",
-          "institutionType": "",
-          "position": 1,
-          "name": "K. Karthick"
-        },
-        {
-          "affiliation": "",
-          "name": "R. Manikandan",
-          "position": 2,
-          "isCorresponding": false,
-          "email": "",
-          "country": "",
-          "institutionType": "",
-          "id": "author-1787133016323-gwc9c",
-          "isStudent": false
-        },
-        {
-          "id": "author-1787133017346-at98c",
-          "email": "aruna.sk@christuniversity.in",
-          "name": "ARUNA S K ",
-          "country": "India",
-          "institutionType": "",
-          "isCorresponding": false,
-          "affiliation": "",
-          "isStudent": false,
-          "position": 3
-        }
-      ],
-      "sdgCategory": "",
+      "pageFrom": "",
+      "year": "2022",
+      "publisherAddress": "",
+      "journalUrl": "https://www.tandfonline.com/journals/tjim20",
+      "pageTo": "",
       "indexingEntries": [
         {
-          "scopusWosLink": "https://www.scopus.com/sourceid/19700186891",
-          "percentile": "",
-          "quartileOrCategory": "",
           "id": "idx-1787132921663-cct85",
+          "quartileOrCategory": "",
+          "agency": "Scopus",
+          "scopusWosLink": "https://www.scopus.com/sourceid/19700186891",
           "publicationUrl": "https://www.tandfonline.com/doi/abs/10.1080/09720502.2021.2012890",
-          "agency": "Scopus"
+          "percentile": ""
         },
         {
           "agency": "Web of Science",
-          "percentile": "",
+          "quartileOrCategory": "",
           "id": "idx-1787133064965-h1xt4",
           "scopusWosLink": "",
           "publicationUrl": "",
-          "quartileOrCategory": ""
+          "percentile": ""
         }
       ],
-      "pageTo": "",
+      "dateOfRevision": "",
+      "scope": "International",
+      "title": "Development and evaluation of the bootstrap resampling technique based statistical prediction model for Covid-19 real time data : A data driven approach",
+      "volume": "",
+      "dateOfSubmission": "",
+      "doi": "10.1080/09720502.2021.2012890",
+      "abstract": "",
+      "dateOfPublication": "2022-02-02",
+      "id": "pub-1787132921663",
+      "type": "Journal",
+      "issue": "",
+      "issn": "0972-0502",
+      "medium": "Print and Online",
+      "authorship": "Co-Authored",
+      "articleKeywords": [],
+      "language": "English",
+      "subjectAreas": [],
       "authors": [
         "K. Karthick",
         "R. Manikandan",
         "ARUNA S K "
       ],
-      "dateOfSubmission": "",
-      "publisherName": "Taylor & Francis",
+      "documentProofName": "",
       "peerReviewStatus": "Peer-reviewed",
-      "language": "English",
       "journalName": "Journal of Interdisciplinary Mathematics",
-      "issn": "0972-0502",
-      "issue": "",
-      "title": "Development and evaluation of the bootstrap resampling technique based statistical prediction model for Covid-19 real time data : A data driven approach",
-      "documentProofName": "",
-      "scope": "International",
-      "medium": "Print and Online",
-      "journalUrl": "https://www.tandfonline.com/journals/tjim20",
-      "volume": "",
-      "articleKeywords": [],
-      "year": "2022",
-      "subjectAreas": [],
-      "publisherAddress": "",
-      "dateOfPublication": "2022-02-02",
-      "doi": "10.1080/09720502.2021.2012890",
-      "abstract": "",
-      "dateOfRevision": "",
-      "pageFrom": "",
-      "type": "Journal",
-      "id": "pub-1787132921663"
-    },
-    {
-      "journalName": "Journal of Circuits, Systems and Computers",
-      "documentProofName": "",
-      "articleKeywords": [],
       "authorDetails": [
         {
-          "position": 1,
-          "country": "",
-          "email": "",
-          "affiliation": "",
+          "id": "author-1787132921663-v8128",
           "isStudent": false,
-          "id": "author-1787133122337-fha2l",
-          "name": "K. Sindhanaiselvan",
+          "country": "",
+          "affiliation": "",
+          "name": "K. Karthick",
+          "position": 1,
+          "isCorresponding": false,
+          "institutionType": "",
+          "email": ""
+        },
+        {
+          "isStudent": false,
+          "country": "",
+          "name": "R. Manikandan",
+          "id": "author-1787133016323-gwc9c",
+          "position": 2,
+          "affiliation": "",
+          "email": "",
           "institutionType": "",
           "isCorresponding": false
         },
         {
-          "id": "author-1787133195668-3c6n1",
-          "institutionType": "",
-          "country": "India",
-          "isCorresponding": false,
-          "position": 2,
           "affiliation": "",
           "isStudent": false,
+          "position": 3,
+          "isCorresponding": false,
+          "institutionType": "",
+          "email": "aruna.sk@christuniversity.in",
+          "name": "ARUNA S K ",
+          "id": "author-1787133017346-at98c",
+          "country": "India"
+        }
+      ],
+      "publisherName": "Taylor & Francis",
+      "sdgCategory": ""
+    },
+    {
+      "doi": "10.1142/S021812662150105X",
+      "dateOfPublication": "2020-12-20",
+      "issn": "0218-1266",
+      "authorship": "Co-Authored",
+      "publisherAddress": "World Scientific Publ Co Pte Ltd, 5 Toh Tuck Link, Singapore, Singapore, 596224",
+      "pageFrom": "",
+      "documentProofName": "",
+      "pageTo": "",
+      "dateOfSubmission": "",
+      "type": "Journal",
+      "scope": "International",
+      "indexingEntries": [
+        {
+          "agency": "Scopus",
+          "publicationUrl": "",
+          "id": "idx-1787133122337-jaxef",
+          "scopusWosLink": "",
+          "percentile": "",
+          "quartileOrCategory": ""
+        },
+        {
+          "publicationUrl": "",
+          "agency": "Web of Science",
+          "id": "idx-1787133242105-axy46",
+          "quartileOrCategory": "",
+          "scopusWosLink": "",
+          "percentile": ""
+        }
+      ],
+      "title": "Performance Analysis of Deterministic Finite Automata and Turing Machine Using JFLAP Tool",
+      "volume": "",
+      "publisherName": "World Scientific",
+      "authorDetails": [
+        {
+          "position": 1,
+          "name": "K. Sindhanaiselvan",
+          "affiliation": "",
+          "id": "author-1787133122337-fha2l",
+          "isStudent": false,
+          "isCorresponding": false,
+          "institutionType": "",
+          "email": "",
+          "country": ""
+        },
+        {
+          "affiliation": "",
+          "position": 2,
+          "id": "author-1787133195668-3c6n1",
+          "isStudent": false,
+          "isCorresponding": false,
+          "institutionType": "",
+          "country": "India",
           "email": "aruna.sk@christuniversity.in",
           "name": "ARUNA S K "
         },
         {
-          "email": "",
-          "affiliation": "",
-          "country": "",
-          "position": 3,
           "name": "B. Padmini Devi",
-          "id": "author-1787133196839-a3swh",
-          "isStudent": false,
+          "position": 3,
+          "affiliation": "",
+          "email": "",
+          "country": "",
           "institutionType": "",
-          "isCorresponding": false
+          "isCorresponding": false,
+          "id": "author-1787133196839-a3swh",
+          "isStudent": false
         }
       ],
-      "peerReviewStatus": "Peer-reviewed",
+      "journalUrl": "https://www.worldscientific.com/doi/abs/10.1142/S021812662150105X",
       "dateOfRevision": "",
-      "scope": "International",
+      "abstract": "",
+      "subjectAreas": [],
+      "sdgCategory": "",
+      "id": "pub-1787133122337",
+      "journalName": "Journal of Circuits, Systems and Computers",
+      "issue": "",
+      "medium": "Print and Online",
       "authors": [
         "K. Sindhanaiselvan",
         "ARUNA S K ",
         "B. Padmini Devi"
       ],
-      "doi": "10.1142/S021812662150105X",
-      "journalUrl": "https://www.worldscientific.com/doi/abs/10.1142/S021812662150105X",
-      "year": "2020",
-      "sdgCategory": "",
       "language": "English",
-      "publisherName": "World Scientific",
-      "medium": "Print and Online",
-      "dateOfSubmission": "",
-      "volume": "",
-      "type": "Journal",
-      "subjectAreas": [],
-      "authorship": "Co-Authored",
+      "articleKeywords": [],
+      "year": "2020",
+      "peerReviewStatus": "Peer-reviewed"
+    },
+    {
+      "year": "2019",
       "indexingEntries": [
         {
           "agency": "Scopus",
-          "quartileOrCategory": "",
-          "id": "idx-1787133122337-jaxef",
-          "percentile": "",
           "publicationUrl": "",
-          "scopusWosLink": ""
-        },
-        {
+          "id": "idx-1787133298468-dsyn8",
+          "scopusWosLink": "",
           "percentile": "",
-          "id": "idx-1787133242105-axy46",
-          "agency": "Web of Science",
-          "publicationUrl": "",
-          "quartileOrCategory": "",
-          "scopusWosLink": ""
+          "quartileOrCategory": ""
         }
       ],
-      "issue": "",
-      "dateOfPublication": "2020-12-20",
-      "abstract": "",
-      "pageTo": "",
-      "title": "Performance Analysis of Deterministic Finite Automata and Turing Machine Using JFLAP Tool",
-      "pageFrom": "",
-      "publisherAddress": "World Scientific Publ Co Pte Ltd, 5 Toh Tuck Link, Singapore, Singapore, 596224",
-      "issn": "0218-1266",
-      "id": "pub-1787133122337"
-    },
-    {
+      "dateOfRevision": "",
       "volume": "",
+      "pageTo": "",
       "journalUrl": "https://link.springer.com/journal/500",
+      "id": "pub-1787133298468",
+      "subjectAreas": [],
+      "pageFrom": "",
+      "title": "Computerized grading of brain tumors supplemented by artificial intelligence",
+      "scope": "International",
+      "peerReviewStatus": "Peer-reviewed",
       "authors": [
         "K.Sindhanaiselvan",
         "B. Madhusudhanan",
         "ARUNA S K "
       ],
+      "publisherAddress": "",
+      "articleKeywords": [],
+      "language": "English",
+      "type": "Journal",
+      "dateOfPublication": "2019-09-09",
       "issue": "",
       "medium": "Print Only",
-      "issn": "1432-7643 ",
-      "id": "pub-1787133298468",
-      "title": "Computerized grading of brain tumors supplemented by artificial intelligence",
-      "peerReviewStatus": "Peer-reviewed",
-      "dateOfSubmission": "",
-      "language": "English",
-      "dateOfPublication": "2019-09-09",
-      "articleKeywords": [],
-      "dateOfRevision": "",
-      "subjectAreas": [],
+      "authorship": "Co-Authored",
+      "publisherName": "Springer Berlin Heidelberg",
+      "sdgCategory": "",
       "authorDetails": [
         {
           "country": "",
+          "isStudent": false,
           "name": "K.Sindhanaiselvan",
-          "isStudent": false,
-          "id": "author-1787133298468-iawnj",
-          "position": 1,
+          "isCorresponding": false,
           "institutionType": "",
-          "isCorresponding": false,
-          "affiliation": "",
-          "email": ""
-        },
-        {
-          "country": "",
-          "name": "B. Madhusudhanan",
-          "isStudent": false,
-          "id": "author-1787133348948-uxyve",
           "email": "",
-          "position": 2,
-          "isCorresponding": false,
           "affiliation": "",
-          "institutionType": ""
+          "position": 1,
+          "id": "author-1787133298468-iawnj"
         },
         {
-          "isStudent": false,
-          "name": "ARUNA S K ",
+          "affiliation": "",
+          "name": "B. Madhusudhanan",
           "isCorresponding": false,
+          "email": "",
+          "institutionType": "",
+          "country": "",
+          "id": "author-1787133348948-uxyve",
+          "isStudent": false,
+          "position": 2
+        },
+        {
+          "affiliation": "",
+          "id": "author-1787133350006-epymt",
           "institutionType": "",
           "position": 3,
+          "isCorresponding": false,
           "country": "India",
-          "id": "author-1787133350006-epymt",
-          "affiliation": "",
-          "email": "aruna.sk@christuniversity.in"
+          "email": "aruna.sk@christuniversity.in",
+          "isStudent": false,
+          "name": "ARUNA S K "
         }
       ],
-      "documentProofName": "",
-      "authorship": "Co-Authored",
+      "dateOfSubmission": "",
       "journalName": "Soft Computing A Fusion of Foundations, Methodologies and Applications",
-      "doi": "10.1007/s00500-019-04403-7",
-      "pageTo": "",
-      "type": "Journal",
-      "publisherAddress": "",
-      "pageFrom": "",
-      "scope": "International",
-      "publisherName": "Springer Berlin Heidelberg",
       "abstract": "",
-      "year": "2019",
-      "sdgCategory": "",
-      "indexingEntries": [
-        {
-          "publicationUrl": "",
-          "scopusWosLink": "",
-          "agency": "Scopus",
-          "percentile": "",
-          "id": "idx-1787133298468-dsyn8",
-          "quartileOrCategory": ""
-        }
-      ]
+      "documentProofName": "",
+      "issn": "1432-7643 ",
+      "doi": "10.1007/s00500-019-04403-7"
     },
     {
-      "subjectAreas": [],
-      "dateOfSubmission": "",
-      "volume": "11",
-      "indexingEntries": [
-        {
-          "scopusWosLink": "",
-          "id": "idx-1787133457238-pvd5v",
-          "quartileOrCategory": "",
-          "publicationUrl": "",
-          "percentile": "",
-          "agency": "Scopus"
-        },
-        {
-          "publicationUrl": "",
-          "percentile": "",
-          "quartileOrCategory": "",
-          "id": "idx-1787133640732-szin3",
-          "scopusWosLink": "",
-          "agency": "Web of Science"
-        }
-      ],
       "authors": [
         "K.Sindhanaiselvan",
         "M.Kumaresan",
         "ARUNA S K "
       ],
-      "sdgCategory": "",
-      "publisherName": "JARDCS",
+      "journalUrl": "http://www.jardcs.org/abstract.php?id=1577 ",
+      "dateOfRevision": "",
+      "publisherAddress": "67321, Mackay Street, Deerfield Beach, Kansas City, USA",
+      "articleKeywords": [],
       "year": "2019",
-      "medium": "E Journal",
-      "pageFrom": "1953",
-      "title": "A Unique Adventure - Unity Based 3D Game",
       "issue": "Special issue 02",
-      "abstract": "",
-      "journalName": "Journal of Advanced Research in Dynamical and Control Systems",
+      "id": "pub-1787133457238",
+      "pageFrom": "1953",
+      "dateOfSubmission": "",
+      "medium": "E Journal",
       "authorship": "Co-Authored",
+      "dateOfPublication": "2019-07-11",
       "type": "Journal",
-      "documentProofName": "",
+      "publisherName": "JARDCS",
       "authorDetails": [
         {
-          "institutionType": "",
-          "isCorresponding": false,
+          "country": "",
+          "isStudent": false,
           "affiliation": "",
-          "position": 1,
           "name": "K.Sindhanaiselvan",
           "email": "",
-          "isStudent": false,
-          "country": "",
+          "position": 1,
+          "isCorresponding": false,
+          "institutionType": "",
           "id": "author-1787133457238-0fwen"
         },
         {
+          "isStudent": false,
+          "position": 2,
           "isCorresponding": false,
-          "institutionType": "",
-          "name": "M.Kumaresan",
           "email": "",
-          "isStudent": false,
+          "institutionType": "",
           "country": "",
+          "name": "M.Kumaresan",
           "id": "author-1787133606396-nbv1w",
-          "affiliation": "",
-          "position": 2
+          "affiliation": ""
         },
         {
-          "institutionType": "",
-          "name": "ARUNA S K ",
           "isCorresponding": false,
-          "affiliation": "",
-          "email": "aruna.sk@christuniversity.in",
-          "isStudent": false,
+          "institutionType": "",
           "id": "author-1787133607492-8qzy8",
-          "country": "India",
-          "position": 3
-        }
-      ],
-      "id": "pub-1787133457238",
-      "peerReviewStatus": "Peer-reviewed",
-      "publisherAddress": "67321, Mackay Street, Deerfield Beach, Kansas City, USA",
-      "dateOfRevision": "",
-      "dateOfPublication": "2019-07-11",
-      "language": "English",
-      "pageTo": "1959",
-      "articleKeywords": [],
-      "issn": "1943-023X",
-      "scope": "International",
-      "journalUrl": "http://www.jardcs.org/abstract.php?id=1577 "
-    },
-    {
-      "doi": "https://www.jardcs.org/abstract.php?id=1577",
-      "publisherName": "JARDCS",
-      "pageFrom": "1960",
-      "documentProofName": "",
-      "abstract": "",
-      "volume": "11",
-      "publisherAddress": "67321, Mackay Street, Deerfield Beach, Kansas City, USA",
-      "authorship": "Co-Authored",
-      "authorDetails": [
-        {
-          "affiliation": "",
-          "name": "KIRUBAKRAN DAVID",
-          "position": 1,
-          "id": "author-1787133893902-n8mv9",
-          "country": "",
-          "isStudent": false,
-          "isCorresponding": false,
-          "institutionType": "",
-          "email": ""
-        },
-        {
-          "affiliation": "",
-          "isCorresponding": false,
-          "institutionType": "",
-          "name": "MERIN THOMAS ",
-          "email": "merin.thomas@christuniversity.in",
-          "id": "author-1787134041237-4zuxm",
-          "isStudent": false,
-          "country": "India",
-          "position": 2
-        },
-        {
-          "country": "India",
-          "id": "author-1787134042447-hkq4v",
           "position": 3,
           "email": "aruna.sk@christuniversity.in",
-          "isCorresponding": false,
-          "institutionType": "",
-          "name": "ARUNA S K ",
           "isStudent": false,
+          "name": "ARUNA S K ",
+          "country": "India",
           "affiliation": ""
         }
       ],
-      "issn": "1943-023X",
-      "issue": "Special issue 02",
-      "medium": "E Journal",
-      "articleKeywords": [],
-      "title": "An Advanced Variable Temperature Refrigerator for Preservation And Management Of Food ",
-      "dateOfRevision": "",
-      "id": "pub-1787133893902",
-      "scope": "International",
-      "journalName": "Journal of Advanced Research in Dynamical and Control Systems",
-      "year": "2019",
       "language": "English",
+      "indexingEntries": [
+        {
+          "id": "idx-1787133457238-pvd5v",
+          "scopusWosLink": "",
+          "publicationUrl": "",
+          "percentile": "",
+          "quartileOrCategory": "",
+          "agency": "Scopus"
+        },
+        {
+          "agency": "Web of Science",
+          "publicationUrl": "",
+          "id": "idx-1787133640732-szin3",
+          "percentile": "",
+          "scopusWosLink": "",
+          "quartileOrCategory": ""
+        }
+      ],
       "peerReviewStatus": "Peer-reviewed",
       "subjectAreas": [],
+      "issn": "1943-023X",
+      "journalName": "Journal of Advanced Research in Dynamical and Control Systems",
+      "volume": "11",
       "sdgCategory": "",
-      "journalUrl": "http://www.jardcs.org/",
+      "documentProofName": "",
+      "scope": "International",
+      "title": "A Unique Adventure - Unity Based 3D Game",
+      "pageTo": "1959",
+      "abstract": ""
+    },
+    {
+      "subjectAreas": [],
+      "indexingEntries": [
+        {
+          "publicationUrl": "",
+          "quartileOrCategory": "",
+          "id": "idx-1787133893902-4hljp",
+          "scopusWosLink": "",
+          "agency": "Scopus",
+          "percentile": ""
+        },
+        {
+          "quartileOrCategory": "",
+          "publicationUrl": "",
+          "percentile": "",
+          "agency": "Web of Science",
+          "scopusWosLink": "",
+          "id": "idx-1787134096434-qclxr"
+        }
+      ],
+      "journalName": "Journal of Advanced Research in Dynamical and Control Systems",
+      "publisherAddress": "67321, Mackay Street, Deerfield Beach, Kansas City, USA",
+      "issn": "1943-023X",
+      "medium": "E Journal",
+      "authorship": "Co-Authored",
+      "sdgCategory": "",
+      "type": "Journal",
+      "id": "pub-1787133893902",
+      "dateOfRevision": "",
+      "title": "An Advanced Variable Temperature Refrigerator for Preservation And Management Of Food ",
       "dateOfSubmission": "",
+      "pageFrom": "1960",
+      "scope": "International",
+      "articleKeywords": [],
+      "publisherName": "JARDCS",
+      "language": "English",
+      "authorDetails": [
+        {
+          "position": 1,
+          "email": "",
+          "isStudent": false,
+          "country": "",
+          "id": "author-1787133893902-n8mv9",
+          "affiliation": "",
+          "isCorresponding": false,
+          "institutionType": "",
+          "name": "KIRUBAKRAN DAVID"
+        },
+        {
+          "affiliation": "",
+          "country": "India",
+          "isStudent": false,
+          "institutionType": "",
+          "isCorresponding": false,
+          "name": "MERIN THOMAS ",
+          "email": "merin.thomas@christuniversity.in",
+          "id": "author-1787134041237-4zuxm",
+          "position": 2
+        },
+        {
+          "isCorresponding": false,
+          "email": "aruna.sk@christuniversity.in",
+          "institutionType": "",
+          "id": "author-1787134042447-hkq4v",
+          "isStudent": false,
+          "country": "India",
+          "affiliation": "",
+          "position": 3,
+          "name": "ARUNA S K "
+        }
+      ],
+      "doi": "https://www.jardcs.org/abstract.php?id=1577",
+      "volume": "11",
       "authors": [
         "KIRUBAKRAN DAVID",
         "MERIN THOMAS ",
         "ARUNA S K "
       ],
-      "indexingEntries": [
-        {
-          "agency": "Scopus",
-          "id": "idx-1787133893902-4hljp",
-          "quartileOrCategory": "",
-          "scopusWosLink": "",
-          "publicationUrl": "",
-          "percentile": ""
-        },
-        {
-          "publicationUrl": "",
-          "quartileOrCategory": "",
-          "agency": "Web of Science",
-          "id": "idx-1787134096434-qclxr",
-          "scopusWosLink": "",
-          "percentile": ""
-        }
-      ],
-      "type": "Journal",
-      "dateOfPublication": "2019-07-11",
-      "pageTo": "1966"
+      "issue": "Special issue 02",
+      "journalUrl": "http://www.jardcs.org/",
+      "pageTo": "1966",
+      "documentProofName": "",
+      "abstract": "",
+      "peerReviewStatus": "Peer-reviewed",
+      "year": "2019",
+      "dateOfPublication": "2019-07-11"
     },
     {
+      "medium": "Print and Online",
+      "doi": "https://doi.org/10.1007/s11036-019-01283-x",
+      "articleKeywords": [],
+      "issn": "1572-8153",
+      "dateOfSubmission": "",
+      "journalUrl": "https://link.springer.com/journal/11036",
+      "abstract": "",
+      "dateOfPublication": "2019-06-10",
       "issue": "",
-      "authorDetails": [
-        {
-          "isStudent": false,
-          "affiliation": "",
-          "country": "",
-          "email": "",
-          "isCorresponding": false,
-          "position": 1,
-          "institutionType": "",
-          "name": "K. Sindhanaiselvan",
-          "id": "author-1787134141575-bat9b"
-        },
-        {
-          "isCorresponding": false,
-          "institutionType": "",
-          "id": "author-1787134227456-p1svc",
-          "affiliation": "",
-          "email": "",
-          "position": 2,
-          "name": "J. Mannar Mannan",
-          "isStudent": false,
-          "country": ""
-        },
-        {
-          "id": "author-1787134228799-k8khw",
-          "institutionType": "",
-          "name": "ARUNA S K ",
-          "isCorresponding": false,
-          "position": 3,
-          "affiliation": "",
-          "isStudent": false,
-          "country": "India",
-          "email": "aruna.sk@christuniversity.in"
-        }
-      ],
+      "dateOfRevision": "",
+      "subjectAreas": [],
+      "publisherAddress": "Springer US",
+      "type": "Journal",
+      "language": "English",
+      "documentProofName": "",
+      "pageFrom": "",
+      "pageTo": "",
       "indexingEntries": [
         {
-          "publicationUrl": "",
+          "scopusWosLink": "",
           "agency": "Scopus",
-          "percentile": "",
           "quartileOrCategory": "",
-          "id": "idx-1787134141575-buie6",
-          "scopusWosLink": ""
+          "publicationUrl": "",
+          "percentile": "",
+          "id": "idx-1787134141575-buie6"
         }
       ],
-      "peerReviewStatus": "Peer-reviewed",
-      "title": "Designing a Dynamic Topology (DHT) for Cluster Head Selection in Mobile Adhoc Network",
-      "doi": "https://doi.org/10.1007/s11036-019-01283-x",
-      "pageTo": "",
-      "language": "English",
-      "id": "pub-1787134141575",
-      "journalName": "Mobile Networks and Applications",
-      "dateOfPublication": "2019-06-10",
-      "journalUrl": "https://link.springer.com/journal/11036",
-      "publisherName": "Springer US",
-      "sdgCategory": "",
-      "subjectAreas": [],
-      "dateOfSubmission": "",
-      "issn": "1572-8153",
-      "documentProofName": "",
-      "volume": "",
-      "pageFrom": "",
-      "dateOfRevision": "",
-      "articleKeywords": [],
-      "abstract": "",
-      "year": "2019",
-      "medium": "Print and Online",
+      "authorship": "Co-Authored",
       "authors": [
         "K. Sindhanaiselvan",
         "J. Mannar Mannan",
         "ARUNA S K "
       ],
-      "authorship": "Co-Authored",
+      "id": "pub-1787134141575",
+      "volume": "",
+      "peerReviewStatus": "Peer-reviewed",
+      "journalName": "Mobile Networks and Applications",
       "scope": "International",
-      "publisherAddress": "Springer US",
-      "type": "Journal"
-    },
-    {
-      "volume": "14",
+      "sdgCategory": "",
       "authorDetails": [
         {
-          "name": "ARUNA S K ",
-          "country": "India",
-          "isCorresponding": false,
-          "position": 1,
+          "name": "K. Sindhanaiselvan",
           "isStudent": false,
+          "email": "",
+          "country": "",
+          "id": "author-1787134141575-bat9b",
+          "institutionType": "",
+          "isCorresponding": false,
+          "affiliation": "",
+          "position": 1
+        },
+        {
+          "email": "",
+          "id": "author-1787134227456-p1svc",
+          "isStudent": false,
+          "institutionType": "",
+          "isCorresponding": false,
+          "position": 2,
+          "name": "J. Mannar Mannan",
+          "affiliation": "",
+          "country": ""
+        },
+        {
+          "isCorresponding": false,
           "email": "aruna.sk@christuniversity.in",
           "institutionType": "",
+          "country": "India",
+          "affiliation": "",
+          "position": 3,
+          "id": "author-1787134228799-k8khw",
+          "isStudent": false,
+          "name": "ARUNA S K "
+        }
+      ],
+      "title": "Designing a Dynamic Topology (DHT) for Cluster Head Selection in Mobile Adhoc Network",
+      "year": "2019",
+      "publisherName": "Springer US"
+    },
+    {
+      "journalName": "TAGA Journal of Graphic Technology ?Technical Association of the Graphic Arts",
+      "issn": "1748-0345",
+      "indexingEntries": [
+        {
+          "agency": "",
+          "percentile": "",
+          "quartileOrCategory": "",
+          "publicationUrl": "",
+          "id": "idx-1787134364749-9y2q7",
+          "scopusWosLink": ""
+        }
+      ],
+      "sdgCategory": "",
+      "authorDetails": [
+        {
           "id": "author-1787134364748-64j7f",
-          "affiliation": ""
+          "isStudent": false,
+          "affiliation": "",
+          "email": "aruna.sk@christuniversity.in",
+          "institutionType": "",
+          "name": "ARUNA S K ",
+          "isCorresponding": false,
+          "position": 1,
+          "country": "India"
         },
         {
           "position": 2,
+          "affiliation": "",
+          "isStudent": false,
+          "name": "SINDHANAISELVAN K",
           "country": "India",
-          "email": "",
-          "institutionType": "",
           "isCorresponding": false,
           "id": "author-1787134474023-7pfgd",
-          "isStudent": false,
-          "affiliation": "",
-          "name": "SINDHANAISELVAN K"
+          "institutionType": "",
+          "email": ""
         }
       ],
-      "scope": "International",
-      "dateOfRevision": "",
-      "medium": "E Journal",
-      "peerReviewStatus": "Peer-reviewed",
-      "dateOfSubmission": "",
       "publisherName": "Swansea Printing Technology Ltd",
       "documentProofName": "",
-      "articleKeywords": [],
-      "authorship": "Co-Authored",
-      "abstract": "",
-      "issn": "1748-0345",
+      "subjectAreas": [],
+      "journalUrl": "http://www.tagajournal.com/",
+      "dateOfSubmission": "",
+      "pageTo": "3154",
       "authors": [
         "ARUNA S K ",
         "SINDHANAISELVAN K"
       ],
-      "pageFrom": "3148",
-      "subjectAreas": [],
-      "dateOfPublication": "2018-04-18",
-      "sdgCategory": "",
-      "year": "2018",
-      "pageTo": "3154",
-      "publisherAddress": "Sketty, Swansea, SA2 0QG, United Kingdom",
-      "journalName": "TAGA Journal of Graphic Technology ?Technical Association of the Graphic Arts",
-      "id": "pub-1787134364748",
-      "journalUrl": "http://www.tagajournal.com/",
-      "type": "Journal",
       "issue": "",
+      "pageFrom": "3148",
+      "dateOfPublication": "2018-04-18",
+      "volume": "14",
+      "type": "Journal",
+      "publisherAddress": "Sketty, Swansea, SA2 0QG, United Kingdom",
+      "scope": "International",
+      "articleKeywords": [],
       "title": "Energy Efficient Glue Routing Algorithm Based on AODV in Mobile Adhoc Networks",
       "language": "English",
-      "indexingEntries": [
-        {
-          "id": "idx-1787134364749-9y2q7",
-          "scopusWosLink": "",
-          "quartileOrCategory": "",
-          "publicationUrl": "",
-          "percentile": "",
-          "agency": ""
-        }
-      ]
+      "peerReviewStatus": "Peer-reviewed",
+      "authorship": "Co-Authored",
+      "id": "pub-1787134364748",
+      "medium": "E Journal",
+      "abstract": "",
+      "dateOfRevision": "",
+      "year": "2018"
     },
     {
-      "language": "English",
-      "dateOfSubmission": "",
+      "journalName": "The IIOAB Journal - Institute of Integrative Omics and Applied Biotechnology (IIOAB) ISSN",
+      "peerReviewStatus": "Peer-reviewed",
+      "title": "Support Vector Machine Based Framework for Dementia Classification",
+      "authorship": "Co-Authored",
       "year": "2016",
-      "journalUrl": "https://www.iioab.org",
+      "sdgCategory": "",
+      "scope": "International",
+      "subjectAreas": [],
+      "indexingEntries": [
+        {
+          "id": "idx-1787134586014-grth5",
+          "quartileOrCategory": "",
+          "agency": "Scopus",
+          "percentile": "",
+          "publicationUrl": "",
+          "scopusWosLink": ""
+        }
+      ],
+      "dateOfRevision": "",
+      "pageFrom": "384",
       "authorDetails": [
         {
-          "country": "India",
-          "id": "author-1787134586014-0494q",
           "affiliation": "",
-          "name": "ARUNA S K ",
+          "isCorresponding": false,
+          "isStudent": false,
           "position": 1,
           "institutionType": "",
-          "isCorresponding": false,
+          "id": "author-1787134586014-0494q",
           "email": "aruna.sk@christuniversity.in",
-          "isStudent": false
+          "country": "India",
+          "name": "ARUNA S K "
         },
         {
-          "id": "author-1787134721594-zqpza",
+          "isStudent": false,
           "affiliation": "",
           "institutionType": "",
-          "email": "",
+          "position": 2,
+          "country": "",
           "isCorresponding": false,
           "name": "Madhusudhanan B",
-          "country": "",
-          "isStudent": false,
-          "position": 2
+          "email": "",
+          "id": "author-1787134721594-zqpza"
         },
         {
+          "country": "",
+          "id": "author-1787134723986-txjxy",
+          "name": "Chitra S",
           "email": "",
-          "isCorresponding": false,
+          "position": 3,
           "isStudent": false,
           "institutionType": "",
-          "position": 3,
-          "id": "author-1787134723986-txjxy",
-          "country": "",
-          "name": "Chitra S",
+          "isCorresponding": false,
           "affiliation": ""
         }
       ],
-      "title": "Support Vector Machine Based Framework for Dementia Classification",
-      "documentProofName": "",
-      "issue": "9",
-      "articleKeywords": [],
       "id": "pub-1787134586014",
-      "subjectAreas": [],
+      "medium": "E Journal",
+      "publisherName": "",
       "type": "Journal",
-      "pageTo": "393",
       "authors": [
         "ARUNA S K ",
         "Madhusudhanan B",
         "Chitra S"
       ],
-      "publisherName": "",
-      "peerReviewStatus": "Peer-reviewed",
-      "abstract": "",
-      "publisherAddress": "",
-      "pageFrom": "384",
-      "indexingEntries": [
-        {
-          "id": "idx-1787134586014-grth5",
-          "agency": "Scopus",
-          "percentile": "",
-          "publicationUrl": "",
-          "quartileOrCategory": "",
-          "scopusWosLink": ""
-        }
-      ],
-      "authorship": "Co-Authored",
-      "journalName": "The IIOAB Journal - Institute of Integrative Omics and Applied Biotechnology (IIOAB) ISSN",
-      "medium": "E Journal",
-      "scope": "International",
-      "issn": "0976-3104",
-      "sdgCategory": "",
+      "journalUrl": "https://www.iioab.org",
+      "language": "English",
+      "dateOfSubmission": "",
+      "articleKeywords": [],
+      "documentProofName": "",
       "volume": "7",
-      "dateOfRevision": "",
+      "issue": "9",
+      "abstract": "",
+      "issn": "0976-3104",
+      "publisherAddress": "",
+      "pageTo": "393",
       "dateOfPublication": "2016-08-18"
     },
     {
-      "scope": "International",
-      "sdgCategory": "",
-      "peerReviewStatus": "Peer-reviewed",
-      "language": "English",
-      "dateOfPublication": "2015-05-11",
-      "articleKeywords": [],
-      "type": "Journal",
-      "publisherName": "International Standard Name Identifier (ISO 27729)",
-      "medium": "E Journal",
-      "dateOfRevision": "",
-      "journalName": "World Academy of Science,Engineering&Technology,International Journal of Computer&Information Engg.",
-      "subjectAreas": [],
-      "journalUrl": "https://waset.org/Publication",
-      "volume": "9",
-      "doi": "10.1166/jmihi.2016.1948",
-      "dateOfSubmission": "",
+      "abstract": "",
       "id": "pub-1787134814812",
+      "volume": "9",
+      "documentProofName": "",
+      "articleKeywords": [],
+      "dateOfSubmission": "",
+      "pageTo": "888",
       "year": "2015",
+      "language": "English",
+      "doi": "10.1166/jmihi.2016.1948",
+      "journalUrl": "https://waset.org/Publication",
+      "dateOfPublication": "2015-05-11",
+      "scope": "International",
+      "publisherAddress": "",
+      "title": "Machine Learning Approach for Identifying Dementia from MRI Images",
+      "publisherName": "International Standard Name Identifier (ISO 27729)",
       "authorDetails": [
         {
-          "id": "author-1787134814812-l4g7p",
-          "institutionType": "",
-          "affiliation": "",
-          "email": "",
-          "isCorresponding": false,
-          "isStudent": false,
           "position": 1,
+          "id": "author-1787134814812-l4g7p",
+          "email": "",
+          "institutionType": "",
+          "isStudent": false,
+          "isCorresponding": false,
           "country": "",
-          "name": "Chitra S"
+          "name": "Chitra S",
+          "affiliation": ""
         },
         {
-          "institutionType": "",
-          "affiliation": "",
-          "name": "ARUNA S K ",
-          "isCorresponding": false,
           "email": "aruna.sk@christuniversity.in",
-          "isStudent": false,
-          "position": 2,
+          "id": "author-1787134978648-7qk6q",
+          "institutionType": "",
+          "isCorresponding": false,
+          "affiliation": "",
           "country": "India",
-          "id": "author-1787134978648-7qk6q"
+          "position": 2,
+          "name": "ARUNA S K ",
+          "isStudent": false
         }
       ],
-      "abstract": "",
+      "peerReviewStatus": "Peer-reviewed",
+      "medium": "E Journal",
+      "subjectAreas": [],
+      "type": "Journal",
       "pageFrom": "881",
+      "issue": "3",
       "indexingEntries": [
         {
-          "publicationUrl": "",
-          "agency": "",
           "percentile": "",
-          "scopusWosLink": "",
+          "agency": "",
           "id": "idx-1787134814812-3iy0p",
-          "quartileOrCategory": ""
+          "quartileOrCategory": "",
+          "scopusWosLink": "",
+          "publicationUrl": ""
         }
       ],
+      "issn": "9195-0263",
+      "journalName": "World Academy of Science,Engineering&Technology,International Journal of Computer&Information Engg.",
+      "sdgCategory": "",
+      "dateOfRevision": "",
+      "authorship": "Co-Authored",
       "authors": [
         "Chitra S",
         "ARUNA S K "
-      ],
-      "issn": "9195-0263",
-      "authorship": "Co-Authored",
-      "pageTo": "888",
-      "documentProofName": "",
-      "issue": "3",
-      "publisherAddress": "",
-      "title": "Machine Learning Approach for Identifying Dementia from MRI Images"
+      ]
     }
   ],
-  "copyrights": [],
-  "patents": [],
-  "workshopsConducted": [
+  "experience": [
     {
-      "documentProofName": "Satellite Imagery Workshop-Christ.pdf",
-      "location": "Kengeri Campus, Bangalore",
-      "organizationType": "Academic Institution",
-      "mode": "Offline",
-      "startDate": "2022-11-18",
-      "title": "One day Workshop on Data Science and Satellite Imagery",
-      "type": "Conducted",
-      "organizerName": "Department of Computer Science and Engineering, CHRIST (Deemed to be University)",
-      "endDate": "2022-11-18",
-      "topic": "Data Science and Satellite Imagery",
-      "organizedBy": "Department of Computer Science and Engineering, CHRIST (Deemed to be University)",
-      "id": "ws-c-1",
+      "role": "Lecturer",
+      "endDate": "2008-12",
+      "startDate": "2004-06",
+      "organization": "Department of CSE, Trichy Engineering College",
+      "id": "experience-1786443720597",
       "description": "",
-      "organizerAddress": "Kengeri Campus, Bangalore"
+      "location": "Trichy District, Tamil Nadu, India"
     },
     {
-      "organizationType": "Academic Institution",
-      "startDate": "2024-09-06",
-      "mode": "Offline",
+      "organization": "Department of CSE, Paavai Engineering College",
+      "startDate": "2009-01",
       "description": "",
-      "type": "Conducted",
-      "id": "ws-c-2",
-      "documentProofName": "2024.09.06_Startup Success_Idea to Pitch_Report.docx",
-      "topic": "Startup Success: Idea to Pitch",
-      "organizedBy": "CHRIST Incubation Centre, Sub-Institute Innovation Council (IIC) - Kengeri Campus, CHRIST (Deemed to be University)",
-      "endDate": "2024-09-06",
-      "title": "Startup Success: Idea to Pitch Workshop",
-      "location": "Mini Seminar Hall, Block II - SoET, Kengeri Campus, Bangalore",
-      "organizerAddress": "Mini Seminar Hall, Block II - SoET, Kengeri Campus, Bangalore",
-      "organizerName": "CHRIST Incubation Centre, Sub-Institute Innovation Council (IIC) - Kengeri Campus, CHRIST (Deemed to be University)"
-    }
-  ],
-  "workshopsAttended": [
-    {
-      "organizedBy": "Indian Institute of Science (IISc), Bengaluru & London School of Hygiene & Tropical Medicine (LSHTM), London",
-      "documentProofName": "IISc.pdf",
-      "endDate": "2025-05-01",
-      "location": "IISc Campus, Bengaluru, India",
-      "topic": "Bridging Artificial Intelligence and Healthcare",
-      "description": "",
-      "organizationType": "Premier Research Institute / Academic",
-      "organizerName": "Indian Institute of Science (IISc), Bengaluru & London School of Hygiene & Tropical Medicine (LSHTM), London",
-      "title": "Bridging Artificial Intelligence and Healthcare Workshop",
-      "organizerAddress": "IISc Campus, Bengaluru, India",
-      "mode": "Offline",
-      "id": "ws-a-1",
-      "startDate": "2025-04-29",
-      "type": "Attended"
+      "location": "Namakkal District, Tamil Nadu, India",
+      "id": "experience-1786443633956",
+      "endDate": "2009-08",
+      "role": "Lecturer"
     },
     {
-      "documentProofName": "ATAL_Aruna_ APS certificate.pdf",
-      "organizedBy": "AICTE Training And Learning (ATAL) Academy / A P S College of Engineering",
-      "organizerAddress": "A P S College of Engineering, Bangalore",
-      "startDate": "2024-12-16",
+      "location": "Namakkal District, Tamil Nadu, India",
       "description": "",
-      "title": "AICTE ATAL Faculty Development Program on QuantumVerse: Advancing Knowledge in Quantum Computing, XR, and the Metaverse",
-      "organizerName": "AICTE Training And Learning (ATAL) Academy / A P S College of Engineering",
-      "endDate": "2024-12-21",
-      "mode": "Offline",
-      "type": "Attended",
-      "organizationType": "Government Body / Academic Institution",
-      "topic": "QuantumVerse: Advancing Knowledge in Quantum Computing, XR, and the Metaverse",
-      "id": "ws-a-2",
-      "location": "A P S College of Engineering, Bangalore"
+      "id": "experience-1786443536881",
+      "organization": "Department of CSE, Paavai Engineering College",
+      "startDate": "2011-06",
+      "endDate": "2017-05",
+      "role": "Assistant Professor"
     },
     {
-      "endDate": "2025-01-25",
-      "organizedBy": "AICTE Training And Learning (ATAL) Academy / Gnanamani College of Technology",
-      "type": "Attended",
-      "id": "ws-a-3",
-      "mode": "Offline",
-      "documentProofName": "ATAL _ARUNA_Gnamani.pdf",
-      "topic": "Innovative Medical Healthcare using Augmented Reality and Virtual Reality",
-      "organizerName": "AICTE Training And Learning (ATAL) Academy / Gnanamani College of Technology",
       "description": "",
-      "organizerAddress": "Gnanamani College of Technology, Namakkal, Tamil Nadu",
-      "startDate": "2025-01-20",
-      "location": "Gnanamani College of Technology, Namakkal, Tamil Nadu",
-      "organizationType": "Government Body / Academic Institution",
-      "title": "AICTE ATAL Faculty Development Program on Innovative Medical Healthcare using Augmented Reality and Virtual Reality"
+      "role": "Associate Professor",
+      "startDate": "2017-06",
+      "id": "experience-1786443409443",
+      "endDate": "2018-05",
+      "location": "Namakkal District, Tamil Nadu, India",
+      "organization": "Department of CSE, Paavai Engineering College"
     },
     {
-      "organizerName": "Department of Electronics and Communication Engineering, Paavai Engineering College in association with IETE",
-      "id": "ws-a-4",
-      "organizerAddress": "Pachal, Namakkal, Tamil Nadu",
-      "location": "Pachal, Namakkal, Tamil Nadu",
-      "title": "Online Faculty Development Programme on 'Innovation in Mentoring Pedagogy and incorporation of ICT techniques in Education'",
-      "endDate": "2023-02-04",
-      "startDate": "2023-01-30",
-      "organizedBy": "Department of Electronics and Communication Engineering, Paavai Engineering College in association with IETE",
-      "type": "Attended",
-      "documentProofName": "PEC-ECE-FDP Certificate.png",
-      "organizationType": "Academic Institution",
-      "topic": "Innovation in Mentoring Pedagogy and incorporation of ICT techniques in Education",
-      "mode": "Online",
+      "endDate": "2022-06",
+      "id": "experience-1786443342334",
+      "organization": "Department of CSE, CHRIST (Deemed to be University",
+      "description": "",
+      "location": "Bangalore, Karnataka, India.",
+      "startDate": "2018-06",
+      "role": "Assistant Professor "
+    },
+    {
+      "startDate": "2022-07",
+      "location": "Bangalore, KA, IN.",
+      "role": "Associate Professor",
+      "id": "experience-1786442711454",
+      "endDate": "present",
+      "organization": "CHRIST (Deemed to be University)",
       "description": ""
-    },
-    {
-      "organizerName": "IIT Bombay",
-      "organizerAddress": "IIT Bombay, Powai, Mumbai",
-      "title": "Co-ordinators workshop on Computer Networking",
-      "location": "IIT Bombay, Powai, Mumbai",
-      "organizedBy": "IIT Bombay",
-      "type": "Attended",
-      "startDate": "2014-05-05",
-      "id": "ws-a-5",
-      "mode": "Offline",
-      "organizationType": "Premier Institute / Government",
-      "documentProofName": "Workshop Coordinator - Computer Networks.jpg",
-      "description": "",
-      "endDate": "2014-05-09",
-      "topic": "Computer Networking"
-    },
-    {
-      "organizerAddress": "Perundurai, Erode, Tamil Nadu",
-      "topic": "Data Mining Research Tools",
-      "description": "",
-      "organizedBy": "Kongu Engineering College",
-      "location": "Perundurai, Erode, Tamil Nadu",
-      "id": "ws-a-6",
-      "organizationType": "Academic Institution",
-      "type": "Attended",
-      "organizerName": "Kongu Engineering College",
-      "mode": "Offline",
-      "endDate": "2012-09-15",
-      "documentProofName": "15.09.12 Open Source tools for Data mining Research - Workshop - Kongu.jpg",
-      "title": "Open Source tools for Data Mining Research",
-      "startDate": "2012-09-15"
-    },
-    {
-      "topic": "Medical Image Diagnostics",
-      "organizedBy": "Karunya University",
-      "organizationType": "Academic Institution",
-      "description": "",
-      "location": "Coimbatore, Tamil Nadu",
-      "endDate": "2013-01-19",
-      "organizerAddress": "Coimbatore, Tamil Nadu",
-      "startDate": "2013-01-18",
-      "mode": "Offline",
-      "type": "Attended",
-      "id": "ws-a-7",
-      "documentProofName": "18.01.13-Medical image diagmostics-Workshop-Karunya univ.jpg",
-      "title": "The Application of Advanced Learning Techniques for Medical Image Diagnostics",
-      "organizerName": "Karunya University"
     }
   ],
+  "conferencesAttended": [
+    {
+      "title": "1st IEEE International Conference on Contemporary Computing and Communications (InC4 2023)",
+      "location": "Bangalore, India",
+      "paperTitle": "",
+      "id": "conf-1",
+      "role": "Technical Committee & Session Chair",
+      "date": "2023-04-21 to 2023-04-22"
+    },
+    {
+      "location": "S.E.A. College of Engineering and Technology, Bengaluru, India",
+      "title": "Second International Conference on Inventive Computing and Informatics (ICICI 2024)",
+      "date": "11-12, June 2024",
+      "paperTitle": "Malpractice Detection in Examination Hall using Deep Learning",
+      "id": "conf-2",
+      "role": "Author / Presenter"
+    },
+    {
+      "role": "Author",
+      "date": "2025-03-25",
+      "location": "",
+      "id": "conf-3",
+      "paperTitle": "Prediction of CO and NOx emission from gas turbine using machine learning",
+      "title": "AIP Conference Proceedings (Volume 3137)"
+    },
+    {
+      "location": "KPR Institute of Engineering and Technology, Coimbatore, Tamil Nadu",
+      "date": "28th and 29th January 2022",
+      "paperTitle": "Machine Learning Based Time Series Analysis for COVID-19 Cases in India",
+      "role": "Author / Presenter",
+      "id": "conf-4",
+      "title": "International Conference on Advances in Computing, Communication, Automation and Biomedical Technology (ICACCABT 2022)"
+    },
+    {
+      "location": "Er. Perumal Manimekalai College of Engineering, Hosur, Tamil Nadu",
+      "paperTitle": "Segmentation of Brain Tumor using U-net and Res-Unet",
+      "id": "conf-5",
+      "date": "13-05-2021",
+      "title": "National Conference on Emerging Trends in Information & Communication Technology (NCETICT'21)",
+      "role": "Presenter"
+    },
+    {
+      "title": "2nd International Conference on Innovations in Computing, Automation and Intelligent Information Systems (ICAIIS-2019)",
+      "paperTitle": "A unique Adventure Unity Based 3D game.",
+      "location": "MVJ College of Engineering, Bangalore",
+      "id": "conf-6",
+      "role": "Presenter",
+      "date": "29th & 30th May 2019"
+    },
+    {
+      "paperTitle": "Survey on Cyber Threats",
+      "location": "M. Kumarasamy College of Engineering, Thalavapalayam, Karur, Tamil Nadu",
+      "id": "conf-7",
+      "title": "National Conference on 'Big Data & Business Analytics'",
+      "role": "Presenter",
+      "date": "2019-03-29"
+    },
+    {
+      "location": "CSI College of Engineering, Ketti, The Nilgiris, Tamil Nadu",
+      "date": "2013-03-15",
+      "title": "Seventh National Conference on Advanced Computing",
+      "role": "Presenter",
+      "id": "conf-8",
+      "paperTitle": "Enhancing Flexibility and Scalablity in Cloud Computing using Hierarchical Attribute-Set Based Encryption"
+    }
+  ],
+  "patents": [],
   "grantsReceived": [
     {
       "title": "8th National Level Young Entrepreneurs Summit (YESummit-2025)",
       "purpose": "",
       "year": "2025",
       "agency": "Youth-Aid Foundation",
-      "amount": "₹12,50,000",
-      "id": "grant-1"
+      "id": "grant-1",
+      "amount": "₹12,50,000"
     },
     {
       "purpose": "",
-      "amount": "₹30,000",
       "agency": "Youth-Aid Foundation",
+      "amount": "₹30,000",
       "title": "State Level Young Entrepreneurs Summit (YESummit-2025)-Karnataka",
-      "id": "grant-2",
-      "year": "2025"
+      "year": "2025",
+      "id": "grant-2"
+    }
+  ],
+  "workshopsAttended": [
+    {
+      "organizerName": "Indian Institute of Science (IISc), Bengaluru & London School of Hygiene & Tropical Medicine (LSHTM), London",
+      "documentProofName": "IISc.pdf",
+      "description": "",
+      "organizerAddress": "IISc Campus, Bengaluru, India",
+      "organizedBy": "Indian Institute of Science (IISc), Bengaluru & London School of Hygiene & Tropical Medicine (LSHTM), London",
+      "mode": "Offline",
+      "location": "IISc Campus, Bengaluru, India",
+      "endDate": "2025-05-01",
+      "title": "Bridging Artificial Intelligence and Healthcare Workshop",
+      "organizationType": "Premier Research Institute / Academic",
+      "id": "ws-a-1",
+      "topic": "Bridging Artificial Intelligence and Healthcare",
+      "type": "Attended",
+      "startDate": "2025-04-29"
+    },
+    {
+      "topic": "QuantumVerse: Advancing Knowledge in Quantum Computing, XR, and the Metaverse",
+      "type": "Attended",
+      "id": "ws-a-2",
+      "organizationType": "Government Body / Academic Institution",
+      "title": "AICTE ATAL Faculty Development Program on QuantumVerse: Advancing Knowledge in Quantum Computing, XR, and the Metaverse",
+      "location": "A P S College of Engineering, Bangalore",
+      "description": "",
+      "documentProofName": "ATAL_Aruna_ APS certificate.pdf",
+      "endDate": "2024-12-21",
+      "organizedBy": "AICTE Training And Learning (ATAL) Academy / A P S College of Engineering",
+      "startDate": "2024-12-16",
+      "mode": "Offline",
+      "organizerAddress": "A P S College of Engineering, Bangalore",
+      "organizerName": "AICTE Training And Learning (ATAL) Academy / A P S College of Engineering"
+    },
+    {
+      "topic": "Innovative Medical Healthcare using Augmented Reality and Virtual Reality",
+      "documentProofName": "ATAL _ARUNA_Gnamani.pdf",
+      "organizedBy": "AICTE Training And Learning (ATAL) Academy / Gnanamani College of Technology",
+      "organizerAddress": "Gnanamani College of Technology, Namakkal, Tamil Nadu",
+      "description": "",
+      "id": "ws-a-3",
+      "mode": "Offline",
+      "title": "AICTE ATAL Faculty Development Program on Innovative Medical Healthcare using Augmented Reality and Virtual Reality",
+      "startDate": "2025-01-20",
+      "organizerName": "AICTE Training And Learning (ATAL) Academy / Gnanamani College of Technology",
+      "location": "Gnanamani College of Technology, Namakkal, Tamil Nadu",
+      "endDate": "2025-01-25",
+      "organizationType": "Government Body / Academic Institution",
+      "type": "Attended"
+    },
+    {
+      "location": "Pachal, Namakkal, Tamil Nadu",
+      "title": "Online Faculty Development Programme on 'Innovation in Mentoring Pedagogy and incorporation of ICT techniques in Education'",
+      "startDate": "2023-01-30",
+      "topic": "Innovation in Mentoring Pedagogy and incorporation of ICT techniques in Education",
+      "type": "Attended",
+      "organizationType": "Academic Institution",
+      "documentProofName": "PEC-ECE-FDP Certificate.png",
+      "description": "",
+      "organizerName": "Department of Electronics and Communication Engineering, Paavai Engineering College in association with IETE",
+      "id": "ws-a-4",
+      "endDate": "2023-02-04",
+      "mode": "Online",
+      "organizerAddress": "Pachal, Namakkal, Tamil Nadu",
+      "organizedBy": "Department of Electronics and Communication Engineering, Paavai Engineering College in association with IETE"
+    },
+    {
+      "location": "IIT Bombay, Powai, Mumbai",
+      "type": "Attended",
+      "organizedBy": "IIT Bombay",
+      "organizerAddress": "IIT Bombay, Powai, Mumbai",
+      "endDate": "2014-05-09",
+      "organizerName": "IIT Bombay",
+      "description": "",
+      "title": "Co-ordinators workshop on Computer Networking",
+      "mode": "Offline",
+      "organizationType": "Premier Institute / Government",
+      "documentProofName": "Workshop Coordinator - Computer Networks.jpg",
+      "startDate": "2014-05-05",
+      "topic": "Computer Networking",
+      "id": "ws-a-5"
+    },
+    {
+      "description": "",
+      "organizerAddress": "Perundurai, Erode, Tamil Nadu",
+      "endDate": "2012-09-15",
+      "startDate": "2012-09-15",
+      "title": "Open Source tools for Data Mining Research",
+      "type": "Attended",
+      "topic": "Data Mining Research Tools",
+      "documentProofName": "15.09.12 Open Source tools for Data mining Research - Workshop - Kongu.jpg",
+      "organizedBy": "Kongu Engineering College",
+      "id": "ws-a-6",
+      "organizationType": "Academic Institution",
+      "mode": "Offline",
+      "location": "Perundurai, Erode, Tamil Nadu",
+      "organizerName": "Kongu Engineering College"
+    },
+    {
+      "mode": "Offline",
+      "id": "ws-a-7",
+      "organizationType": "Academic Institution",
+      "title": "The Application of Advanced Learning Techniques for Medical Image Diagnostics",
+      "type": "Attended",
+      "organizerAddress": "Coimbatore, Tamil Nadu",
+      "organizedBy": "Karunya University",
+      "startDate": "2013-01-18",
+      "description": "",
+      "endDate": "2013-01-19",
+      "organizerName": "Karunya University",
+      "documentProofName": "18.01.13-Medical image diagmostics-Workshop-Karunya univ.jpg",
+      "topic": "Medical Image Diagnostics",
+      "location": "Coimbatore, Tamil Nadu"
     }
   ],
   "resourcePersonRoles": [],
-  "externalExaminerRoles": [],
-  "personalInfo": {
-    "googleScholarUrl": "https://scholar.google.com/citations?user=MD0YkOEAAAAJ&hl=en",
-    "department": " Department of AI and Data Science Engineering",
-    "websiteUrl": "https://scholarcv.vercel.app/",
-    "phone": " +91 9994338269",
-    "linkedInUrl": "https://www.linkedin.com/in/aruna-s-k-8b121a34/",
-    "title": "Associate Professor",
-    "name": "Dr Aruna S K",
-    "orcid": "0000-0002-6638-2772",
-    "institution": "CHRIST (Deemed to be University)",
-    "researchInterests": [
-      "Information and Communication Engineering",
-      "Image Processing",
-      "Machine Learning",
-      "Deep Learning"
-    ],
-    "biography": "Dr Aruna S.K. is an Associate Professor in the Department of AI and Data Science Engineering at CHRIST (Deemed to be University), Bengaluru. She is a distinguished researcher, academician, and innovation mentor specializing in Information and Communication Engineering. Alongside her teaching duties, she serves as an impactful catalyst for institutional growth and student entrepreneurship",
-    "officeAddress": "CHRIST (Deemed to be University)-Kengeri Campus, Bangalore -560074.",
-    "email": "sksaruna@yahoo.co.in, aruna.sk@christuniversity.in",
-    "avatarUrl": ""
-  },
+  "id": "sarah-jenkins",
   "academicAchievements": [
     {
-      "title": "Campus Coordinator - Incubation and Entrepreneurship Support Cell (IIIC)",
-      "date": "2023 - Present",
       "id": "ach-1",
+      "date": "2023 - Present",
+      "title": "Campus Coordinator - Incubation and Entrepreneurship Support Cell (IIIC)",
       "description": "Served as Campus Coordinator for IIIC, coordinating Yukti Innovation Challenge, MSME Hackathon 4.0 & 5.0, and MoUs."
     },
     {
-      "date": "2021 - 2024",
+      "description": "SPOC and Lab Incharge for Honeywell Women Empowerment Lab, training 112+ students in UiPath RPA.",
       "id": "ach-2",
-      "title": "Single Point of Contact (SPOC) - Honeywell Women Empowerment Cell (UiPath RPA)",
-      "description": "SPOC and Lab Incharge for Honeywell Women Empowerment Lab, training 112+ students in UiPath RPA."
+      "date": "2021 - 2024",
+      "title": "Single Point of Contact (SPOC) - Honeywell Women Empowerment Cell (UiPath RPA)"
     },
     {
+      "description": "NBA PO Attainment Analysis for Criteria 3, and NAAC Infrastructure and Learning Resources (Criteria 6).",
       "title": "Coordinator for NBA & NAAC Accreditations (Criteria 3 & 6)",
-      "id": "ach-3",
       "date": "2020 - 2025",
-      "description": "NBA PO Attainment Analysis for Criteria 3, and NAAC Infrastructure and Learning Resources (Criteria 6)."
+      "id": "ach-3"
     },
     {
+      "date": "2022 - 2024",
       "id": "ach-4",
-      "title": "Curriculum Innovation - Created Course on AI & ML for Honors Track",
       "description": "Created a new course on Artificial Intelligence and Machine Learning for Honors track; participated in syllabus revision.",
-      "date": "2022 - 2024"
+      "title": "Curriculum Innovation - Created Course on AI & ML for Honors Track"
     },
     {
-      "date": "2025",
-      "description": "Co-Principal Investigator and organizer for national-level 8th Young Entrepreneurs Summit (YESummit-2025).",
+      "title": "Coordinator - 8th Young Entrepreneurs Summit (YESummit 2025)",
       "id": "ach-5",
-      "title": "Coordinator - 8th Young Entrepreneurs Summit (YESummit 2025)"
+      "date": "2025",
+      "description": "Co-Principal Investigator and organizer for national-level 8th Young Entrepreneurs Summit (YESummit-2025)."
     }
   ],
-  "phdScholars": [],
-  "id": "sarah-jenkins",
+  "seminars": [
+    {
+      "organizationType": "Academic Institution / DRDO-Sponsored",
+      "documentProofName": "DRDO seminar certificate.pdf",
+      "description": "",
+      "organizedBy": "Department of Computer Science and Engineering, CHRIST (Deemed to be University)",
+      "mode": "Offline",
+      "endDate": "2024-10-03",
+      "startDate": "2024-10-03",
+      "organizerName": "Department of Computer Science and Engineering, CHRIST (Deemed to be University)",
+      "id": "sem-1",
+      "organizerAddress": "Kengeri Campus, Bangalore",
+      "level": "National",
+      "title": "DRDO-Sponsored National Seminar on 'Quantum Cryptography: Unleashing Secure Communication'",
+      "topic": "Quantum Cryptography: Unleashing Secure Communication"
+    },
+    {
+      "organizationType": "Academic Institution",
+      "documentProofName": "Department-poster Agile Software Dev Seminar.pdf",
+      "title": "Departmental Seminar on Agile Software Development Methodology",
+      "level": "Institutional",
+      "mode": "Online",
+      "topic": "Agile Software Development Methodology (Speaker: Sarath Jonnalagadda, Capgemini)",
+      "organizerName": "Department of Computer Science and Engineering, CHRIST (Deemed to be University)",
+      "startDate": "2021-09-25",
+      "organizerAddress": "Kengeri Campus, Bangalore (Online via Google Meet)",
+      "id": "sem-2",
+      "endDate": "2021-09-25",
+      "description": "",
+      "organizedBy": "Department of Computer Science and Engineering, CHRIST (Deemed to be University)"
+    },
+    {
+      "organizationType": "Academic Institution",
+      "documentProofName": "16.10.12 Computational Intelligence in network security with Cryptography - Seminar -PMCtech.jpg",
+      "mode": "Offline",
+      "description": "",
+      "organizedBy": "Er. Perumal Manimekalai College of Engineering (PMC Tech)",
+      "organizerName": "Er. Perumal Manimekalai College of Engineering (PMC Tech)",
+      "id": "sem-3",
+      "organizerAddress": "Koneripalli, Hosur, Tamil Nadu",
+      "startDate": "2012-10-16",
+      "endDate": "2012-10-17",
+      "topic": "Computational Intelligence in Network Security with Cryptography",
+      "level": "National",
+      "title": "National Seminar on Computational Intelligence in Network Security with Cryptography"
+    },
+    {
+      "startDate": "2012-03-05",
+      "organizedBy": "Er. Perumal Manimekalai College of Engineering (PMC Tech)",
+      "description": "",
+      "organizerAddress": "Koneripalli, Hosur, Tamil Nadu",
+      "mode": "Offline",
+      "organizerName": "Er. Perumal Manimekalai College of Engineering (PMC Tech)",
+      "title": "State Level Seminar on Bio Inspired Computing",
+      "endDate": "2012-03-06",
+      "level": "State",
+      "topic": "Bio Inspired Computing",
+      "id": "sem-4",
+      "documentProofName": "06.03.12 Bio Inspired Computing -Seminar.jpg",
+      "organizationType": "Academic Institution"
+    },
+    {
+      "level": "State",
+      "title": "Seminar on Mobile Cloud Computing",
+      "organizationType": "Academic Institution",
+      "description": "",
+      "id": "sem-5",
+      "organizedBy": "The Kavery Engineering College",
+      "organizerName": "The Kavery Engineering College",
+      "documentProofName": "17.02.11 Mobile Cloud Computing - Seminar - Kaveri clg.jpg",
+      "topic": "Mobile Cloud Computing",
+      "mode": "Offline",
+      "startDate": "2011-02-17",
+      "organizerAddress": "Mecheri, Salem, Tamil Nadu",
+      "endDate": "2011-02-18"
+    }
+  ],
+  "copyrights": [],
+  "workshopsConducted": [
+    {
+      "organizationType": "Academic Institution",
+      "topic": "Data Science and Satellite Imagery",
+      "location": "Kengeri Campus, Bangalore",
+      "mode": "Offline",
+      "title": "One day Workshop on Data Science and Satellite Imagery",
+      "documentProofName": "Satellite Imagery Workshop-Christ.pdf",
+      "organizerAddress": "Kengeri Campus, Bangalore",
+      "startDate": "2022-11-18",
+      "description": "",
+      "organizerName": "Department of Computer Science and Engineering, CHRIST (Deemed to be University)",
+      "endDate": "2022-11-18",
+      "organizedBy": "Department of Computer Science and Engineering, CHRIST (Deemed to be University)",
+      "type": "Conducted",
+      "id": "ws-c-1"
+    },
+    {
+      "description": "",
+      "startDate": "2024-09-06",
+      "documentProofName": "2024.09.06_Startup Success_Idea to Pitch_Report.docx",
+      "mode": "Offline",
+      "id": "ws-c-2",
+      "organizerAddress": "Mini Seminar Hall, Block II - SoET, Kengeri Campus, Bangalore",
+      "organizedBy": "CHRIST Incubation Centre, Sub-Institute Innovation Council (IIC) - Kengeri Campus, CHRIST (Deemed to be University)",
+      "title": "Startup Success: Idea to Pitch Workshop",
+      "type": "Conducted",
+      "organizerName": "CHRIST Incubation Centre, Sub-Institute Innovation Council (IIC) - Kengeri Campus, CHRIST (Deemed to be University)",
+      "organizationType": "Academic Institution",
+      "location": "Mini Seminar Hall, Block II - SoET, Kengeri Campus, Bangalore",
+      "endDate": "2024-09-06",
+      "topic": "Startup Success: Idea to Pitch"
+    }
+  ],
+  "awardsReceived": [
+    {
+      "title": "Rashtrapati Guide Award",
+      "id": "award-1",
+      "description": "Conferred Rashtrapati Guide Award by The President of India.",
+      "year": "National Honor",
+      "awardingBody": "The President of India / Bharat Scouts and Guides"
+    },
+    {
+      "title": "Excellence and Innovation Award (2023)",
+      "description": "Awarded in recognition of contributions to the MSME-funded research project.",
+      "id": "award-2",
+      "year": "2023",
+      "awardingBody": "CHRIST (Deemed to be University)"
+    },
+    {
+      "description": "Letter of appreciation in recognition of valuable contribution and service to the institution.",
+      "year": "2024-05",
+      "id": "award-3",
+      "awardingBody": "School of Engineering and Technology, CHRIST (Deemed to be University)",
+      "title": "Letter of Appreciation for Institutional Contribution"
+    },
+    {
+      "title": "Infosys Silver Partner Faculty Award",
+      "awardingBody": "Infosys Campus Connect",
+      "year": "2018",
+      "id": "award-4",
+      "description": "Recognized as Silver Partner Faculty under Inspire - The Campus Connect Faculty Partnership Model."
+    },
+    {
+      "year": "2021 & 2024",
+      "awardingBody": "IEEE / CIS Conference Committee",
+      "description": "Certificate of Appreciation for Session Chairing at International Conference on Contemporary Computing and Applications.",
+      "id": "award-5",
+      "title": "IEEE CIS Conference Session Chair Distinction"
+    }
+  ],
   "skills": [
     {
       "skills": [
@@ -2349,14 +2318,121 @@ export const mockFacultyProfiles: FacultyProfile[] = [
       "category": "Programming & Frameworks"
     },
     {
-      "category": "Academic & Professional",
       "skills": [
         "Grant Writing",
         "Curriculum Design",
         "PhD Mentorship",
         "Peer Review",
         "Technical Speaking"
-      ]
+      ],
+      "category": "Academic & Professional"
+    }
+  ],
+  "phdScholars": [],
+  "fundedProjects": [
+    {
+      "id": "proj-1",
+      "role": "Principal Investigator",
+      "fundingAgency": "Ministry of Micro, Small and Medium Enterprises (MSME), Government of India",
+      "description": "",
+      "title": "Biodegradable Hydrogel gauze from Nano Sericin & Gelatin, IDEAKR005232",
+      "amount": "₹21,00,000",
+      "status": "Ongoing",
+      "endDate": "",
+      "startDate": "2022-08"
+    },
+    {
+      "title": "AI- Powered Drone Monitoring Systems at Christ University Bangalore Kengeri Campus",
+      "description": "",
+      "endDate": "2027-01-31",
+      "id": "proj-2",
+      "fundingAgency": "CHRIST (Deemed to be University)",
+      "role": "Co-Principal Investigator",
+      "startDate": "2025-01-31",
+      "amount": "₹4,46,000",
+      "status": "Ongoing"
+    },
+    {
+      "title": "Investigation on incorporation of the Blockchain technology for authentication and assurance of digital media for mitigating deepfakes and fake documents in the social media",
+      "endDate": "2026-01-31",
+      "fundingAgency": "CHRIST (Deemed to be University)",
+      "status": "Ongoing",
+      "amount": "₹1,30,000",
+      "id": "proj-3",
+      "description": "",
+      "startDate": "2025-01-31",
+      "role": "Principal Investigator"
+    },
+    {
+      "description": "",
+      "role": "Co-Principal Investigator",
+      "status": "Ongoing",
+      "amount": "₹2,50,000",
+      "endDate": "",
+      "fundingAgency": "Honeywell (Implementing Agency: ICT Academy)",
+      "startDate": "2021-08",
+      "id": "proj-4",
+      "title": "Women Empowerment Program (UiPath RPA)"
+    },
+    {
+      "title": "Support in projects via Upskilling Training for the fresh Employees of Capgemini",
+      "role": "Principal Investigator",
+      "fundingAgency": "SRUSHTI / Capgemini",
+      "description": "",
+      "endDate": "2022-04-28",
+      "id": "proj-5",
+      "startDate": "2022-04-07",
+      "amount": "₹80,000",
+      "status": "Completed"
+    },
+    {
+      "fundingAgency": "ICT Academy (Honeywell CSR Activities)",
+      "endDate": "2022-04-23",
+      "description": "",
+      "role": "Co-Principal Investigator",
+      "status": "Completed",
+      "amount": "₹7,00,000",
+      "startDate": "2022-01-05",
+      "id": "proj-6",
+      "title": "Proof of Concept support (Student Empowerment) session 1"
+    }
+  ],
+  "education": [
+    {
+      "id": "education-1786442800046",
+      "field": "Information and Communication Engineering",
+      "grade": "",
+      "thesisTitle": "",
+      "degree": "Ph.D. ",
+      "institution": "Anna University",
+      "year": "2017"
+    },
+    {
+      "field": "Master of Business Administration (International Business)",
+      "degree": "MBA",
+      "thesisTitle": "",
+      "id": "education-1786442757759",
+      "institution": "Periyar University",
+      "year": "2016",
+      "grade": "First Class"
+    },
+    {
+      "year": "2011",
+      "field": "Computer Science & Engineering",
+      "id": "education-1786442711450",
+      "degree": "M.E.",
+      "thesisTitle": "",
+      "grade": "91%",
+      "institution": "Anna University of Technology"
+    },
+    {
+      "institution": "Bharathidasan University",
+      "degree": "B.E.",
+      "id": "education-1786433284953",
+      "thesisTitle": "",
+      "year": "2004",
+      "field": "Computer Science & Engineering",
+      "grade": " 77%"
     }
   ]
 }

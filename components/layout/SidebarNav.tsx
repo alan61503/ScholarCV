@@ -15,10 +15,11 @@ import {
   Settings,
 } from 'lucide-react';
 
-interface NavItem {
+export interface NavItem {
   id: string;
   label: string;
   icon: string;
+  count?: number;
 }
 
 interface SidebarNavProps {
@@ -155,7 +156,7 @@ export default function SidebarNav({ items, name, title, avatarUrl }: SidebarNav
         {items.map((item, index) => {
           const Icon = iconMap[item.icon] || User;
           const isActive = activeSection === item.id;
-          const padded = String(index + 1).padStart(2, '0');
+          const displayCount = String(item.count ?? (index + 1)).padStart(2, '0');
 
           return (
             <button
@@ -183,16 +184,20 @@ export default function SidebarNav({ items, name, title, avatarUrl }: SidebarNav
                 <Icon className="h-3.5 w-3.5" />
               </div>
               <span className="flex-1 text-left text-sm">{item.label}</span>
-              {isActive ? (
-                <span className="w-1.5 h-1.5 rounded-full shrink-0 animate-pulse-dot" style={{ background: '#fbbf24', boxShadow: '0 0 8px #fbbf24' }} />
-              ) : (
+              <div className="flex items-center gap-1.5 shrink-0">
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full shrink-0 animate-pulse-dot" style={{ background: '#fbbf24', boxShadow: '0 0 8px #fbbf24' }} />
+                )}
                 <span
-                  className="nav-btn-number shrink-0 text-[10px] font-bold opacity-30"
-                  style={{ color: 'var(--foreground-subtle)' }}
+                  className="nav-btn-number shrink-0 text-[10px] font-bold"
+                  style={{
+                    color: isActive ? 'rgba(255,255,255,0.85)' : 'var(--foreground-subtle)',
+                    opacity: isActive ? 0.9 : 0.45,
+                  }}
                 >
-                  {padded}
+                  {displayCount}
                 </span>
-              )}
+              </div>
             </button>
           );
         })}

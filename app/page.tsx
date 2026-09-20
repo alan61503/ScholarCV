@@ -8,7 +8,7 @@ import { sortByDateDesc } from '../lib/sortHelper';
 
 import HighlightsTicker from '../components/layout/HighlightsTicker';
 import Nav from '../components/layout/Nav';
-import SidebarNav from '../components/layout/SidebarNav';
+import SidebarNav, { NavItem } from '../components/layout/SidebarNav';
 import ProfileSummary from '../components/sections/ProfileSummary';
 import EducationExperience from '../components/sections/EducationExperience';
 import Publications from '../components/sections/Publications';
@@ -25,21 +25,6 @@ import PrintableCV, { SelectedChapters, defaultSelectedChapters } from '../compo
 import PrintCustomizationModal from '../components/cv/PrintCustomizationModal';
 import ThemeToggle from '../components/ui/ThemeToggle';
 import { FadeIn } from '../components/ui/FadeIn';
-
-const navItems = [
-  { id: 'summary', label: 'Summary', icon: 'user' },
-  { id: 'education-experience', label: 'Education & Skills', icon: 'education' },
-  { id: 'publications', label: 'Publications', icon: 'publications' },
-  { id: 'projects-grants', label: 'Projects & Grants', icon: 'projects' },
-  { id: 'awards-achievements', label: 'Awards & Honors', icon: 'awards' },
-  { id: 'conferences-workshops', label: 'Conferences', icon: 'conferences' },
-  { id: 'workshops', label: 'Workshops', icon: 'workshops' },
-  { id: 'seminars', label: 'Seminars', icon: 'seminar' },
-  { id: 'scholars', label: 'Research Scholars', icon: 'scholars' },
-  { id: 'roles-recognition', label: 'Roles & Recognitions', icon: 'roles' },
-  { id: 'patents', label: 'Patents', icon: 'patents' },
-  { id: 'copyrights', label: 'Copyrights', icon: 'copyrights' },
-];
 
 export default function Home() {
   const [profileData, setProfileData] = useState<FacultyProfile>(initialProfile);
@@ -58,6 +43,46 @@ export default function Home() {
   }, []);
 
   const p = profileData;
+
+  const navItems: NavItem[] = React.useMemo(() => [
+    { id: 'summary', label: 'Summary', icon: 'user', count: 1 },
+    {
+      id: 'education-experience',
+      label: 'Education & Skills',
+      icon: 'education',
+      count: (p.education?.length || 0) + (p.experience?.length || 0),
+    },
+    { id: 'publications', label: 'Publications', icon: 'publications', count: p.publications?.length || 0 },
+    {
+      id: 'projects-grants',
+      label: 'Projects & Grants',
+      icon: 'projects',
+      count: (p.fundedProjects?.length || 0) + (p.grantsReceived?.length || 0),
+    },
+    {
+      id: 'awards-achievements',
+      label: 'Awards & Honors',
+      icon: 'awards',
+      count: (p.awardsReceived?.length || 0) + (p.academicAchievements?.length || 0),
+    },
+    { id: 'conferences-workshops', label: 'Conferences', icon: 'conferences', count: p.conferencesAttended?.length || 0 },
+    {
+      id: 'workshops',
+      label: 'Workshops',
+      icon: 'workshops',
+      count: (p.workshopsAttended?.length || 0) + (p.workshopsConducted?.length || 0),
+    },
+    { id: 'seminars', label: 'Seminars', icon: 'seminar', count: p.seminars?.length || 0 },
+    { id: 'scholars', label: 'Research Scholars', icon: 'scholars', count: p.phdScholars?.length || 0 },
+    {
+      id: 'roles-recognition',
+      label: 'Roles & Recognitions',
+      icon: 'roles',
+      count: (p.resourcePersonRoles?.length || 0) + (p.externalExaminerRoles?.length || 0),
+    },
+    { id: 'patents', label: 'Patents', icon: 'patents', count: p.patents?.length || 0 },
+    { id: 'copyrights', label: 'Copyrights', icon: 'copyrights', count: p.copyrights?.length || 0 },
+  ], [p]);
 
   return (
     <>

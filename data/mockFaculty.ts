@@ -204,8 +204,92 @@ export const mockFacultyProfiles: FacultyProfile[] = [
         type: 'Conference'
       }
     ],
-    fundedProjects: [],
-    grantsReceived: [],
+    fundedProjects: [
+      {
+        id: 'proj-1',
+        title: 'Biodegradable Hydrogel gauze from Nano Sericin & Gelatin, IDEAKR005232',
+        fundingAgency: 'Ministry of Micro, Small and Medium Enterprises (MSME), Government of India',
+        amount: '₹21,00,000',
+        startDate: '2022-08',
+        endDate: '',
+        status: 'Ongoing',
+        role: 'Principal Investigator',
+        description: ''
+      },
+      {
+        id: 'proj-2',
+        title: 'AI- Powered Drone Monitoring Systems at Christ University Bangalore Kengeri Campus',
+        fundingAgency: 'CHRIST (Deemed to be University)',
+        amount: '₹4,46,000',
+        startDate: '2025-01-31',
+        endDate: '2027-01-31',
+        status: 'Ongoing',
+        role: 'Co-Principal Investigator',
+        description: ''
+      },
+      {
+        id: 'proj-3',
+        title: 'Investigation on incorporation of the Blockchain technology for authentication and assurance of digital media for mitigating deepfakes and fake documents in the social media',
+        fundingAgency: 'CHRIST (Deemed to be University)',
+        amount: '₹1,30,000',
+        startDate: '2025-01-31',
+        endDate: '2026-01-31',
+        status: 'Ongoing',
+        role: 'Principal Investigator',
+        description: ''
+      },
+      {
+        id: 'proj-4',
+        title: 'Women Empowerment Program (UiPath RPA)',
+        fundingAgency: 'Honeywell (Implementing Agency: ICT Academy)',
+        amount: '₹2,50,000',
+        startDate: '2021-08',
+        endDate: '',
+        status: 'Ongoing',
+        role: 'Co-Principal Investigator',
+        description: ''
+      },
+      {
+        id: 'proj-5',
+        title: 'Support in projects via Upskilling Training for the fresh Employees of Capgemini',
+        fundingAgency: 'SRUSHTI / Capgemini',
+        amount: '₹80,000',
+        startDate: '2022-04-07',
+        endDate: '2022-04-28',
+        status: 'Completed',
+        role: 'Principal Investigator',
+        description: ''
+      },
+      {
+        id: 'proj-6',
+        title: 'Proof of Concept support (Student Empowerment) session 1',
+        fundingAgency: 'ICT Academy (Honeywell CSR Activities)',
+        amount: '₹7,00,000',
+        startDate: '2022-01-05',
+        endDate: '2022-04-23',
+        status: 'Completed',
+        role: 'Co-Principal Investigator',
+        description: ''
+      }
+    ],
+    grantsReceived: [
+      {
+        id: 'grant-1',
+        title: '8th National Level Young Entrepreneurs Summit (YESummit-2025)',
+        agency: 'Youth-Aid Foundation',
+        amount: '₹12,50,000',
+        year: '2025',
+        purpose: ''
+      },
+      {
+        id: 'grant-2',
+        title: 'State Level Young Entrepreneurs Summit (YESummit-2025)-Karnataka',
+        agency: 'Youth-Aid Foundation',
+        amount: '₹30,000',
+        year: '2025',
+        purpose: ''
+      }
+    ],
     awardsReceived: [],
     conferencesAttended: [],
     seminars: [],

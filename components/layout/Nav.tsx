@@ -13,6 +13,7 @@ export interface NavItem {
   id: string;
   label: string;
   icon: string;
+  count?: number;
 }
 
 interface NavProps {

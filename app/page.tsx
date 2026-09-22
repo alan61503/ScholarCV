@@ -34,7 +34,14 @@ export default function Home() {
   useEffect(() => {
     const unsubscribe = subscribeToCloudProfile((liveData) => {
       if (liveData && liveData.personalInfo) {
-        setProfileData(liveData);
+        const mergedProfile = {
+          ...liveData,
+          personalInfo: {
+            ...liveData.personalInfo,
+            avatarUrl: liveData.personalInfo.avatarUrl || initialProfile.personalInfo.avatarUrl || '/Profile_Picture.png',
+          },
+        };
+        setProfileData(mergedProfile);
         // Dynamically update the browser tab title to match the live loaded data
         document.title = `${liveData.personalInfo.name} — ${liveData.personalInfo.title}`;
       }

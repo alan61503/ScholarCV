@@ -67,7 +67,8 @@ export default function Nav({ name, institution, department, onOpenPrintModal }:
         {/* Right: Badges + Print */}
         <div className="flex items-center gap-3 shrink-0">
           <div
-            className="hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold"
+            className="hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap"
+            title={institution}
             style={{
               background: 'rgba(29,78,216,0.08)',
               color: '#1d4ed8',
@@ -75,22 +76,23 @@ export default function Nav({ name, institution, department, onOpenPrintModal }:
             }}
           >
             <div
-              className="w-2 h-2 rounded-full"
+              className="w-2 h-2 rounded-full shrink-0"
               style={{ background: 'linear-gradient(135deg, #1d4ed8, #d4af37)' }}
             />
-            <span className="truncate max-w-[160px]">{institution}</span>
+            <span>{institution}</span>
           </div>
 
           <div
-            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold"
+            className="hidden lg:flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap"
+            title={department}
             style={{
               background: 'rgba(212,175,55,0.1)',
               color: '#b8962e',
               border: '1px solid rgba(212,175,55,0.2)',
             }}
           >
-            <BookOpen className="h-3 w-3" aria-hidden="true" />
-            <span className="truncate max-w-[140px]">{department}</span>
+            <BookOpen className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+            <span>{department}</span>
           </div>
 
           {/* Customize & Print CV Button */}

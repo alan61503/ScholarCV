@@ -2563,7 +2563,7 @@ export const mockFacultyProfiles: FacultyProfile[] = [
     "googleScholarUrl": "https://scholar.google.com/citations?user=MD0YkOEAAAAJ&hl=en",
     "phone": " +91 9994338269",
     "title": "Associate Professor",
-    "department": " Department of AI and Data Science Engineering",
+    "department": "Department of AI and Data Science Engineering",
     "institution": "CHRIST (Deemed to be University)",
     "researchInterests": [
       "Information and Communication Engineering",

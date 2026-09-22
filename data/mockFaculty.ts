@@ -2559,7 +2559,7 @@ export const mockFacultyProfiles: FacultyProfile[] = [
     "name": "Dr Aruna S K",
     "biography": "Dr Aruna S.K. is an Associate Professor in the Department of AI and Data Science Engineering at CHRIST (Deemed to be University), Bengaluru. She is a distinguished researcher, academician, and innovation mentor specializing in Information and Communication Engineering. Alongside her teaching duties, she serves as an impactful catalyst for institutional growth and student entrepreneurship",
     "linkedInUrl": "https://www.linkedin.com/in/aruna-s-k-8b121a34/",
-    "avatarUrl": "",
+    "avatarUrl": "/Profile_Picture.png",
     "googleScholarUrl": "https://scholar.google.com/citations?user=MD0YkOEAAAAJ&hl=en",
     "phone": " +91 9994338269",
     "title": "Associate Professor",

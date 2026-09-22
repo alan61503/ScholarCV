@@ -222,9 +222,9 @@ export default function Publications({ publications }: PublicationsProps) {
                         {pub.title}
                       </h3>
 
-                      <div className="flex items-center gap-1.5 text-xs text-foreground-muted">
-                        <Users className="h-3.5 w-3.5 shrink-0" />
-                        <span className="truncate">{pub.authors.join(', ')}</span>
+                      <div className="flex items-start gap-1.5 text-xs text-foreground-muted">
+                        <Users className="h-3.5 w-3.5 shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{pub.authors.join(', ')}</span>
                       </div>
 
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-foreground-muted font-medium">

@@ -161,7 +161,7 @@ export default function ProfileSummary({ profile }: ProfileSummaryProps) {
                 {personalInfo.officeAddress && (
                   <div className="flex items-center gap-1.5" style={{ color: 'rgba(191,219,254,0.7)' }}>
                     <MapPin className="h-3.5 w-3.5 shrink-0" style={{ color: '#60a5fa' }} />
-                    <span className="truncate max-w-xs">{personalInfo.officeAddress}</span>
+                    <span className="leading-snug">{personalInfo.officeAddress}</span>
                   </div>
                 )}
               </div>
@@ -172,7 +172,7 @@ export default function ProfileSummary({ profile }: ProfileSummaryProps) {
                   <div className="flex gap-2">
                     <Quote className="h-4 w-4 shrink-0 mt-1" style={{ color: '#d4af37' }} />
                     <p className="text-sm italic leading-relaxed" style={{ fontFamily: "'Crimson Text', 'Playfair Display', Georgia, serif", color: 'rgba(219,234,254,0.85)', fontSize: '15px' }}>
-                      {personalInfo.biography.split('.')[0]}.
+                      {personalInfo.biography.match(/^(.+?(?:[a-z\)]|[A-Z]{3,})\.)(?:\s+[A-Z]|$)/)?.[1] || personalInfo.biography}
                     </p>
                   </div>
                 </div>

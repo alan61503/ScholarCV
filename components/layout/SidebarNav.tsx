@@ -126,11 +126,11 @@ export default function SidebarNav({ items, name, title, avatarUrl }: SidebarNav
               <User className="h-5 w-5 text-white/60" />
             </div>
           )}
-          <div className="min-w-0">
-            <p className="text-sm font-bold truncate leading-tight" style={{ color: '#e8eeff' }}>
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-bold leading-tight" style={{ color: '#e8eeff' }}>
               {name}
             </p>
-            <p className="text-[10px] truncate leading-tight mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <p className="text-[11px] leading-tight mt-0.5" style={{ color: 'rgba(255,255,255,0.65)' }}>
               {title}
             </p>
           </div>

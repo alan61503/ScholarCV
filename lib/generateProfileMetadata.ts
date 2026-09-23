@@ -11,12 +11,8 @@ export function createProfileMetadata(
   const profile = profileData || fallbackProfile;
   const personal = profile.personalInfo;
 
-  const title = `${personal.name} – ${personal.title}`;
-  const department = (personal.department || '').trim();
-  const institution = (personal.institution || '').trim();
-  const description = department && institution 
-    ? `${department} · ${institution}`
-    : personal.biography || `${personal.name}'s Academic Portfolio`;
+  const title = `${personal.name} — ${personal.title}`;
+  const description = (personal.biography || `${personal.department} · ${personal.institution}`).trim();
 
   const rawImage = personal.avatarUrl || '/Profile_Picture.png';
   const imageUrl = rawImage.startsWith('http')

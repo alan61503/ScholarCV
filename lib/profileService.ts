@@ -12,27 +12,35 @@ const timeout = <T>(ms: number, fallbackValue: T): Promise<T> =>
   new Promise((resolve) => setTimeout(() => resolve(fallbackValue), ms));
 
 // Fetches the live profile from Cloud Firestore, seeding it if missing
-export async function getCloudProfile(): Promise<FacultyProfile> {
+export async function getCloudProfile(id: string = 'default'): Promise<FacultyProfile> {
   try {
-    const docRef = doc(db, COLLECTION_NAME, PROFILE_DOC_PATH);
+    const docPath = !id || id === 'default' ? PROFILE_DOC_PATH : id;
+    const docRef = doc(db, COLLECTION_NAME, docPath);
     const fetchPromise = getDoc(docRef).then((snap) => {
       if (snap.exists()) {
         return snap.data() as FacultyProfile;
       }
-      return defaultProfile;
+      const matched = mockFacultyProfiles.find(
+        (p) => p.id === id || p.personalInfo.name.toLowerCase().includes(id.toLowerCase().replace(/-/g, ' '))
+      );
+      return matched || defaultProfile;
     });
 
     return await Promise.race([fetchPromise, timeout(3000, defaultProfile)]);
   } catch (error) {
     console.warn('Firebase fetch error, falling back to local profile:', error);
-    return defaultProfile;
+    const matched = mockFacultyProfiles.find(
+      (p) => p.id === id || p.personalInfo.name.toLowerCase().includes(id.toLowerCase().replace(/-/g, ' '))
+    );
+    return matched || defaultProfile;
   }
 }
 
 // Saves updated profile to Cloud Firestore live with timeout safety
-export async function saveCloudProfile(profile: FacultyProfile): Promise<boolean> {
+export async function saveCloudProfile(profile: FacultyProfile, id: string = 'default'): Promise<boolean> {
   try {
-    const docRef = doc(db, COLLECTION_NAME, PROFILE_DOC_PATH);
+    const docPath = !id || id === 'default' ? PROFILE_DOC_PATH : id;
+    const docRef = doc(db, COLLECTION_NAME, docPath);
     const savePromise = setDoc(docRef, profile, { merge: true }).then(() => true);
     const result = await Promise.race([savePromise, timeout(2500, false)]);
     return result;
@@ -43,9 +51,13 @@ export async function saveCloudProfile(profile: FacultyProfile): Promise<boolean
 }
 
 // Subscribes to real-time updates from Cloud Firestore
-export function subscribeToCloudProfile(onUpdate: (profile: FacultyProfile) => void): () => void {
+export function subscribeToCloudProfile(
+  onUpdate: (profile: FacultyProfile) => void,
+  id: string = 'default'
+): () => void {
   try {
-    const docRef = doc(db, COLLECTION_NAME, PROFILE_DOC_PATH);
+    const docPath = !id || id === 'default' ? PROFILE_DOC_PATH : id;
+    const docRef = doc(db, COLLECTION_NAME, docPath);
     return onSnapshot(
       docRef,
       (docSnap) => {
@@ -55,12 +67,18 @@ export function subscribeToCloudProfile(onUpdate: (profile: FacultyProfile) => v
       },
       (error) => {
         console.warn('Firestore subscription fallback:', error);
-        onUpdate(defaultProfile);
+        const matched = mockFacultyProfiles.find(
+          (p) => p.id === id || p.personalInfo.name.toLowerCase().includes(id.toLowerCase().replace(/-/g, ' '))
+        );
+        onUpdate(matched || defaultProfile);
       }
     );
   } catch (err) {
     console.warn('Firestore subscription failed:', err);
-    onUpdate(defaultProfile);
+    const matched = mockFacultyProfiles.find(
+      (p) => p.id === id || p.personalInfo.name.toLowerCase().includes(id.toLowerCase().replace(/-/g, ' '))
+    );
+    onUpdate(matched || defaultProfile);
     return () => {};
   }
 }

@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { profile } from "../data/profile";
+import { createProfileMetadata } from "../lib/generateProfileMetadata";
 
-export const metadata: Metadata = {
-  title: `${profile.personalInfo.name} — ${profile.personalInfo.title}`,
-  description: profile.personalInfo.biography,
-};
+export const metadata: Metadata = createProfileMetadata(profile, '/');
 
 const themeInitScript = `
 (function() {
